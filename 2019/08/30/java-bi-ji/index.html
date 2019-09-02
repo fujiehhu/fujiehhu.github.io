@@ -507,12 +507,9 @@ double
 <ol start="2">
 <li>运行java应用程序时，实际的代码运行之前的一个步骤是加载类，如果类中有静态成员，加载类时会在heap中为其分配空间，此空间是属于类的。类中的非静态成员（实例成员）是和类的对象绑定的，它们属于对象在heap中的空间。静态成员不能访问非静态成员，因为静态成员在类加载完成后已经存在于heap中了，但是如果没创建对象的话非静态成员是不存在的，所以在代码中有引用时会发生编译错误。反过来说，非静态成员可以访问静态成员，因为当非静态成员存在于heap中时，静态成员肯定已经存在于heap中了。</li>
 <li><strong>static 声明的变量和方法在类中共享的</strong>，当使用static修饰变量时，<strong>在类中是共享</strong>。例如：在下列代码中定义静态变量i = 10时，当类创建了多个对象时，其中一个对象修改了i的值（ts1.i = 100）,其他对象ts2、ts3调用i值时，会出现i值都是100，说明静态变量i是共享。 <strong>非静态变量</strong>：当类中创建多个对象时，非静态变量在内存中直接分布各个新创建的对象中。所以当修改某个对象引用的变量值时，其他对象在引用变量时，没有发生改变。例如：j =20 ；ts1.j = 15;此时ts1对象输出 j=15 .而输出的ts2.j=20,ts3.j=20跟初始定义的j一样;</li>
-<li>静态成员方法采用通过类名的方法调用“Thread.sleep()”和采用实例对象的调用sleep成员方法在效果上是一样的。<br>假设A和B分别是两个不同的线程，而线程B执行到下面的语句<blockquote>
-<p>A.sleep(1000);</p>
-</blockquote>
-</li>
+<li>静态成员方法采用通过类名的方法调用“Thread.sleep()”和采用实例对象的调用sleep成员方法在效果上是一样的。<br>假设A和B分别是两个不同的线程，而线程B执行到下面的语句</li>
 </ol>
-<p>则进入睡眠状态的是线程B，而不是线程A。</p>
+<p><code>A.sleep(1000);</code><br>则进入睡眠状态的是线程B，而不是线程A。</p>
 <h1 id="多线程程序设计"><a href="#多线程程序设计" class="headerlink" title="多线程程序设计"></a>多线程程序设计</h1><p><strong>线程的生命周期</strong><br><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="img/%E7%BA%BF%E7%A8%8B%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.jpg" alt="线程的生命周期" title="线程的生命周期"></p>
 
             </div>
