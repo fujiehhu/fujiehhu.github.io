@@ -9,9 +9,15 @@
     <meta name="keywords" content="讲稿, HHU">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="代码部分
-ppt部分
-补充1. Introduction开发了一个评估街道清洁和废物收集服务的应用程序。这个应用程序基于一个指标计划，可以用来评估桑坦德市街道清洁和垃圾收集服务。制定了计算和评价59项指标的具体方法，以获得有关服务不同要素状">
+    <meta name="description" content="代码部分配置
+labelmap.pbtxt
+
+
+faster_rcnn_inception_v2_pets.config
+train_config: {
+  batch_size: 1
+  optimizer {
+    momentum_">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -381,14 +387,14 @@ ppt部分
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        8.1k
+                        8.2k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        28 分
+                        29 分
                     </div>
                     
                 
@@ -405,7 +411,48 @@ ppt部分
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="代码部分"><a href="#代码部分" class="headerlink" title="代码部分"></a>代码部分</h1><hr>
+                <h1 id="代码部分"><a href="#代码部分" class="headerlink" title="代码部分"></a>代码部分</h1><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><blockquote>
+<p>labelmap.pbtxt</p>
+</blockquote>
+<blockquote>
+<p>faster_rcnn_inception_v2_pets.config</p>
+<pre><code>train_config: {
+  batch_size: 1
+  optimizer {
+    momentum_optimizer: {
+      learning_rate: {
+        manual_step_learning_rate {
+          initial_learning_rate: 0.0003
+          schedule {
+            step: 60000
+            learning_rate: .0002
+          }
+          schedule {
+            step: 2000000
+            learning_rate: .00005
+          }
+        }
+      }
+      momentum_optimizer_value: 0.9
+    }
+    use_moving_average: false
+  }
+  gradient_clipping_by_norm: 10.0
+  fine_tune_checkpoint: &quot;xxxx/faster_rcnn_inception_v2_coco_2018_01_28/model.ckpt&quot;
+  from_detection_checkpoint: true
+  load_all_detection_checkpoint_vars: true
+  num_steps: 200000
+  data_augmentation_options {
+    random_horizontal_flip {
+    }
+  }
+}</code></pre><pre><code>eval_config: {
+  metrics_set: &quot;coco_detection_metrics&quot;
+  num_visualizations: 38
+  num_examples: 38
+  max_evals: 38
+}</code></pre></blockquote>
+<hr>
 <h1 id="ppt部分"><a href="#ppt部分" class="headerlink" title="ppt部分"></a>ppt部分</h1><hr>
 <h1 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h1><h2 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a>1. Introduction</h2><p>开发了一个评估街道清洁和废物收集服务的应用程序。这个应用程序基于一个指标计划，可以用来评估桑坦德市街道清洁和垃圾收集服务。制定了计算和评价59项指标的具体方法，以获得有关服务不同要素状况的信息。指标计划已应用于桑坦德市。该应用程序旨在解决(但不限于)以下目标：i)获取、存储和计算关于上述指标的信息；ii)向公共部门传播服务要素状况的结果。开发的APP可以快速查看每个区域的每个指标获得的结果，这有助于对城市的清洁度做出适当的诊断，并且是决策和服务优化过程中的第一步。街道清洁度指数的详细结果显示了桑坦德市每个地区的情况。街道清洁度指标值也与频率街道清洁度服务参数相关。皮尔逊相关系数结果表明，街道清洁度指数值与频率街道清洁服务/人口密度比之间存在反相关关系(R2=−0.63)。结果表明，街道清洁指数最差值存在于那些具有较低频率街道清洁服务/人口密度参数的地区。研究结果对街道清洁服务的设计和优化具有一定的参考价值。在决策过程中，应在有需要时分配资源，似乎是那些频率较低的街道清洁服务/人口密度比率较低的地区。</p>
 <p>街道清洁和废物收集是当地议会通常外包给当地供应商的一项服务。为了检查服务是否根据一组性能标准执行，质量控制是必要的(Garrido等人，2011)。街道清洁和废物收集服务(SCWCS)包括清扫道路和人行道，收集废物，在某些情况下，确保集装箱、垃圾箱和树栅的清洁和维护。因此，SCWCS质量控制的目标是保证一定程度的清洁和维护，确保遵守所有规则，并在已完成的工作和计划的工作之间建立合理的框架。最后一个因素可能会影响外包服务的价值和支付方式(Sevilla et al.，2013)。</p>
@@ -856,7 +903,7 @@ ppt部分
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">9.7k</span>
+                <span class="white-color">9.8k</span>
 
             
             <br>
