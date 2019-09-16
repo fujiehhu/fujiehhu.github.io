@@ -6,13 +6,45 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="图片标注工具LabelImg, HHU">
+    <meta name="keywords" content="java笔记, HHU">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="图片标注工具LabelImg的安装及使用方法安装百度云地址 提取码: ivdc 
-anaconda prompt命令行安装pip3 install labelImg打开,命令行输入
-labelimg使用方法
-修改默认的XML文件保存位置，使">
+    <meta name="description" content="Java基础知识(笔记)java 基本数据类型
+
+
+
+类型
+位数
+类型
+位数
+
+
+
+boolean
+8
+int
+32
+
+
+char
+16
+long
+64
+
+
+byte
+8
+float
+32
+
+
+short
+16
+double
+64
+
+
+类修">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +52,7 @@ labelimg使用方法
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>图片标注工具LabelImg | 我的博客</title>
+    <title>java笔记 | 我的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -228,7 +260,7 @@ labelimg使用方法
 <script src="/libs/cryptojs/crypto-js.min.js"></script>
 <script>
     (function() {
-        let pwd = '';
+        let pwd = 'bcc5b2861be15b6d793a6eeef7ed316e16ffc273cebe72d68c08da34f461a2ac';
         if (pwd && pwd.length > 0) {
             if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
                 alert('密码错误，将返回主页！');
@@ -241,13 +273,13 @@ labelimg使用方法
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/27.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        图片标注工具LabelImg
+                        java笔记
                     </div>
                 </div>
             </div>
@@ -359,8 +391,8 @@ labelimg使用方法
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/labelImg/" target="_blank">
-                                <span class="chip bg-color">labelImg</span>
+                            <a href="/tags/java笔记/" target="_blank">
+                                <span class="chip bg-color">java笔记</span>
                             </a>
                         
                     </div>
@@ -368,13 +400,22 @@ labelimg使用方法
                 </div>
                 <div class="col s5 right-align">
                     
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/java/" class="post-category" target="_blank">
+                                java
+                            </a>
+                        
+                    </div>
+                    
                 </div>
             </div>
             
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-09-16
+                    2019-08-30
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -388,14 +429,14 @@ labelimg使用方法
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        136
+                        1.4k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        5 分
                     </div>
                     
                 
@@ -412,12 +453,127 @@ labelimg使用方法
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="图片标注工具LabelImg的安装及使用方法"><a href="#图片标注工具LabelImg的安装及使用方法" class="headerlink" title="图片标注工具LabelImg的安装及使用方法"></a>图片标注工具LabelImg的安装及使用方法</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>百度云<a href="https://pan.baidu.com/s/15vy4367JYusVNNX-13RJzA" target="_blank" rel="noopener">地址</a> 提取码: ivdc </p>
-<h2 id="anaconda-prompt命令行安装"><a href="#anaconda-prompt命令行安装" class="headerlink" title="anaconda prompt命令行安装"></a>anaconda prompt命令行安装</h2><pre><code>pip3 install labelImg</code></pre><p>打开,命令行输入</p>
-<pre><code>labelimg</code></pre><h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><ul>
-<li>修改默认的XML文件保存位置，使用快捷键“Ctrl+R”，改为自定义位置，这里的路径一定不能包含中文，否则无法保存</li>
-<li>快捷键：<br>画框 w ;<br>保存 ctrl+s；<br>下一张图片 d；<br>上一张图片 a；<br>复制当前标签和矩形框 ctrl+d ；<br>标记当前图片已标记 Space</li>
+                <h1 id="Java基础知识-笔记"><a href="#Java基础知识-笔记" class="headerlink" title="Java基础知识(笔记)"></a>Java基础知识(笔记)</h1><p><strong>java 基本数据类型</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">类型</th>
+<th align="center">位数</th>
+<th align="center">类型</th>
+<th align="center">位数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">boolean</td>
+<td align="center">8</td>
+<td align="center">int</td>
+<td align="center">32</td>
+</tr>
+<tr>
+<td align="center">char</td>
+<td align="center">16</td>
+<td align="center">long</td>
+<td align="center">64</td>
+</tr>
+<tr>
+<td align="center">byte</td>
+<td align="center">8</td>
+<td align="center">float</td>
+<td align="center">32</td>
+</tr>
+<tr>
+<td align="center">short</td>
+<td align="center">16</td>
+<td align="center">double</td>
+<td align="center">64</td>
+</tr>
+</tbody></table>
+<p><strong>类修饰词</strong></p>
+<p>public：定义的类可以被java的所有软件包使用</p>
+<p>abstract：抽象类</p>
+<p>final：定义的列不能用作父类</p>
+<p>在同一个java源文件中可以包含多个类，但不能包含两个或者两个以上的具有public修饰词的类。</p>
+<p>面向对象的技术的3大特性：<strong>继承性</strong>，<strong>封装性</strong>，<strong>多态性</strong>。</p>
+<p><strong>静态多态性</strong>指的是在同一个类中通脉那个方法在功能上的重载。</p>
+<p><strong>动态多态性</strong>指的是在子类和父类的类体重均定义了具有基本相同声明的费静态成员方法。</p>
+<hr>
+<p>数组元素的下标值从0开始。</p>
+<h1 id="数组，字符串，向量与哈希表"><a href="#数组，字符串，向量与哈希表" class="headerlink" title="数组，字符串，向量与哈希表"></a>数组，字符串，向量与哈希表</h1><blockquote>
+<p>Vector&lt;向量元素的数据类型&gt; 变量名</p>
+</blockquote>
+<p><strong>引用数据类型</strong>：类(calss)，接口(interface)，枚举(enum)，数组(array)。</p>
+<p><strong>基本数据类型</strong>：布尔，字符，字节，短整数，整数，长整数，单精度浮点数，双精度浮点数。</p>
+<p><strong>向量</strong>：Vector&lt;数据类型&gt; 变量名；数据类型必须是引用数据类型。</p>
+<hr>
+<ul>
+<li><strong>静态代码块</strong>：随着类的加载而执行，而且只执行一次。静态代码块的执行顺序优先于main函数。</li>
 </ul>
+<p>转<a href="https://blog.csdn.net/sinat_33921105/article/details/79509638" target="_blank" rel="noopener">静态代码块—学会这个就够了</a></p>
+<ul>
+<li><p>运行java应用程序时，实际的代码运行之前的一个步骤是加载类，如果类中有静态成员，加载类时会在heap中为其分配空间，此空间是属于类的。类中的非静态成员（实例成员）是和类的对象绑定的，它们属于对象在heap中的空间。静态成员不能访问非静态成员，因为静态成员在类加载完成后已经存在于heap中了，但是如果没创建对象的话非静态成员是不存在的，所以在代码中有引用时会发生编译错误。反过来说，非静态成员可以访问静态成员，因为当非静态成员存在于heap中时，静态成员肯定已经存在于heap中了。</p>
+</li>
+<li><p><strong>static 声明的变量和方法在类中共享的</strong>，当使用static修饰变量时，<strong>在类中是共享</strong>。例如：在下列代码中定义静态变量i = 10时，当类创建了多个对象时，其中一个对象修改了i的值（ts1.i = 100）,其他对象ts2、ts3调用i值时，会出现i值都是100，说明静态变量i是共享。 <strong>非静态变量</strong>：当类中创建多个对象时，非静态变量在内存中直接分布各个新创建的对象中。所以当修改某个对象引用的变量值时，其他对象在引用变量时，没有发生改变。例如：j =20 ；ts1.j = 15;此时ts1对象输出 j=15 .而输出的ts2.j=20,ts3.j=20跟初始定义的j一样;</p>
+</li>
+<li><p>静态成员方法采用通过类名的方法调用“Thread.sleep()”和采用实例对象的调用sleep成员方法在效果上是一样的。<br>假设A和B分别是两个不同的线程，而线程B执行到下面的语句</p>
+<blockquote>
+<p>A.sleep(1000);</p>
+</blockquote>
+<p>则进入睡眠状态的是线程B，而不是线程A。</p>
+</li>
+<li><p>段落一</p>
+<p>小段一</p>
+</li>
+<li><p>段落二</p>
+<p>小段二</p>
+</li>
+</ul>
+<hr>
+<h1 id="多线程程序设计"><a href="#多线程程序设计" class="headerlink" title="多线程程序设计"></a>多线程程序设计</h1><p><strong>线程的生命周期</strong><br><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="img/%E7%BA%BF%E7%A8%8B%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.jpg" alt="线程的生命周期" title="线程的生命周期"></p>
+<h2 id="多线程同步"><a href="#多线程同步" class="headerlink" title="多线程同步"></a>多线程同步</h2><p>java虚拟机通过给每个<strong>对象</strong>加锁的方式实现多线程的同步处理。这里的<strong>对象</strong>包括<strong>类对象</strong>和<strong>实例对象</strong>两种。<br>一个类的<strong>静态成员域</strong>和<strong>静态成员方法</strong>隶属于类对象。一个类的<strong>非静态成员域</strong>和<strong>非静态成员方法</strong>是不隶属于类对象的，而隶属于类的<strong>实例对象</strong>。同样，一个类的静态成员域和静态成员方法不隶属于类的实例对象。创建类的实例对象可以通过<code>new</code>运算符和类的构造方法。</p>
+<hr>
+<h2 id="Java中的一个类怎么调用另一个类中的方法？"><a href="#Java中的一个类怎么调用另一个类中的方法？" class="headerlink" title="Java中的一个类怎么调用另一个类中的方法？"></a>Java中的一个类怎么调用另一个类中的方法？</h2><ul>
+<li>方法1：新建一个类。然后在调用类中先进行被调用类实例化，然后通过实例化的对象访问。例如：</li>
+</ul>
+<pre><code>//先定义一个类
+import static java.lang.Systenm.out;
+public class Son{
+    public void IsSon(){
+        out.append(&quot;调用Son类中的IsSon成员方法成功&quot;)；
+    }
+}</code></pre><pre><code>//实例化，调用
+public calss Main(){
+    public static void main(String args[]){
+        Son son = new Son();
+        son.IsSon();
+    }
+}</code></pre><ul>
+<li>方法2:新建一个类，将该类中需要被调用的方法设置为静态（static），加了static后，就可以用类名直接调用。然后在调用类中直接通过类名进行访问。调用格式为：类名.方法名（参数表）。</li>
+</ul>
+<pre><code>//先定义一个类
+import static java.lang.Systenm.out;
+public class Son{
+    public static void IsSon(){
+        out.append(&quot;调用Son类中的IsSon成员方法成功&quot;)；
+    }
+}</code></pre><pre><code>//实例化，调用
+public calss Main(){
+    public static void main(String args[]){
+        son.IsSon();
+    }
+}</code></pre><h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><p>对象的构造主要通过类。类是实例对象的模板。</p>
+<blockquote>
+<p>[修饰词] class 类名 [extends 父类] [implemes 接口] {<br><br>类体<br><br>}</p>
+</blockquote>
+<p>&nbsp;&nbsp;<br>类体部分可以对定义类的<strong>构造方法</strong>和<strong>类的两类成员要素</strong>(成员域和成员方法)。</p>
+<p>&nbsp;&nbsp;<br><strong>类的构造方法</strong>主要用创建类的实例对象，通常同时完成新创建的实例对象的初始化。</p>
+<p>&nbsp;&nbsp;<br>构造方法有如下3个特点</p>
+<blockquote>
+<ol>
+<li>构造方法名必须与类名相同<br> </li>
+<li>构造方法不具有任何返回类型<br></li>
+<li>任何一个类都含有构造方法</li>
+</ol>
+</blockquote>
 
             </div>
             <hr/>
@@ -568,7 +724,7 @@ labelimg使用方法
                     </span>
                     <a href="https://fujie.fun" class="b-link-green">我的博客</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/09/16/tu-pian-biao-zhu-gong-ju-labelimg/" class="b-link-green">图片标注工具LabelImg</a>
+                    <a href="/2019/08/30/java-bi-ji/" class="b-link-green">java笔记</a>
                 </p>
             </div>
 
@@ -590,53 +746,9 @@ labelimg使用方法
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
-            <div class="card">
-                <a href="/2019/09/16/tu-pian-biao-zhu-gong-ju-labelimg/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="图片标注工具LabelImg">
-                        
-                        <span class="card-title">图片标注工具LabelImg</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            图片标注工具
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-16
-                            </span>
-                        <span class="publish-author">
-                            
-                        </span>
-                    </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/labelImg/" target="_blank">
-                        <span class="chip bg-color">labelImg</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
                 <a href="/2019/09/04/gu-ge-colab/">
                     <div class="card-image">
@@ -654,9 +766,9 @@ labelimg使用方法
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-04
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-04
+                        </span>
                         <span class="publish-author">
                             
                         </span>
@@ -667,6 +779,51 @@ labelimg使用方法
                     
                     <a href="/tags/谷歌colab/" target="_blank">
                         <span class="chip bg-color">谷歌colab</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/08/29/esp8266-an-zhuang/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="esp8266安装">
+                        
+                        <span class="card-title">esp8266安装</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            一级标题二级标题
+Hello World!
+
+
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-29
+                            </span>
+                        <span class="publish-author">
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/教程/" target="_blank">
+                        <span class="chip bg-color">教程</span>
                     </a>
                     
                 </div>
@@ -814,6 +971,13 @@ labelimg使用方法
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
 
     
 <footer class="page-footer bg-color">
