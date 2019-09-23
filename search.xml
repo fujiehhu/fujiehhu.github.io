@@ -17,19 +17,6 @@
     
     
     <entry>
-      <title>其他</title>
-      <link href="/2019/09/16/markdown-yu-fa/"/>
-      <url>/2019/09/16/markdown-yu-fa/</url>
-      
-        <content type="html"><![CDATA[<h1 id="天气"><a href="#天气" class="headerlink" title="天气"></a>天气</h1><center><div id="weather-view-he"></div><script>WIDGET = {ID: 'ggduimj82w'};</script><script type="text/javascript" src="https://apip.weatherdt.com/view/static/js/r.js?v=1111"></script></center>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>图片标注工具LabelImg</title>
       <link href="/2019/09/16/tu-pian-biao-zhu-gong-ju-labelimg/"/>
       <url>/2019/09/16/tu-pian-biao-zhu-gong-ju-labelimg/</url>
