@@ -6,10 +6,27 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="谷歌colab, HHU">
+    <meta name="keywords" content="python, HHU">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="Google Colab简介Google Colaboratory是谷歌开放的一款研究工具，主要用于机器学习的开发和研究。这款工具现在可以免费使用，但是不是永久免费暂时还不确定。Google Colab最大的好处是给广大的AI开发者提供了免">
+    <meta name="description" content="字符串
+单双引号都可
+
+
+使用方法修改字符串的大小写
+
+title()以首字母大写的方式显示每个单词
+将字符串改为全部大写或全部小写：upper()，lower()
+
+
+
+合并（拼接）字符串
+
+使用加号（+）来合并字符串
+
+
+
+使用制表符或">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +34,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>谷歌colab | 我的博客</title>
+    <title>python | 我的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -226,7 +243,7 @@
 <script src="/libs/cryptojs/crypto-js.min.js"></script>
 <script>
     (function() {
-        let pwd = '';
+        let pwd = 'f6e0a1e2ac41945a9aa7ff8a8aaa0cebc12a3bcc981a929ad5cf810a090e11ae';
         if (pwd && pwd.length > 0) {
             if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
                 alert('密码错误，将返回主页！');
@@ -245,7 +262,7 @@
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        谷歌colab
+                        python
                     </div>
                 </div>
             </div>
@@ -357,8 +374,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/谷歌colab/" target="_blank">
-                                <span class="chip bg-color">谷歌colab</span>
+                            <a href="/tags/笔记/" target="_blank">
+                                <span class="chip bg-color">笔记</span>
                             </a>
                         
                     </div>
@@ -372,7 +389,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-09-04
+                    2019-09-23
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -386,7 +403,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        115
+                        215
                     </div>
                     
 
@@ -410,10 +427,51 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Google-Colab简介"><a href="#Google-Colab简介" class="headerlink" title="Google Colab简介"></a>Google Colab简介</h1><p>Google Colaboratory是谷歌开放的一款研究工具，主要用于机器学习的开发和研究。这款工具现在可以免费使用，但是不是永久免费暂时还不确定。Google Colab最大的好处是给广大的AI开发者提供了免费的GPU使用！GPU型号是Tesla K80！你可以在上面轻松地跑例如：Keras、Tensorflow、Pytorch等框架。</p>
-<h2 id="挂载云盘"><a href="#挂载云盘" class="headerlink" title="挂载云盘"></a>挂载云盘</h2><blockquote>
-<p>from google.colab import drive<br><br>drive.mount(‘/content/drive/‘)</p>
+                <h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><ul>
+<li>单双引号都可</li>
+</ul>
+<blockquote>
+<p>使用方法修改字符串的大小写</p>
+<ul>
+<li>title()以首字母大写的方式显示每个单词</li>
+<li>将字符串改为全部大写或全部小写：upper()，lower()</li>
+</ul>
 </blockquote>
+<blockquote>
+<p>合并（拼接）字符串</p>
+<ul>
+<li>使用加号（+）来合并字符串</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>使用制表符或换行符来添加空白</p>
+<ul>
+<li>制表符 \t <br> 换行符 \n <br> </li>
+</ul>
+</blockquote>
+<blockquote>
+<p>删除空白</p>
+<ul>
+<li>删除字符串开头的空白 lstrip() <br><br>删除字符串末尾的空白 rstrip()  <br><br>同时删除字符串两端的空白 strip()</li>
+</ul>
+</blockquote>
+<h2 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h2><ul>
+<li>使用两个乘号表示乘方运算 3**2 = 9</li>
+<li>将非字符串值表示为字符串 str()</li>
+</ul>
+<h1 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h1><blockquote>
+<p>访问列表元素</p>
+<ul>
+<li>列表是有序集合<pre class=" language-python"><code class="language-python">bicycles <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'trek'</span><span class="token punctuation">,</span> <span class="token string">'cannondale'</span><span class="token punctuation">,</span> <span class="token string">'redline'</span><span class="token punctuation">,</span> <span class="token string">'specialized'</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span> <span class="token punctuation">(</span>bicycles<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+</li>
+<li>索引从0 而不是1 开始</li>
+<li>将索引指定为-1，可让返回最后一个列表元素</li>
+</ul>
+</blockquote>
+<blockquote>
+</blockquote>
+<p>* </p>
 
             </div>
             <hr/>
@@ -564,7 +622,7 @@
                     </span>
                     <a href="https://fujie.fun" class="b-link-green">我的博客</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/09/04/gu-ge-colab/" class="b-link-green">谷歌colab</a>
+                    <a href="/2019/09/23/python/" class="b-link-green">python</a>
                 </p>
             </div>
 
@@ -586,39 +644,41 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/09/16/tu-pian-biao-zhu-gong-ju-labelimg/">
+                <a href="/2019/09/23/python/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="图片标注工具LabelImg">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="python">
                         
-                        <span class="card-title">图片标注工具LabelImg</span>
+                        <span class="card-title">python</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            图片标注工具
+                            python
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-16
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-23
+                            </span>
                         <span class="publish-author">
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/labelImg/" target="_blank">
-                        <span class="chip bg-color">labelImg</span>
+                    <a href="/tags/笔记/" target="_blank">
+                        <span class="chip bg-color">笔记</span>
                     </a>
                     
                 </div>
@@ -632,43 +692,35 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/08/30/java-bi-ji/">
+                <a href="/2019/09/16/qi-ta/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/27.jpg" class="responsive-img" alt="java笔记">
                         
-                        <span class="card-title">java笔记</span>
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="其他">
+                        
+                        <span class="card-title">其他</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            java笔记
+                            
+
+
+WIDGET = {ID: 'ggduimj82w'};
+
+
+
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-30
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-16
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/java/" class="post-category" target="_blank">
-                                    java
-                                </a>
-                            
-                            
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/java笔记/" target="_blank">
-                        <span class="chip bg-color">java笔记</span>
-                    </a>
-                    
                 </div>
                 
             </div>
