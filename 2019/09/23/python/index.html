@@ -403,7 +403,7 @@ title() 以首字母大写的方式显示每个单词
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        397
+                        383
                     </div>
                     
 
@@ -475,35 +475,40 @@ title() 以首字母大写的方式显示每个单词
 </blockquote>
 <blockquote>
 <p>添加</p>
+</blockquote>
 <ol>
-<li>末尾添加：<strong>append()</strong></li>
-<li>在列表中插入元素：<strong>insert()</strong> <pre class=" language-python"><code class="language-python"> motorcycles<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">'ducati'</span><span class="token punctuation">)</span></code></pre>
+<li><p>末尾添加：<strong>append()</strong></p>
 </li>
-<li>从列表中删除元素<ul>
-<li>使用<strong>del</strong>语句删除元素<pre class=" language-python"><code class="language-python"><span class="token keyword">del</span> motorcycles<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>    
+<li><p>在列表中插入元素：<strong>insert()</strong> </p>
+<pre class=" language-python"><code class="language-python"> motorcycles<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">'ducati'</span><span class="token punctuation">)</span></code></pre>
+</li>
+<li><p>从列表中删除元素</p>
+<ul>
+<li><p>使用<strong>del</strong>语句删除元素</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">del</span> motorcycles<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>    
 <span class="token keyword">del</span> motorcycles<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>  </code></pre>
 </li>
-<li>使用方法 <strong>pop()</strong> 删除元素(可删除列表末尾的元素)<pre class=" language-python"><code class="language-python">popped_motorcycle <span class="token operator">=</span> motorcycles<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<li><p>使用方法 <strong>pop()</strong> 删除元素(可删除列表末尾的元素)</p>
+<pre class=" language-python"><code class="language-python">popped_motorcycle <span class="token operator">=</span> motorcycles<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>motorcycles<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>popped_motorcycle<span class="token punctuation">)</span></code></pre>
+<span class="token keyword">print</span><span class="token punctuation">(</span>popped_motorcycle<span class="token punctuation">)</span>
+
+<span class="token punctuation">[</span><span class="token string">'honda'</span><span class="token punctuation">,</span> <span class="token string">'yamaha'</span><span class="token punctuation">,</span> <span class="token string">'suzuki'</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token string">'honda'</span><span class="token punctuation">,</span> <span class="token string">'yamaha'</span><span class="token punctuation">]</span>
+suzuki</code></pre>
+</li>
+<li><p>弹出列表中任何位置处的元素</p>
+<pre class=" language-python"><code class="language-python">pop<span class="token punctuation">(</span>索引<span class="token punctuation">)</span></code></pre>
+</li>
+<li><p>根据值删除元素 <strong>remove()</strong></p>
+<pre class=" language-python"><code class="language-python">motorcycles<span class="token punctuation">.</span>remove<span class="token punctuation">(</span><span class="token string">'ducati'</span><span class="token punctuation">)</span></code></pre>
+<blockquote>
+<p>方法remove()只删除第一个指定的值。如果要删除的值可能在列表中出现多次，就需要使用循环来判断是否删除了所有这样的值。</p>
+</blockquote>
 </li>
 </ul>
 </li>
 </ol>
-</blockquote>
-<pre><code>[&#39;honda&#39;, &#39;yamaha&#39;, &#39;suzuki&#39;]
-[&#39;honda&#39;, &#39;yamaha&#39;]
-suzuki
-```
-* 弹出列表中任何位置处的元素
-```python
-pop(索引)
-```
-* 根据值删除元素 **remove()**
-```python
-motorcycles.remove(&#39;ducati&#39;)
-```
-&gt;方法remove()只删除第一个指定的值。如果要删除的值可能在列表中出现多次，就需要</code></pre><p>使用循环来判断是否删除了所有这样的值。</p>
 
             </div>
             <hr/>
