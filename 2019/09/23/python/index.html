@@ -403,14 +403,14 @@ title( ) 以首字母大写的方式显示每个单词
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        862
+                        1.2k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        3 分
+                        4 分
                     </div>
                     
                 
@@ -605,7 +605,38 @@ sum<span class="token punctuation">(</span><span class="token punctuation">)</sp
   dimensions <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">400</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span></code></pre>
 </li>
 </ul>
-<h1 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h1>
+<hr>
+<h1 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h1><hr>
+<h1 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h1><h2 id="使用字典"><a href="#使用字典" class="headerlink" title="使用字典"></a>使用字典</h2><ul>
+<li>字典是一系列<strong>键—值</strong>对,每个<strong>键</strong>都与一个值相关联，你可以使用键来访问与之<br>相关联的值。与键相关联的<strong>值</strong>可以是数字、字符串、列表乃至字典。<pre class=" language-python"><code class="language-python">  alien_0 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'color'</span><span class="token punctuation">:</span> <span class="token string">'green'</span><span class="token punctuation">,</span> <span class="token string">'points'</span><span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">}</span></code></pre>
+</li>
+</ul>
+<h2 id="访问字典中的值"><a href="#访问字典中的值" class="headerlink" title="访问字典中的值"></a>访问字典中的值</h2><ul>
+<li>要获取与键相关联的值，可依次指定字典名和放在方括号内的键<pre class=" language-python"><code class="language-python">  alien_0 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'color'</span><span class="token punctuation">:</span> <span class="token string">'green'</span><span class="token punctuation">}</span>
+  <span class="token keyword">print</span> <span class="token punctuation">(</span>alien_0<span class="token punctuation">[</span><span class="token string">'color'</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+</li>
+</ul>
+<h2 id="添加键–值对"><a href="#添加键–值对" class="headerlink" title="添加键–值对"></a>添加键–值对</h2><ul>
+<li>字典是一种动态结构，可随时在其中添加键—值对。要添加键—值对，可依次指定字典名、用<br>方括号括起的键和相关联的值。<pre class=" language-python"><code class="language-python">  alien_0<span class="token punctuation">[</span><span class="token string">'x_position'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span>
+  alien_0<span class="token punctuation">[</span><span class="token string">'y_position'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">25</span>
+  <span class="token keyword">print</span> <span class="token punctuation">(</span>alien_0<span class="token punctuation">)</span>
+  <span class="token comment" spellcheck="true">#----------------------</span>
+  <span class="token punctuation">{</span><span class="token string">'color'</span><span class="token punctuation">:</span> <span class="token string">'green'</span><span class="token punctuation">,</span> <span class="token string">'points'</span><span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token string">'y_position'</span><span class="token punctuation">:</span> <span class="token number">25</span><span class="token punctuation">,</span> <span class="token string">'x_position'</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">}</span></code></pre>
+</li>
+<li>Python不关心键—值对的添加顺序，而只关心键和值之间的关联关系。</li>
+</ul>
+<h2 id="创建一个空字典"><a href="#创建一个空字典" class="headerlink" title="创建一个空字典"></a>创建一个空字典</h2><ul>
+<li>使用一对空的花括号定义一个字典</li>
+</ul>
+<h2 id="修改字典中的值"><a href="#修改字典中的值" class="headerlink" title="修改字典中的值"></a>修改字典中的值</h2><ul>
+<li>要修改字典中的值，可依次指定字典名、用方括号括起的键以及与该键相关联的新值<pre class=" language-python"><code class="language-python">  alien_0 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'color'</span><span class="token punctuation">:</span> <span class="token string">'green'</span><span class="token punctuation">}</span>
+  alien_0<span class="token punctuation">[</span><span class="token string">'color'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'yellow'</span></code></pre>
+<h2 id="删除键–值对"><a href="#删除键–值对" class="headerlink" title="删除键–值对"></a>删除键–值对</h2></li>
+<li>使用del语句将相应的键—值对彻底删除,使用del语句时，必须指定字典名和要删除的键。<pre class=" language-python"><code class="language-python">  alien_0 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'color'</span><span class="token punctuation">:</span> <span class="token string">'green'</span><span class="token punctuation">,</span> <span class="token string">'points'</span><span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">}</span>
+  <span class="token keyword">del</span> alien_0<span class="token punctuation">[</span><span class="token string">'points'</span><span class="token punctuation">]</span></code></pre>
+</li>
+</ul>
+<h2 id="由类似对象组成的字典"><a href="#由类似对象组成的字典" class="headerlink" title="由类似对象组成的字典"></a>由类似对象组成的字典</h2>
             </div>
             <hr/>
 
@@ -1010,7 +1041,7 @@ WIDGET = {ID: 'ggduimj82w'};
 					    
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">2.7k</span>
+                <span class="white-color">3k</span>
 
             
             <br>
