@@ -403,14 +403,14 @@ title( ) 以首字母大写的方式显示每个单词
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        619
+                        862
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        2 分
+                        3 分
                     </div>
                     
                 
@@ -535,7 +535,7 @@ suzuki</code></pre>
 <pre class=" language-python"><code class="language-python">range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span>
 range<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">11</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#指定步长</span></code></pre>
 <ul>
-<li>函数<strong>range( )</strong>让Python从你指定的第一个值开始数，并在到达你指定的第二个值后止，因此输出不包含第二个值<pre class=" language-python"><code class="language-python"> <span class="token keyword">for</span> value <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+<li>函数<strong>range( )</strong>让Python从你指定的第一个值开始数，在到达你指定的第二个索引<strong>前面</strong>的元素后停止<pre class=" language-python"><code class="language-python"> <span class="token keyword">for</span> value <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
      <span class="token keyword">print</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
  <span class="token comment" spellcheck="true">#-----------------------    </span>
  <span class="token number">1</span>
@@ -563,13 +563,49 @@ sum<span class="token punctuation">(</span><span class="token punctuation">)</sp
 <h2 id="使用列表的一部分"><a href="#使用列表的一部分" class="headerlink" title="使用列表的一部分"></a>使用列表的一部分</h2><blockquote>
 <p>切片</p>
 </blockquote>
+<pre class=" language-python"><code class="language-python">players <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'charles'</span><span class="token punctuation">,</span> <span class="token string">'martina'</span><span class="token punctuation">,</span> <span class="token string">'michael'</span><span class="token punctuation">,</span> <span class="token string">'florence'</span><span class="token punctuation">,</span> <span class="token string">'eli'</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>players<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
 <blockquote>
+<p>遍历切片</p>
+</blockquote>
+<pre class=" language-python"><code class="language-python">players <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'charles'</span><span class="token punctuation">,</span> <span class="token string">'martina'</span><span class="token punctuation">,</span> <span class="token string">'michael'</span><span class="token punctuation">,</span> <span class="token string">'florence'</span><span class="token punctuation">,</span> <span class="token string">'eli'</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Here are the first three players on my team:"</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> player <span class="token keyword">in</span> players<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>player<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<blockquote>
+<p>复制列表</p>
+</blockquote>
+<ul>
+<li>要复制列表，可创建一个包含整个列表的切片<pre class=" language-python"><code class="language-python">  my_foods <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'pizza'</span><span class="token punctuation">,</span> <span class="token string">'falafel'</span><span class="token punctuation">,</span> <span class="token string">'carrot cake'</span><span class="token punctuation">]</span>
+  friend_foods <span class="token operator">=</span> my_foods<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">]</span></code></pre>
+</li>
+<li>倘若只是简单地将my_foods赋给friend_foods，就不能得到两个列表<pre class=" language-python"><code class="language-python">  my_foods <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'pizza'</span><span class="token punctuation">,</span> <span class="token string">'falafel'</span><span class="token punctuation">,</span> <span class="token string">'carrot cake'</span><span class="token punctuation">]</span>
+  <span class="token comment" spellcheck="true">#这行不通</span>
+  friend_foods <span class="token operator">=</span> my_foods</code></pre>
+<blockquote>
+<p>这里将my_foods赋给friend_foods，而不是将my_foods的副本存储到friend_foods。这种语法实际上是让Python将新变量friend_foods关联到包含在my_foods中的列表，因此这两个变量都指向同一个列表</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h2><p>Python将<strong>不能修改</strong>的值称为不可变的，而不可变的列表被称为<strong>元组</strong>。</p>
+<blockquote>
+<p>定义元组</p>
+</blockquote>
+<ul>
+<li>使用圆括号而不是方括号</li>
+</ul>
+<blockquote>
+<p>遍历元组中的所有值 <strong>for循环</strong></p>
 </blockquote>
 <blockquote>
+<p>修改元组变量</p>
 </blockquote>
-<blockquote>
-</blockquote>
-
+<ul>
+<li>虽然不能修改元组的元素，但可以给存储元组的变量赋值<pre class=" language-python"><code class="language-python">  dimensions <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">)</span>
+  dimensions <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">400</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span></code></pre>
+</li>
+</ul>
+<h1 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h1>
             </div>
             <hr/>
 
@@ -974,7 +1010,7 @@ WIDGET = {ID: 'ggduimj82w'};
 					    
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">2.4k</span>
+                <span class="white-color">2.7k</span>
 
             
             <br>
