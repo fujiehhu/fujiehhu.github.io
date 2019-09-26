@@ -243,7 +243,7 @@ title( ) 以首字母大写的方式显示每个单词
 <script src="/libs/cryptojs/crypto-js.min.js"></script>
 <script>
     (function() {
-        let pwd = 'f6e0a1e2ac41945a9aa7ff8a8aaa0cebc12a3bcc981a929ad5cf810a090e11ae';
+        let pwd = '';
         if (pwd && pwd.length > 0) {
             if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
                 alert('密码错误，将返回主页！');
@@ -403,14 +403,14 @@ title( ) 以首字母大写的方式显示每个单词
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.7k
+                        2k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        6 分
+                        7 分
                     </div>
                     
                 
@@ -477,27 +477,22 @@ title( ) 以首字母大写的方式显示每个单词
 </li>
 <li><p>在列表中插入元素：<strong>insert( )</strong> </p>
 <pre class=" language-python"><code class="language-python"> motorcycles<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">'ducati'</span><span class="token punctuation">)</span></code></pre>
-</li>
-<li><p>从列表中删除元素</p>
-<ul>
-<li><p>使用<strong>del</strong>语句删除元素</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">del</span> motorcycles<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>    
+<blockquote>
+<h3 id="从列表中删除元素"><a href="#从列表中删除元素" class="headerlink" title="从列表中删除元素"></a>从列表中删除元素</h3><ul>
+<li>使用<strong>del</strong>语句删除元素<pre class=" language-python"><code class="language-python"><span class="token keyword">del</span> motorcycles<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>    
 <span class="token keyword">del</span> motorcycles<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>  </code></pre>
 </li>
-<li><p>使用方法 <strong>pop( )</strong> 删除元素(可删除列表末尾的元素)</p>
-<pre class=" language-python"><code class="language-python">popped_motorcycle <span class="token operator">=</span> motorcycles<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<li>使用方法 <strong>pop( )</strong> 删除元素(可删除列表末尾的元素)<pre class=" language-python"><code class="language-python">popped_motorcycle <span class="token operator">=</span> motorcycles<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>motorcycles<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>popped_motorcycle<span class="token punctuation">)</span>
-
-<span class="token punctuation">[</span><span class="token string">'honda'</span><span class="token punctuation">,</span> <span class="token string">'yamaha'</span><span class="token punctuation">,</span> <span class="token string">'suzuki'</span><span class="token punctuation">]</span>
-<span class="token punctuation">[</span><span class="token string">'honda'</span><span class="token punctuation">,</span> <span class="token string">'yamaha'</span><span class="token punctuation">]</span>
-suzuki</code></pre>
+<span class="token keyword">print</span><span class="token punctuation">(</span>popped_motorcycle<span class="token punctuation">)</span></code></pre>
 </li>
-<li><p>弹出列表中任何位置处的元素</p>
-<pre class=" language-python"><code class="language-python">pop<span class="token punctuation">(</span>索引<span class="token punctuation">)</span></code></pre>
-</li>
-<li><p>根据值删除元素 <strong>remove( )</strong></p>
-<pre class=" language-python"><code class="language-python">motorcycles<span class="token punctuation">.</span>remove<span class="token punctuation">(</span><span class="token string">'ducati'</span><span class="token punctuation">)</span></code></pre>
+</ul>
+</blockquote>
+<p> [‘honda’, ‘yamaha’, ‘suzuki’]<br> [‘honda’, ‘yamaha’]<br> suzuki</p>
+<pre><code> * 弹出列表中任何位置处的元素
+ ```python
+ pop(索引)</code></pre><ul>
+<li>根据值删除元素 <strong>remove( )</strong><pre class=" language-python"><code class="language-python">motorcycles<span class="token punctuation">.</span>remove<span class="token punctuation">(</span><span class="token string">'ducati'</span><span class="token punctuation">)</span></code></pre>
 <blockquote>
 <p>方法remove( )只删除第一个指定的值。如果要删除的值可能在列表中出现多次，就需要使用循环来判断是否删除了所有这样的值。</p>
 </blockquote>
@@ -722,8 +717,34 @@ prompt <span class="token operator">+=</span> <span class="token string">"\nWhat
 height <span class="token operator">=</span> int<span class="token punctuation">(</span>height<span class="token punctuation">)</span></code></pre>
 </li>
 </ul>
-<h3 id="求模运算符"><a href="#求模运算符" class="headerlink" title="求模运算符 %"></a>求模运算符 %</h3><p>## </p>
+<h3 id="求模运算符"><a href="#求模运算符" class="headerlink" title="求模运算符 %"></a>求模运算符 %</h3><h2 id="使用while循环处理列表"><a href="#使用while循环处理列表" class="headerlink" title="使用while循环处理列表"></a>使用while循环处理列表</h2><blockquote>
+<p>列表之间移动元素<br>    ```python</p>
+</blockquote>
+<pre><code># 首先，创建一个待验证用户列表
+# 和一个用于存储已验证用户的空列表
+unconfirmed_users = [&#39;alice&#39;, &#39;brian&#39;, &#39;candace&#39;]
+confirmed_users = []
 
+# 验证每个用户，直到没有未验证用户为止
+# 将每个经过验证的列表都移到已验证用户列表中
+while unconfirmed_users:
+    current_user = unconfirmed_users.pop()
+    print(&quot;Verifying user: &quot; + current_user.title())
+    confirmed_users.append(current_user)
+# 显示所有已验证的用户
+print(&quot;\nThe following users have been confirmed:&quot;)
+for confirmed_user in confirmed_users:
+    print (confirmed_user.title())
+```</code></pre><blockquote>
+<p>删除包含特定值的所有列表元素<br>    ```python<br>    pets = [‘dog’, ‘cat’, ‘dog’, ‘goldfish’, ‘cat’, ‘rabbit’, ‘cat’]<br>    print (pets)</p>
+</blockquote>
+<pre><code>while &#39;cat&#39; in pets:
+    pets.remove(&#39;cat&#39;)
+print(pets)
+#-----------------------
+[&#39;dog&#39;, &#39;cat&#39;, &#39;dog&#39;, &#39;goldfish&#39;, &#39;cat&#39;, &#39;rabbit&#39;, &#39;cat&#39;]
+[&#39;dog&#39;, &#39;dog&#39;, &#39;goldfish&#39;, &#39;rabbit&#39;]
+```</code></pre>
             </div>
             <hr/>
 
@@ -1128,7 +1149,7 @@ WIDGET = {ID: 'ggduimj82w'};
 					    
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">3.6k</span>
+                <span class="white-color">3.8k</span>
 
             
             <br>
