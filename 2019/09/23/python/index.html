@@ -410,7 +410,7 @@ title( ) 以首字母大写的方式显示每个单词
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        7 分
+                        8 分
                     </div>
                     
                 
@@ -718,9 +718,10 @@ height <span class="token operator">=</span> int<span class="token punctuation">
 </li>
 </ul>
 <h3 id="求模运算符"><a href="#求模运算符" class="headerlink" title="求模运算符 %"></a>求模运算符 %</h3><h2 id="使用while循环处理列表"><a href="#使用while循环处理列表" class="headerlink" title="使用while循环处理列表"></a>使用while循环处理列表</h2><blockquote>
-<p>列表之间移动元素<br>    ```python</p>
+<p>列表之间移动元素</p>
 </blockquote>
-<pre><code># 首先，创建一个待验证用户列表
+<pre><code>```python
+# 首先，创建一个待验证用户列表
 # 和一个用于存储已验证用户的空列表
 unconfirmed_users = [&#39;alice&#39;, &#39;brian&#39;, &#39;candace&#39;]
 confirmed_users = []
@@ -736,9 +737,13 @@ print(&quot;\nThe following users have been confirmed:&quot;)
 for confirmed_user in confirmed_users:
     print (confirmed_user.title())
 ```</code></pre><blockquote>
-<p>删除包含特定值的所有列表元素<br>    ```python<br>    pets = [‘dog’, ‘cat’, ‘dog’, ‘goldfish’, ‘cat’, ‘rabbit’, ‘cat’]<br>    print (pets)</p>
+<p>删除包含特定值的所有列表元素</p>
 </blockquote>
-<pre><code>while &#39;cat&#39; in pets:
+<pre><code>```python
+pets = [&#39;dog&#39;, &#39;cat&#39;, &#39;dog&#39;, &#39;goldfish&#39;, &#39;cat&#39;, &#39;rabbit&#39;, &#39;cat&#39;]
+print (pets)
+
+while &#39;cat&#39; in pets:
     pets.remove(&#39;cat&#39;)
 print(pets)
 #-----------------------
