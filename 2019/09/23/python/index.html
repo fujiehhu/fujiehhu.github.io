@@ -403,7 +403,7 @@ title( ) 以首字母大写的方式显示每个单词
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        2.1k
+                        2.2k
                     </div>
                     
 
@@ -717,63 +717,96 @@ prompt <span class="token operator">+=</span> <span class="token string">"\nWhat
 height <span class="token operator">=</span> int<span class="token punctuation">(</span>height<span class="token punctuation">)</span></code></pre>
 </li>
 </ul>
-<h3 id="求模运算符"><a href="#求模运算符" class="headerlink" title="求模运算符 %"></a>求模运算符 %</h3><h2 id="使用while循环处理列表"><a href="#使用while循环处理列表" class="headerlink" title="使用while循环处理列表"></a>使用while循环处理列表</h2><blockquote>
+<blockquote>
+<p>求模运算符 %</p>
+</blockquote>
+<h2 id="使用while循环处理列表"><a href="#使用while循环处理列表" class="headerlink" title="使用while循环处理列表"></a>使用while循环处理列表</h2><blockquote>
 <p>列表之间移动元素</p>
 </blockquote>
-<pre><code>```python
-# 首先，创建一个待验证用户列表
-# 和一个用于存储已验证用户的空列表
-unconfirmed_users = [&#39;alice&#39;, &#39;brian&#39;, &#39;candace&#39;]
-confirmed_users = []
+<ul>
+<li><pre class=" language-python"><code class="language-python">  <span class="token comment" spellcheck="true"># 首先，创建一个待验证用户列表</span>
+  <span class="token comment" spellcheck="true"># 和一个用于存储已验证用户的空列表</span>
+  unconfirmed_users <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'alice'</span><span class="token punctuation">,</span> <span class="token string">'brian'</span><span class="token punctuation">,</span> <span class="token string">'candace'</span><span class="token punctuation">]</span>
+  confirmed_users <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
 
-# 验证每个用户，直到没有未验证用户为止
-# 将每个经过验证的列表都移到已验证用户列表中
-while unconfirmed_users:
-    current_user = unconfirmed_users.pop()
-    print(&quot;Verifying user: &quot; + current_user.title())
-    confirmed_users.append(current_user)
-# 显示所有已验证的用户
-print(&quot;\nThe following users have been confirmed:&quot;)
-for confirmed_user in confirmed_users:
-    print (confirmed_user.title())
-```</code></pre><blockquote>
+  <span class="token comment" spellcheck="true"># 验证每个用户，直到没有未验证用户为止</span>
+  <span class="token comment" spellcheck="true"># 将每个经过验证的列表都移到已验证用户列表中</span>
+  <span class="token keyword">while</span> unconfirmed_users<span class="token punctuation">:</span>
+      current_user <span class="token operator">=</span> unconfirmed_users<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Verifying user: "</span> <span class="token operator">+</span> current_user<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+      confirmed_users<span class="token punctuation">.</span>append<span class="token punctuation">(</span>current_user<span class="token punctuation">)</span>
+  <span class="token comment" spellcheck="true"># 显示所有已验证的用户</span>
+  <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"\nThe following users have been confirmed:"</span><span class="token punctuation">)</span>
+  <span class="token keyword">for</span> confirmed_user <span class="token keyword">in</span> confirmed_users<span class="token punctuation">:</span>
+      <span class="token keyword">print</span> <span class="token punctuation">(</span>confirmed_user<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+</li>
+</ul>
+<blockquote>
 <p>删除包含特定值的所有列表元素</p>
 </blockquote>
-<pre><code>```python
-pets = [&#39;dog&#39;, &#39;cat&#39;, &#39;dog&#39;, &#39;goldfish&#39;, &#39;cat&#39;, &#39;rabbit&#39;, &#39;cat&#39;]
-print (pets)
+<ul>
+<li><pre class=" language-python"><code class="language-python">  pets <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'dog'</span><span class="token punctuation">,</span> <span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'dog'</span><span class="token punctuation">,</span> <span class="token string">'goldfish'</span><span class="token punctuation">,</span> <span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'rabbit'</span><span class="token punctuation">,</span> <span class="token string">'cat'</span><span class="token punctuation">]</span>
+  <span class="token keyword">print</span> <span class="token punctuation">(</span>pets<span class="token punctuation">)</span>
 
-while &#39;cat&#39; in pets:
-    pets.remove(&#39;cat&#39;)
-print(pets)
-#-----------------------
-[&#39;dog&#39;, &#39;cat&#39;, &#39;dog&#39;, &#39;goldfish&#39;, &#39;cat&#39;, &#39;rabbit&#39;, &#39;cat&#39;]
-[&#39;dog&#39;, &#39;dog&#39;, &#39;goldfish&#39;, &#39;rabbit&#39;]
-```</code></pre><h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="传递实参"><a href="#传递实参" class="headerlink" title="传递实参"></a>传递实参</h2><blockquote>
+  <span class="token keyword">while</span> <span class="token string">'cat'</span> <span class="token keyword">in</span> pets<span class="token punctuation">:</span>
+      pets<span class="token punctuation">.</span>remove<span class="token punctuation">(</span><span class="token string">'cat'</span><span class="token punctuation">)</span>
+  <span class="token keyword">print</span><span class="token punctuation">(</span>pets<span class="token punctuation">)</span>
+  <span class="token comment" spellcheck="true">#-----------------------</span>
+  <span class="token punctuation">[</span><span class="token string">'dog'</span><span class="token punctuation">,</span> <span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'dog'</span><span class="token punctuation">,</span> <span class="token string">'goldfish'</span><span class="token punctuation">,</span> <span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'rabbit'</span><span class="token punctuation">,</span> <span class="token string">'cat'</span><span class="token punctuation">]</span>
+  <span class="token punctuation">[</span><span class="token string">'dog'</span><span class="token punctuation">,</span> <span class="token string">'dog'</span><span class="token punctuation">,</span> <span class="token string">'goldfish'</span><span class="token punctuation">,</span> <span class="token string">'rabbit'</span><span class="token punctuation">]</span></code></pre>
+</li>
+</ul>
+<hr>
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="传递实参"><a href="#传递实参" class="headerlink" title="传递实参"></a>传递实参</h2><blockquote>
 <p>位置实参 <strong>位置实参的顺序很重要</strong></p>
 </blockquote>
-<pre><code>```python
-def describe_pet(animal_type, pet_name):
-    &quot;&quot;&quot;显示宠物的信息&quot;&quot;&quot;
+<ul>
+<li><pre class=" language-python"><code class="language-python">  <span class="token keyword">def</span> <span class="token function">describe_pet</span><span class="token punctuation">(</span>animal_type<span class="token punctuation">,</span> pet_name<span class="token punctuation">)</span><span class="token punctuation">:</span>
+      <span class="token triple-quoted-string string">"""显示宠物的信息"""</span>
 
-describe_pet(&#39;hamster&#39;, &#39;harry&#39;)
-```</code></pre><blockquote>
+  describe_pet<span class="token punctuation">(</span><span class="token string">'hamster'</span><span class="token punctuation">,</span> <span class="token string">'harry'</span><span class="token punctuation">)</span></code></pre>
+</li>
+</ul>
+<blockquote>
 <p>关键字实参 <strong>关键字实参的顺序无关紧要</strong></p>
 </blockquote>
-<pre><code>```python
-def describe_pet(animal_type, pet_name):
-    &quot;&quot;&quot;显示宠物的信息&quot;&quot;&quot;
+<ul>
+<li><pre class=" language-python"><code class="language-python">  <span class="token keyword">def</span> <span class="token function">describe_pet</span><span class="token punctuation">(</span>animal_type<span class="token punctuation">,</span> pet_name<span class="token punctuation">)</span><span class="token punctuation">:</span>
+      <span class="token triple-quoted-string string">"""显示宠物的信息"""</span>
 
-describe_pet(animal_type=&#39;hamster&#39;, pet_name=&#39;harry&#39;)
-```</code></pre><blockquote>
+  describe_pet<span class="token punctuation">(</span>animal_type<span class="token operator">=</span><span class="token string">'hamster'</span><span class="token punctuation">,</span> pet_name<span class="token operator">=</span><span class="token string">'harry'</span><span class="token punctuation">)</span></code></pre>
+</li>
+</ul>
+<blockquote>
 <p>默认值 <strong>在形参列表中必须先列出没有默认值的形参，再列出有默认值的实参</strong></p>
 </blockquote>
-<pre><code>```python
-def describe_pet(pet_name, animal_type=&#39;dog&#39;):
-    &quot;&quot;&quot;显示宠物的信息&quot;&quot;&quot;
+<ul>
+<li><pre class=" language-python"><code class="language-python">  <span class="token keyword">def</span> <span class="token function">describe_pet</span><span class="token punctuation">(</span>pet_name<span class="token punctuation">,</span> animal_type<span class="token operator">=</span><span class="token string">'dog'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+      <span class="token triple-quoted-string string">"""显示宠物的信息"""</span>
 
-describe_pet(pet_name=&#39;willie&#39;)
-```</code></pre>
+  describe_pet<span class="token punctuation">(</span>pet_name<span class="token operator">=</span><span class="token string">'willie'</span><span class="token punctuation">)</span></code></pre>
+</li>
+</ul>
+<h2 id="在函数中修改列表"><a href="#在函数中修改列表" class="headerlink" title="在函数中修改列表"></a>在函数中修改列表</h2><pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">print_models</span><span class="token punctuation">(</span>unprinted_designs<span class="token punctuation">,</span> completed_models<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    模拟打印每个设计，直到没有未打印的设计为止
+    打印每个设计后，都将其移到列表completed_models中
+    """</span>
+
+<span class="token keyword">def</span> <span class="token function">show_completed_models</span><span class="token punctuation">(</span>completed_models<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""显示打印好的所有模型"""</span>
+
+
+unprinted_designs <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'iphone case'</span><span class="token punctuation">,</span> <span class="token string">'robot pendant'</span><span class="token punctuation">,</span> <span class="token string">'dodecahedron'</span><span class="token punctuation">]</span>
+completed_models <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+print_models<span class="token punctuation">(</span>unprinted_designs<span class="token punctuation">,</span> completed_models<span class="token punctuation">)</span>
+show_completed_models<span class="token punctuation">(</span>completed_models<span class="token punctuation">)</span>    </code></pre>
+<h2 id="禁止函数修改列表"><a href="#禁止函数修改列表" class="headerlink" title="禁止函数修改列表"></a>禁止函数修改列表</h2><p>向函数传递列表的<strong>副本</strong>而不是原件；这样函数所做的任何修改都只影响副本，而丝毫不影响原件</p>
+<pre class=" language-python"><code class="language-python">print_models<span class="token punctuation">(</span>unprinted_designs<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">,</span> completed_models<span class="token punctuation">)</span></code></pre>
+<blockquote>
+<p>虽然向函数传递列表的副本可保留原始列表的内容，但除非有充分的理由需要传递副本，否<br>则还是应该将原始列表传递给函数，因为让函数使用现成列表可避免花时间和内存创建副本，从<br>而提高效率，在处理大型列表时尤其如此。</p>
+</blockquote>
+
             </div>
             <hr/>
 
@@ -1172,7 +1205,7 @@ WIDGET = {ID: 'ggduimj82w'};
 					    
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">4.5k</span>
+                <span class="white-color">4.6k</span>
 
             
             <br>
