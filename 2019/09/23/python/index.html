@@ -403,14 +403,14 @@ title( ) 以首字母大写的方式显示每个单词
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        2.2k
+                        2.6k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        8 分
+                        10 分
                     </div>
                     
                 
@@ -473,33 +473,38 @@ title( ) 以首字母大写的方式显示每个单词
 <blockquote>
 <h3 id="添加"><a href="#添加" class="headerlink" title="添加"></a>添加</h3></blockquote>
 <ol>
-<li><p>末尾添加：<strong>append( )</strong></p>
-</li>
-<li><p>在列表中插入元素：<strong>insert( )</strong> </p>
-<pre class=" language-python"><code class="language-python"> motorcycles<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">'ducati'</span><span class="token punctuation">)</span></code></pre>
+<li>末尾添加：<strong>append( )</strong></li>
+<li>在列表中插入元素：<strong>insert( )</strong> <pre class=" language-python"><code class="language-python"> motorcycles<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">'ducati'</span><span class="token punctuation">)</span></code></pre>
 <blockquote>
-<h3 id="从列表中删除元素"><a href="#从列表中删除元素" class="headerlink" title="从列表中删除元素"></a>从列表中删除元素</h3><ul>
-<li>使用<strong>del</strong>语句删除元素<pre class=" language-python"><code class="language-python"><span class="token keyword">del</span> motorcycles<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>    
-<span class="token keyword">del</span> motorcycles<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>  </code></pre>
+<h3 id="从列表中删除元素"><a href="#从列表中删除元素" class="headerlink" title="从列表中删除元素"></a>从列表中删除元素</h3></blockquote>
 </li>
-<li>使用方法 <strong>pop( )</strong> 删除元素(可删除列表末尾的元素)<pre class=" language-python"><code class="language-python">popped_motorcycle <span class="token operator">=</span> motorcycles<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</ol>
+<ul>
+<li><p>使用<strong>del</strong>语句删除元素</p>
+<pre class=" language-python"><code class="language-python">  <span class="token keyword">del</span> motorcycles<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>    
+  <span class="token keyword">del</span> motorcycles<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>  </code></pre>
+<ul>
+<li><p>使用方法 <strong>pop( )</strong> 删除元素(可删除列表末尾的元素)</p>
+<pre class=" language-python"><code class="language-python">popped_motorcycle <span class="token operator">=</span> motorcycles<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>motorcycles<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>popped_motorcycle<span class="token punctuation">)</span></code></pre>
+<span class="token keyword">print</span><span class="token punctuation">(</span>popped_motorcycle<span class="token punctuation">)</span>
+
+<span class="token punctuation">[</span><span class="token string">'honda'</span><span class="token punctuation">,</span> <span class="token string">'yamaha'</span><span class="token punctuation">,</span> <span class="token string">'suzuki'</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token string">'honda'</span><span class="token punctuation">,</span> <span class="token string">'yamaha'</span><span class="token punctuation">]</span>
+suzuki</code></pre>
 </li>
 </ul>
-</blockquote>
-<p> [‘honda’, ‘yamaha’, ‘suzuki’]<br> [‘honda’, ‘yamaha’]<br> suzuki</p>
-<pre><code> * 弹出列表中任何位置处的元素
- ```python
- pop(索引)</code></pre><ul>
-<li>根据值删除元素 <strong>remove( )</strong><pre class=" language-python"><code class="language-python">motorcycles<span class="token punctuation">.</span>remove<span class="token punctuation">(</span><span class="token string">'ducati'</span><span class="token punctuation">)</span></code></pre>
+</li>
+<li><p>弹出列表中任何位置处的元素</p>
+<pre class=" language-python"><code class="language-python">  pop<span class="token punctuation">(</span>索引<span class="token punctuation">)</span></code></pre>
+</li>
+<li><p>根据值删除元素 <strong>remove( )</strong></p>
+<pre class=" language-python"><code class="language-python">  motorcycles<span class="token punctuation">.</span>remove<span class="token punctuation">(</span><span class="token string">'ducati'</span><span class="token punctuation">)</span></code></pre>
 <blockquote>
 <p>方法remove( )只删除第一个指定的值。如果要删除的值可能在列表中出现多次，就需要使用循环来判断是否删除了所有这样的值。</p>
 </blockquote>
 </li>
 </ul>
-</li>
-</ol>
 <h2 id="组织列表"><a href="#组织列表" class="headerlink" title="组织列表"></a>组织列表</h2><blockquote>
 <p>使用方法<strong>sort( )</strong>对列表进行永久性排序</p>
 </blockquote>
@@ -806,7 +811,62 @@ show_completed_models<span class="token punctuation">(</span>completed_models<sp
 <blockquote>
 <p>虽然向函数传递列表的副本可保留原始列表的内容，但除非有充分的理由需要传递副本，否<br>则还是应该将原始列表传递给函数，因为让函数使用现成列表可避免花时间和内存创建副本，从<br>而提高效率，在处理大型列表时尤其如此。</p>
 </blockquote>
+<h2 id="传递任意数量的实参"><a href="#传递任意数量的实参" class="headerlink" title="传递任意数量的实参"></a>传递任意数量的实参</h2><pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">make_pizza</span><span class="token punctuation">(</span><span class="token operator">*</span>toppings<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""打印顾客点的所有配料"""</span>
+    <span class="token keyword">print</span> <span class="token punctuation">(</span>toppings<span class="token punctuation">)</span>
 
+make_pizza<span class="token punctuation">(</span><span class="token string">'pepperoni'</span><span class="token punctuation">)</span>
+make_pizza<span class="token punctuation">(</span><span class="token string">'mushrooms'</span><span class="token punctuation">,</span> <span class="token string">'green peppers'</span><span class="token punctuation">,</span> <span class="token string">'extra cheese'</span><span class="token punctuation">)</span></code></pre>
+<blockquote>
+<p>形参名<em>toppings中的*</em>星号<strong>让Python创建一个名为toppings的</strong>空元组<strong>，并将收到的所有值都封装到这个</strong>元组**中</p>
+</blockquote>
+<blockquote>
+<p>结合使用位置实参和任意数量实参</p>
+</blockquote>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">make_pizza</span><span class="token punctuation">(</span>size<span class="token punctuation">,</span> <span class="token operator">*</span>toppings<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""概述要制作的比萨"""</span>
+
+make_pizza<span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">,</span> <span class="token string">'pepperoni'</span><span class="token punctuation">)</span>
+make_pizza<span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">,</span> <span class="token string">'mushrooms'</span><span class="token punctuation">,</span> <span class="token string">'green peppers'</span><span class="token punctuation">,</span> <span class="token string">'extra cheese'</span><span class="token punctuation">)</span></code></pre>
+<blockquote>
+<p>使用任意数量的关键字实参</p>
+</blockquote>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">build_profile</span><span class="token punctuation">(</span>first<span class="token punctuation">,</span> last<span class="token punctuation">,</span> <span class="token operator">**</span>user_info<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""创建一个字典，其中包含我们知道的有关用户的一切"""</span>
+    profile <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    profile<span class="token punctuation">[</span><span class="token string">'first_name'</span><span class="token punctuation">]</span> <span class="token operator">=</span> first
+    profile<span class="token punctuation">[</span><span class="token string">'last_name'</span><span class="token punctuation">]</span> <span class="token operator">=</span> last
+    <span class="token keyword">for</span> key<span class="token punctuation">,</span> value <span class="token keyword">in</span> user_info<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        profile<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> value
+    <span class="token keyword">return</span> profile
+
+user_profile <span class="token operator">=</span> build_profile<span class="token punctuation">(</span><span class="token string">'albert'</span><span class="token punctuation">,</span> <span class="token string">'einstein'</span><span class="token punctuation">,</span>
+                                location<span class="token operator">=</span><span class="token string">'princeton'</span><span class="token punctuation">,</span>
+                                field<span class="token operator">=</span><span class="token string">'physics'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span> <span class="token punctuation">(</span>user_profile<span class="token punctuation">)</span>   </code></pre>
+<blockquote>
+<p>形参*<em>user_info中的*</em>两个星号<strong>让Python创建一个名为user_info的</strong>空字典<strong>，并将收到的所有名称—值对都封装到这个</strong>字典**中</p>
+</blockquote>
+<h2 id="将函数存储在模块中"><a href="#将函数存储在模块中" class="headerlink" title="将函数存储在模块中"></a>将函数存储在模块中</h2><blockquote>
+<p>导入整个模块</p>
+</blockquote>
+<ul>
+<li>如果使用import语句导入了整个模块，使用下面的语法来使用其中任何一个函数：<blockquote>
+<p>module_name.function_name()</p>
+<pre class=" language-python"><code class="language-python"></code></pre>
+</blockquote>
+<h1 id="pizza-py"><a href="#pizza-py" class="headerlink" title="pizza.py"></a>pizza.py</h1>def make_pizza(size, *toppings):<br>  “””概述要制作的比萨”””<pre><code>```python
+import pizza
+</code></pre></li>
+</ul>
+<p>pizza.make_pizza(16, ‘pepperoni’)<br>pizza.make_pizza(12, ‘mushrooms’, ‘green peppers’, ‘extra cheese’)</p>
+<pre><code>&gt; 导入特定的函数
+* &gt; from module_name import function_0, function_1, function_2
+```python
+from pizza import make_pizza
+
+make_pizza(16, &#39;pepperoni&#39;)
+make_pizza(12, &#39;mushrooms&#39;, &#39;green peppers&#39;, &#39;extra cheese&#39;)</code></pre>
             </div>
             <hr/>
 
@@ -1205,7 +1265,7 @@ WIDGET = {ID: 'ggduimj82w'};
 					    
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">4.6k</span>
+                <span class="white-color">4.9k</span>
 
             
             <br>
