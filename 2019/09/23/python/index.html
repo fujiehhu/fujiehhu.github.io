@@ -908,16 +908,20 @@ make_pizza<span class="token punctuation">(</span><span class="token number">12<
    <span class="token keyword">def</span> <span class="token function">read_odometer</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
       <span class="token triple-quoted-string string">"""打印一条指出汽车里程的消息"""</span>
       <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"This car has "</span> <span class="token operator">+</span> str<span class="token punctuation">(</span>self<span class="token punctuation">.</span>odometer_reading<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" miles on it."</span><span class="token punctuation">)</span>
-</code></pre>
+<span class="token comment" spellcheck="true"># -----------------------       </span>
+my_new_car <span class="token operator">=</span> Car<span class="token punctuation">(</span><span class="token string">'audi'</span><span class="token punctuation">,</span> <span class="token string">'a4'</span><span class="token punctuation">,</span> <span class="token number">2016</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span> <span class="token punctuation">(</span>my_new_car<span class="token punctuation">.</span>get_descriptive_name<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+my_new_car<span class="token punctuation">.</span>read_odometer<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
 </li>
 </ul>
-<p>#————————————————————–<br>my_new_car = Car(‘audi’, ‘a4’, 2016)<br>print (my_new_car.get_descriptive_name())<br>my_new_car.read_odometer()</p>
-<pre><code>
-&gt; 1. 直接修改属性的值
-
-```python
-my_new_car.odometer_reading = 23
-my_new_car.read_odometer()</code></pre><blockquote>
+<blockquote>
+<ol>
+<li>直接修改属性的值</li>
+</ol>
+</blockquote>
+<pre class=" language-python"><code class="language-python">my_new_car<span class="token punctuation">.</span>odometer_reading <span class="token operator">=</span> <span class="token number">23</span>
+my_new_car<span class="token punctuation">.</span>read_odometer<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<blockquote>
 <ol start="2">
 <li>通过方法修改属性的值</li>
 </ol>
