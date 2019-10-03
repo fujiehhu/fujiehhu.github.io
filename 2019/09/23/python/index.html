@@ -784,15 +784,17 @@ height <span class="token operator">=</span> int<span class="token punctuation">
 </ul>
 <blockquote>
 <p>默认值 <strong>在形参列表中必须先列出没有默认值的形参，再列出有默认值的实参</strong></p>
+</blockquote>
 <ul>
-<li>给形参指定默认值时，等号两边不要有空格</li>
+<li><p>给形参指定默认值时，等号两边不要有空格</p>
+</li>
 <li><pre class=" language-python"><code class="language-python">  <span class="token keyword">def</span> <span class="token function">describe_pet</span><span class="token punctuation">(</span>pet_name<span class="token punctuation">,</span> animal_type<span class="token operator">=</span><span class="token string">'dog'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-      <span class="token triple-quoted-string string">"""显示宠物的信息"""</span></code></pre>
+      <span class="token triple-quoted-string string">"""显示宠物的信息"""</span>
+
+  describe_pet<span class="token punctuation">(</span>pet_name<span class="token operator">=</span><span class="token string">'willie'</span><span class="token punctuation">)</span></code></pre>
 </li>
 </ul>
-</blockquote>
-<pre><code>describe_pet(pet_name=&#39;willie&#39;)
-```</code></pre><h2 id="在函数中修改列表"><a href="#在函数中修改列表" class="headerlink" title="在函数中修改列表"></a>在函数中修改列表</h2><pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">print_models</span><span class="token punctuation">(</span>unprinted_designs<span class="token punctuation">,</span> completed_models<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<h2 id="在函数中修改列表"><a href="#在函数中修改列表" class="headerlink" title="在函数中修改列表"></a>在函数中修改列表</h2><pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">print_models</span><span class="token punctuation">(</span>unprinted_designs<span class="token punctuation">,</span> completed_models<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">"""
     模拟打印每个设计，直到没有未打印的设计为止
     打印每个设计后，都将其移到列表completed_models中
@@ -851,22 +853,31 @@ user_profile <span class="token operator">=</span> build_profile<span class="tok
 <p>导入整个模块</p>
 </blockquote>
 <ul>
-<li>如果使用import语句导入了整个模块，使用下面的语法来使用其中任何一个函数：<blockquote>
+<li><p>如果使用import语句导入了整个模块，使用下面的语法来使用其中任何一个函数：</p>
+<blockquote>
 <p>module_name.function_name()</p>
-<pre class=" language-python"><code class="language-python"></code></pre>
 </blockquote>
-<h1 id="pizza-py"><a href="#pizza-py" class="headerlink" title="pizza.py"></a>pizza.py</h1>def make_pizza(size, *toppings):<br>  “””概述要制作的比萨”””<pre><code>```python
-import pizza
-</code></pre></li>
+</li>
 </ul>
-<p>pizza.make_pizza(16, ‘pepperoni’)<br>pizza.make_pizza(12, ‘mushrooms’, ‘green peppers’, ‘extra cheese’)</p>
-<pre><code>&gt; 导入特定的函数
-* &gt; from module_name import function_0, function_1, function_2
-```python
-from pizza import make_pizza
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># pizza.py</span>
+<span class="token keyword">def</span> <span class="token function">make_pizza</span><span class="token punctuation">(</span>size<span class="token punctuation">,</span> <span class="token operator">*</span>toppings<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""概述要制作的比萨"""</span></code></pre>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> pizza
 
-make_pizza(16, &#39;pepperoni&#39;)
-make_pizza(12, &#39;mushrooms&#39;, &#39;green peppers&#39;, &#39;extra cheese&#39;)</code></pre><blockquote>
+pizza<span class="token punctuation">.</span>make_pizza<span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">,</span> <span class="token string">'pepperoni'</span><span class="token punctuation">)</span>
+pizza<span class="token punctuation">.</span>make_pizza<span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">,</span> <span class="token string">'mushrooms'</span><span class="token punctuation">,</span> <span class="token string">'green peppers'</span><span class="token punctuation">,</span> <span class="token string">'extra cheese'</span><span class="token punctuation">)</span></code></pre>
+<blockquote>
+<p>导入特定的函数</p>
+</blockquote>
+<ul>
+<li><blockquote>
+<p>from module_name import function_0, function_1, function_2</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> pizza <span class="token keyword">import</span> make_pizza</code></pre>
+</blockquote>
+</li>
+</ul>
+<p>make_pizza(16, ‘pepperoni’)<br>make_pizza(12, ‘mushrooms’, ‘green peppers’, ‘extra cheese’)<br>```</p>
+<blockquote>
 <p>使用as 给函数指定别名</p>
 </blockquote>
 <ul>
@@ -1277,7 +1288,7 @@ WIDGET = {ID: 'ggduimj82w'};
 					    
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">5.1k</span>
+                <span class="white-color">5k</span>
 
             
             <br>
