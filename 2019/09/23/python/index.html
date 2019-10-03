@@ -403,14 +403,14 @@ title( ) 以首字母大写的方式显示每个单词
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        2.7k
+                        2.9k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        10 分
+                        11 分
                     </div>
                     
                 
@@ -891,7 +891,62 @@ make_pizza<span class="token punctuation">(</span><span class="token number">12<
 <ul>
 <li>使用星号（*）运算符可让Python导入模块中的所有函数</li>
 </ul>
-<h3 id="如果程序或模块包含多个函数，可使用两个空行将相邻的函数分开"><a href="#如果程序或模块包含多个函数，可使用两个空行将相邻的函数分开" class="headerlink" title="如果程序或模块包含多个函数，可使用两个空行将相邻的函数分开"></a>如果程序或模块包含多个函数，可使用<strong>两个空行</strong>将相邻的函数分开</h3>
+<h3 id="如果程序或模块包含多个函数，可使用两个空行将相邻的函数分开"><a href="#如果程序或模块包含多个函数，可使用两个空行将相邻的函数分开" class="headerlink" title="如果程序或模块包含多个函数，可使用两个空行将相邻的函数分开"></a>如果程序或模块包含多个函数，可使用<strong>两个空行</strong>将相邻的函数分开</h3><hr>
+<h1 id="类"><a href="#类" class="headerlink" title="类"></a>类</h1><h2 id="修改属性的值"><a href="#修改属性的值" class="headerlink" title="修改属性的值"></a>修改属性的值</h2><p><strong>三种方式</strong></p>
+<ul>
+<li>直接通过实例进行修改</li>
+<li>通过方法进行设置</li>
+<li>通过方法进行递增（增加特定的值）<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Car</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> make<span class="token punctuation">,</span> model<span class="token punctuation">,</span> year<span class="token punctuation">)</span><span class="token punctuation">:</span>
+      <span class="token triple-quoted-string string">"""初始化描述汽车的属性"""</span>
+      self<span class="token punctuation">.</span>make <span class="token operator">=</span> make
+      self<span class="token punctuation">.</span>model <span class="token operator">=</span> model
+      self<span class="token punctuation">.</span>year <span class="token operator">=</span> year
+      self<span class="token punctuation">.</span>odometer_reading <span class="token operator">=</span> <span class="token number">0</span>
+  <span class="token keyword">def</span> <span class="token function">get_descriptive_name</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+      <span class="token operator">-</span><span class="token operator">-</span>snip<span class="token operator">-</span><span class="token operator">-</span>
+   <span class="token keyword">def</span> <span class="token function">read_odometer</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+      <span class="token triple-quoted-string string">"""打印一条指出汽车里程的消息"""</span>
+      <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"This car has "</span> <span class="token operator">+</span> str<span class="token punctuation">(</span>self<span class="token punctuation">.</span>odometer_reading<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" miles on it."</span><span class="token punctuation">)</span>
+</code></pre>
+</li>
+</ul>
+<p>#————————————————————–<br>my_new_car = Car(‘audi’, ‘a4’, 2016)<br>print (my_new_car.get_descriptive_name())<br>my_new_car.read_odometer()</p>
+<pre><code>&gt; 1. 直接修改属性的值
+
+```python
+my_new_car.odometer_reading = 23
+my_new_car.read_odometer()</code></pre><blockquote>
+<ol start="2">
+<li>通过方法修改属性的值</li>
+</ol>
+</blockquote>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Car</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token operator">-</span><span class="token operator">-</span>snip<span class="token operator">-</span><span class="token operator">-</span>
+
+    <span class="token keyword">def</span> <span class="token function">update_odometer</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> mileage<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        将里程表读数设置为指定的值
+        禁止将里程表读数往回调
+        """</span>
+        <span class="token keyword">if</span> mileage <span class="token operator">>=</span> self<span class="token punctuation">.</span>odometer_reading<span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>odometer_reading <span class="token operator">=</span> mileage
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"You can't roll back an odometer!"</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">#------------------------------------------</span>
+my_new_car <span class="token operator">=</span> Car<span class="token punctuation">(</span><span class="token string">'audi'</span><span class="token punctuation">,</span> <span class="token string">'a4'</span><span class="token punctuation">,</span> <span class="token number">2016</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span> <span class="token punctuation">(</span>my_new_car<span class="token punctuation">.</span>get_descriptive_name<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+my_new_car<span class="token punctuation">.</span>update_odometer<span class="token punctuation">(</span><span class="token number">23</span><span class="token punctuation">)</span>
+my_new_car<span class="token punctuation">.</span>read_odometer<span class="token punctuation">(</span><span class="token punctuation">)</span>        </code></pre>
+<blockquote>
+<ol start="3">
+<li>通过方法对属性的值进行递增</li>
+</ol>
+</blockquote>
+<pre class=" language-python"><code class="language-python"></code></pre>
+
             </div>
             <hr/>
 
@@ -1290,7 +1345,7 @@ WIDGET = {ID: 'ggduimj82w'};
 					    
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">5k</span>
+                <span class="white-color">5.3k</span>
 
             
             <br>
