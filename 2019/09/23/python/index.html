@@ -403,14 +403,14 @@ title( ) 以首字母大写的方式显示每个单词
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        2.9k
+                        3.3k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        11 分
+                        13 分
                     </div>
                     
                 
@@ -951,6 +951,83 @@ my_new_car<span class="token punctuation">.</span>read_odometer<span class="toke
 </ol>
 </blockquote>
 <pre class=" language-python"><code class="language-python"></code></pre>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Car</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""一次模拟汽车的简单尝试"""</span>    
+
+<span class="token comment" spellcheck="true">#----------------------</span>
+<span class="token keyword">class</span> <span class="token class-name">ElectricCar</span><span class="token punctuation">(</span>Car<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""电动汽车的独特之处"""</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> make<span class="token punctuation">,</span> model<span class="token punctuation">,</span> year<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""初始化父类的属性"""</span>
+        super<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span>make<span class="token punctuation">,</span> model<span class="token punctuation">,</span> year<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">#----------------------</span>
+my_tesla <span class="token operator">=</span> ElectricCar<span class="token punctuation">(</span><span class="token string">'tesla'</span><span class="token punctuation">,</span> <span class="token string">'model s'</span><span class="token punctuation">,</span> <span class="token number">2016</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span> <span class="token punctuation">(</span>my_tesla<span class="token punctuation">.</span>get_descriptive_name<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<ul>
+<li>创建子类时，父类必须包含在当前文件中，且位于子类前面</li>
+<li>定义子类时，必须在括号内指定父类的名称</li>
+</ul>
+<blockquote>
+<ol>
+<li>给子类定义属性和方法</li>
+</ol>
+</blockquote>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Car</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""一次模拟汽车的简单尝试"""</span>    
+<span class="token comment" spellcheck="true">#----------------------</span>
+<span class="token keyword">class</span> <span class="token class-name">ElectricCar</span><span class="token punctuation">(</span>Car<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""电动汽车的独特之处"""</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> make<span class="token punctuation">,</span> model<span class="token punctuation">,</span> year<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""初始化父类的属性"""</span>
+        super<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span>make<span class="token punctuation">,</span> model<span class="token punctuation">,</span> year<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>battery_size <span class="token operator">=</span> <span class="token number">70</span>
+
+    <span class="token keyword">def</span> <span class="token function">describe_battery</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""打印一条描述电瓶容量的消息"""</span>
+        <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"This car has a "</span> <span class="token operator">+</span> str<span class="token punctuation">(</span>self<span class="token punctuation">.</span>battery_size<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"-kWh battery."</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#----------------------</span>
+my_tesla <span class="token operator">=</span> ElectricCar<span class="token punctuation">(</span><span class="token string">'tesla'</span><span class="token punctuation">,</span> <span class="token string">'model s'</span><span class="token punctuation">,</span> <span class="token number">2016</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span> <span class="token punctuation">(</span>my_tesla<span class="token punctuation">.</span>get_descriptive_name<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+my_tesla<span class="token punctuation">.</span>describe_battery<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<blockquote>
+<ol start="2">
+<li>重写父类的方法</li>
+</ol>
+</blockquote>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">ElectricCar</span><span class="token punctuation">(</span>Car<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token operator">-</span><span class="token operator">-</span>snip<span class="token operator">-</span><span class="token operator">-</span>
+    <span class="token keyword">def</span> <span class="token function">fill_gas_tank</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""电动汽车没有油箱"""</span>
+        <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"This car doesn't need a gas tank!"</span><span class="token punctuation">)</span>
+</code></pre>
+<blockquote>
+<ol start="3">
+<li>将实例用作属性</li>
+</ol>
+</blockquote>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Car</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token operator">-</span><span class="token operator">-</span>snip<span class="token operator">-</span><span class="token operator">-</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Battery</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""一次模拟电动汽车电瓶的简单尝试"""</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> battery_size<span class="token operator">=</span><span class="token number">70</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""初始化电瓶的属性"""</span>
+        self<span class="token punctuation">.</span>battery_size <span class="token operator">=</span> battery_size
+    <span class="token keyword">def</span> <span class="token function">describe_battery</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""打印一条描述电瓶容量的消息"""</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"This car has a "</span> <span class="token operator">+</span> str<span class="token punctuation">(</span>self<span class="token punctuation">.</span>battery_size<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"-kWh battery."</span><span class="token punctuation">)</span>
+
+<span class="token keyword">class</span> <span class="token class-name">ElectricCar</span><span class="token punctuation">(</span>Car<span class="token punctuation">)</span><span class="token punctuation">:</span>       
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> make<span class="token punctuation">,</span> model<span class="token punctuation">,</span> year<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""初始化父类的属性"""</span>
+        super<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span>make<span class="token punctuation">,</span> model<span class="token punctuation">,</span> year<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>battery <span class="token operator">=</span> Battery<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#----------------------</span>
+my_tesla <span class="token operator">=</span> ElectricCar<span class="token punctuation">(</span><span class="token string">'tesla'</span><span class="token punctuation">,</span> <span class="token string">'model s'</span><span class="token punctuation">,</span> <span class="token number">2016</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span> <span class="token punctuation">(</span>my_tesla<span class="token punctuation">.</span>get_descriptive_name<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+my_tesla<span class="token punctuation">.</span>battery<span class="token punctuation">.</span>describe_battery<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<p>在实例my_tesla中查找属性battery，并对存储在该属性中的Battery实例调用方法describe_battery()</p>
 
             </div>
             <hr/>
@@ -1350,7 +1427,7 @@ WIDGET = {ID: 'ggduimj82w'};
 					    
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">5.3k</span>
+                <span class="white-color">5.6k</span>
 
             
             <br>
