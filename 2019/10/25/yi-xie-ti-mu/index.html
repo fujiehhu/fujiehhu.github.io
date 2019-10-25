@@ -9,7 +9,14 @@
     <meta name="keywords" content="一些题目, HHU">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="一些题目 | 我的博客">
+    <meta name="description" content="
+假设你正在爬楼梯。需要 n 阶你才能到达楼顶。每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？注意：给定 n 是一个正整数。
+
+动态规划
+
+
+from functools import lru_cache
+# 动态规">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -239,7 +246,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/28.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -355,12 +362,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/面试题/" target="_blank">
+                                <span class="chip bg-color">面试题</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/面试题/" class="post-category" target="_blank">
+                                面试题
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -382,7 +402,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        0
+                        105
                     </div>
                     
 
@@ -406,7 +426,29 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <blockquote>
+<p>假设你正在爬楼梯。需要 n 阶你才能到达楼顶。<br>每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？<br>注意：给定 n 是一个正整数。</p>
+<ul>
+<li>动态规划</li>
+</ul>
+</blockquote>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> functools <span class="token keyword">import</span> lru_cache
+<span class="token comment" spellcheck="true"># 动态规划</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    @lru_cache<span class="token punctuation">(</span><span class="token number">10</span><span class="token operator">**</span><span class="token number">8</span><span class="token punctuation">)</span>
+    <span class="token keyword">def</span> <span class="token function">climbStairs</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :type n: int
+        :rtype: int
+        """</span>
+
+        <span class="token keyword">if</span> n <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token number">1</span>
+        <span class="token keyword">elif</span> n <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token number">2</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> self<span class="token punctuation">.</span>climbStairs<span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> self<span class="token punctuation">.</span>climbStairs<span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">)</span></code></pre>
+
             </div>
             <hr/>
 
@@ -586,8 +628,7 @@
                 <a href="/2019/10/25/yi-xie-ti-mu/">
                     <div class="card-image">
                         
-                        
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="一些题目">
+                        <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="一些题目">
                         
                         <span class="card-title">一些题目</span>
                     </div>
@@ -595,7 +636,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            一些面试题
                         
                     </div>
                     <div class="publish-info">
@@ -604,10 +645,25 @@
                             </span>
                         <span class="publish-author">
                             
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/面试题/" class="post-category" target="_blank">
+                                    面试题
+                                </a>
+                            
+                            
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/面试题/" target="_blank">
+                        <span class="chip bg-color">面试题</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -630,11 +686,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            # 
-keras 深度学习代码import os
-from keras import optimizers
-from keras import applications
-from keras.models import Sequential
+                            深度学习
                         
                     </div>
                     <div class="publish-info">
@@ -801,7 +853,7 @@ from keras.models import Sequential
 					    
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">6.4k</span>
+                <span class="white-color">6.5k</span>
 
             
             <br>
