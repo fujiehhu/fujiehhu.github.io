@@ -473,25 +473,23 @@ title( ) 以首字母大写的方式显示每个单词
 <li>末尾添加：<strong>append( )</strong><pre class=" language-python"><code class="language-python"> motorcycles<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string">'ducati'</span><span class="token punctuation">)</span></code></pre>
 </li>
 <li>在列表中插入元素：<strong>insert( )</strong> <pre class=" language-python"><code class="language-python"> motorcycles<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">'ducati'</span><span class="token punctuation">)</span></code></pre>
-<blockquote>
-<h3 id="从列表中删除元素"><a href="#从列表中删除元素" class="headerlink" title="从列表中删除元素"></a>从列表中删除元素</h3></blockquote>
 </li>
 </ol>
+<blockquote>
+<h3 id="从列表中删除元素"><a href="#从列表中删除元素" class="headerlink" title="从列表中删除元素"></a>从列表中删除元素</h3></blockquote>
 <ul>
 <li><p>使用<strong>del</strong>语句删除元素</p>
 <pre class=" language-python"><code class="language-python">  <span class="token keyword">del</span> motorcycles<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>    
   <span class="token keyword">del</span> motorcycles<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>  </code></pre>
-<ul>
-<li><p>使用方法 <strong>pop( )</strong> 删除元素(可删除列表末尾的元素)</p>
-<pre class=" language-python"><code class="language-python">popped_motorcycle <span class="token operator">=</span> motorcycles<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>motorcycles<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>popped_motorcycle<span class="token punctuation">)</span>
-
-<span class="token punctuation">[</span><span class="token string">'honda'</span><span class="token punctuation">,</span> <span class="token string">'yamaha'</span><span class="token punctuation">,</span> <span class="token string">'suzuki'</span><span class="token punctuation">]</span>
-<span class="token punctuation">[</span><span class="token string">'honda'</span><span class="token punctuation">,</span> <span class="token string">'yamaha'</span><span class="token punctuation">]</span>
-suzuki</code></pre>
 </li>
-</ul>
+<li><p>使用方法 <strong>pop( )</strong> 删除元素(可删除列表末尾的元素)</p>
+<pre class=" language-python"><code class="language-python">  popped_motorcycle <span class="token operator">=</span> motorcycles<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">print</span><span class="token punctuation">(</span>motorcycles<span class="token punctuation">)</span>
+  <span class="token keyword">print</span><span class="token punctuation">(</span>popped_motorcycle<span class="token punctuation">)</span>
+
+  <span class="token punctuation">[</span><span class="token string">'honda'</span><span class="token punctuation">,</span> <span class="token string">'yamaha'</span><span class="token punctuation">,</span> <span class="token string">'suzuki'</span><span class="token punctuation">]</span>
+  <span class="token punctuation">[</span><span class="token string">'honda'</span><span class="token punctuation">,</span> <span class="token string">'yamaha'</span><span class="token punctuation">]</span>
+  suzuki</code></pre>
 </li>
 <li><p>弹出列表中任何位置处的元素</p>
 <pre class=" language-python"><code class="language-python">  pop<span class="token punctuation">(</span>索引<span class="token punctuation">)</span></code></pre>
@@ -503,24 +501,24 @@ suzuki</code></pre>
 </blockquote>
 </li>
 </ul>
-<h2 id="组织列表"><a href="#组织列表" class="headerlink" title="组织列表"></a>组织列表</h2><blockquote>
-<p>使用方法<strong>sort( )</strong>对列表进行永久性排序</p>
-</blockquote>
+<h2 id="组织列表"><a href="#组织列表" class="headerlink" title="组织列表"></a>组织列表</h2><ul>
+<li><p>使用方法<strong>sort( )</strong>对列表进行永久性排序</p>
 <ul>
 <li>与字母顺序相反的顺序排列列表元素 <strong>sort(reverse=True)</strong></li>
 </ul>
-<blockquote>
-<p>使用函数<strong>sorted( )</strong>对列表进行临时排序</p>
-</blockquote>
+</li>
+<li><p>使用函数<strong>sorted( )</strong>对列表进行临时排序</p>
 <ul>
 <li>与字母顺序相反的顺序排列列表元素 <strong>sorted(reverse=True)</strong></li>
 </ul>
-<blockquote>
-<p>反转<strong>列表元素</strong>的排列顺序 <strong>reverse( )</strong></p>
-</blockquote>
-<blockquote>
-<p>确定列表的长度 <strong>len( )</strong></p>
-</blockquote>
+</li>
+<li><p>反转<strong>列表元素</strong>的排列顺序 <strong>reverse( )</strong></p>
+</li>
+<li><p>确定列表的长度 <strong>len( )</strong></p>
+</li>
+<li><p>取得某个值的索引<strong>index(target)</strong></p>
+</li>
+</ul>
 <hr>
 <h1 id="操作列表"><a href="#操作列表" class="headerlink" title="操作列表"></a><center>操作列表</center></h1><h2 id="创建数值列表"><a href="#创建数值列表" class="headerlink" title="创建数值列表"></a>创建数值列表</h2><blockquote>
 <p><strong>range( )</strong> </p>
