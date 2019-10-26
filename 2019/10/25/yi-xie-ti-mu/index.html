@@ -16,7 +16,7 @@
 动态规划
 
 from functools import lru_cache
-# 动态规">
+# &amp;lt">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -402,7 +402,7 @@ from functools import lru_cache
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        255
+                        427
                     </div>
                     
 
@@ -433,7 +433,7 @@ from functools import lru_cache
 <li><strong>动态规划</strong></li>
 </ul>
 <pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> functools <span class="token keyword">import</span> lru_cache
-<span class="token comment" spellcheck="true"># 动态规划</span>
+<span class="token comment" spellcheck="true"># &lt;font color=red>动态规划&lt;/font></span>
 <span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
     @lru_cache<span class="token punctuation">(</span><span class="token number">10</span><span class="token operator">**</span><span class="token number">8</span><span class="token punctuation">)</span>
     <span class="token keyword">def</span> <span class="token function">climbStairs</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -485,6 +485,25 @@ from functools import lru_cache
 <td align="center">两个位相同为0，相异为1 <strong><em>常用统计不相同数</em></strong></td>
 </tr>
 </tbody></table>
+<blockquote>
+<p>给定一个数组 nums 和一个值 val，你需要原地移除所有数值等于 val 的元素，返回移除后数组的新长度。<br>不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。<br>元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。</p>
+</blockquote>
+<ul>
+<li><strong>如果nums[j]不等于val, 则将nums[j]赋值给nums[i]即可, i自增</strong></li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">removeElement</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">,</span> val<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :type nums: List[int]
+        :type val: int
+        :rtype: int
+        """</span>
+        i <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">!=</span> val<span class="token punctuation">:</span>
+                nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
+                i <span class="token operator">+=</span> <span class="token number">1</span>
+        <span class="token keyword">return</span> i</code></pre>
 
             </div>
             <hr/>
@@ -905,7 +924,7 @@ from functools import lru_cache
 					    
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">6.6k</span>
+                <span class="white-color">6.8k</span>
 
             
             <br>
