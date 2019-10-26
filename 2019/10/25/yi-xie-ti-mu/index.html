@@ -16,7 +16,7 @@
 动态规划
 
 from functools import lru_cache
-# &amp;lt">
+# 动态规">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -402,7 +402,7 @@ from functools import lru_cache
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        427
+                        421
                     </div>
                     
 
@@ -430,10 +430,10 @@ from functools import lru_cache
 <p>假设你正在爬楼梯。需要 n 阶你才能到达楼顶。<br>每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？<br>注意：给定 n 是一个正整数。</p>
 </blockquote>
 <ul>
-<li><strong>动态规划</strong></li>
+<li><strong><center><font size="4" color="red" bgcolor="green">动态规划</font></center></strong></li>
 </ul>
 <pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> functools <span class="token keyword">import</span> lru_cache
-<span class="token comment" spellcheck="true"># &lt;font color=red>动态规划&lt;/font></span>
+<span class="token comment" spellcheck="true"># 动态规划</span>
 <span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
     @lru_cache<span class="token punctuation">(</span><span class="token number">10</span><span class="token operator">**</span><span class="token number">8</span><span class="token punctuation">)</span>
     <span class="token keyword">def</span> <span class="token function">climbStairs</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -452,7 +452,7 @@ from functools import lru_cache
 <p>给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。</p>
 </blockquote>
 <ul>
-<li><strong>使用异或操作统计不同元素</strong></li>
+<li><strong><center><font size="4" color="red" bgcolor="green">使用异或操作统计不同元素</font></center></strong></li>
 </ul>
 <pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">singleNumber</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">:</span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
@@ -489,7 +489,7 @@ from functools import lru_cache
 <p>给定一个数组 nums 和一个值 val，你需要原地移除所有数值等于 val 的元素，返回移除后数组的新长度。<br>不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。<br>元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。</p>
 </blockquote>
 <ul>
-<li><strong>如果nums[j]不等于val, 则将nums[j]赋值给nums[i]即可, i自增</strong></li>
+<li><strong><center><font size="4" color="red" bgcolor="green">如果nums[j]不等于val, 则将nums[j]赋值给nums[i]即可, i自增</font></center></strong></li>
 </ul>
 <pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">removeElement</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">,</span> val<span class="token punctuation">)</span><span class="token punctuation">:</span>
