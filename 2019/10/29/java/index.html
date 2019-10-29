@@ -6,16 +6,19 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="一些题目, HHU">
+    <meta name="keywords" content="java, HHU">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="假设你正在爬楼梯。需要 n 阶你才能到达楼顶。
-每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？
-注意：给定 n 是一个正整数。
+    <meta name="description" content=" 
+Java特性：
 
-动态规划
-from functools import lru_cache
-# 动态规划">
+简单 安全 可移植 面向对象 健壮 多线程 体系结构中立 解释执行 高性能 分布式 动态
+
+面向对象的三个原则：封装 继承 多态
+
+Java 与 Java EE 的关系
+
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -23,7 +26,7 @@ from functools import lru_cache
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>一些题目 | 我的博客</title>
+    <title>java | 我的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -245,13 +248,13 @@ from functools import lru_cache
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/28.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        一些题目
+                        java
                     </div>
                 </div>
             </div>
@@ -363,8 +366,8 @@ from functools import lru_cache
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/面试题/" target="_blank">
-                                <span class="chip bg-color">面试题</span>
+                            <a href="/tags/java/" target="_blank">
+                                <span class="chip bg-color">java</span>
                             </a>
                         
                     </div>
@@ -375,8 +378,8 @@ from functools import lru_cache
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/面试题/" class="post-category" target="_blank">
-                                面试题
+                            <a href="/categories/java/" class="post-category" target="_blank">
+                                java
                             </a>
                         
                     </div>
@@ -387,13 +390,13 @@ from functools import lru_cache
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-10-25
+                    2019-10-29
                 </div>
 
                 <div class="post-author info-break-policy">
                     <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
                     
-                        付杰
+                        fujie
                     
                 </div>
 
@@ -401,14 +404,14 @@ from functools import lru_cache
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        529
+                        59
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        2 分
+                        1 分
                     </div>
                     
                 
@@ -425,94 +428,16 @@ from functools import lru_cache
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <table><tr><td bgcolor="00FF7F">假设你正在爬楼梯。需要 n 阶你才能到达楼顶。
-每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？
-注意：给定 n 是一个正整数。</td></tr></table>
+                <font size="4"> 
+Java特性：
 
-<p><strong><center><font size="4" color="red">动态规划</font></center></strong></p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> functools <span class="token keyword">import</span> lru_cache
-<span class="token comment" spellcheck="true"># 动态规划</span>
-<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    @lru_cache<span class="token punctuation">(</span><span class="token number">10</span><span class="token operator">**</span><span class="token number">8</span><span class="token punctuation">)</span>
-    <span class="token keyword">def</span> <span class="token function">climbStairs</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">if</span> n <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
-            <span class="token keyword">return</span> <span class="token number">1</span>
-        <span class="token keyword">elif</span> n <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">:</span>
-            <span class="token keyword">return</span> <span class="token number">2</span>
-        <span class="token keyword">else</span><span class="token punctuation">:</span>
-            <span class="token keyword">return</span> self<span class="token punctuation">.</span>climbStairs<span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> self<span class="token punctuation">.</span>climbStairs<span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">)</span></code></pre>
+<p>简单 安全 可移植 面向对象 健壮 多线程 体系结构中立 解释执行 高性能 分布式 动态</p>
 <hr>
-<table><tr><td bgcolor="00FF7F">给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。</td></tr></table>
-
-<p><strong><center><font size="4" color="red">使用异或操作统计不同元素</font></center></strong></p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">singleNumber</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">:</span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
-        <span class="token comment" spellcheck="true"># 异或</span>
-        res <span class="token operator">=</span> nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            res <span class="token operator">=</span> res <span class="token operator">^</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
-        <span class="token keyword">return</span> res</code></pre>
-<table>
-<thead>
-<tr>
-<th align="center">符号</th>
-<th align="center">描述</th>
-<th align="center">运算规则</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">&amp;</td>
-<td align="center">与</td>
-<td align="center">两个位都为1时，结果才为1 <strong><em>统计奇数</em></strong></td>
-</tr>
-<tr>
-<td align="center">|</td>
-<td align="center">或</td>
-<td align="center">两个位都为0时，结果才为0 <strong><em>统计偶数</em></strong></td>
-</tr>
-<tr>
-<td align="center">^</td>
-<td align="center">异或</td>
-<td align="center">两个位相同为0，相异为1 <strong><em>常用统计不相同数</em></strong></td>
-</tr>
-</tbody></table>
+<p>面向对象的三个原则：<br><font color="red">封装 继承 多态</font></p>
 <hr>
-<table><tr><td bgcolor="00FF7F">给定一个数组 nums 和一个值 val，你需要原地移除所有数值等于 val 的元素，返回移除后数组的新长度。
-不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。
-元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。</td></tr></table>
-
-<p><strong><center><font size="4" color="red">如果nums[j]不等于val, 则将nums[j]赋值给nums[i]即可, i自增</font></center></strong></p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">removeElement</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">,</span> val<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        i <span class="token operator">=</span> <span class="token number">0</span>
-        <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">!=</span> val<span class="token punctuation">:</span>
-                nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
-                i <span class="token operator">+=</span> <span class="token number">1</span>
-        <span class="token keyword">return</span> i</code></pre>
-<hr>
-<table><tr><td bgcolor="00FF7F">给定一个字符串，验证它是否是回文串，只考虑字母和数字字符，可以忽略字母的大小写。
-说明：本题中，我们将空字符串定义为有效的回文串。</td></tr></table>
-
-<p><strong><center><font size="4" color="red">头尾双指针</font></center></strong></p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">isPalindrome</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        i <span class="token operator">=</span> <span class="token number">0</span>
-        j <span class="token operator">=</span> len<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span>
-        <span class="token keyword">while</span> i <span class="token operator">&lt;</span> j<span class="token punctuation">:</span>
-            <span class="token keyword">while</span> i <span class="token operator">&lt;</span> len<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token operator">and</span> <span class="token operator">not</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>isalnum<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-                i <span class="token operator">+=</span> <span class="token number">1</span>
-            <span class="token keyword">while</span> j <span class="token operator">></span> <span class="token operator">-</span><span class="token number">1</span> <span class="token operator">and</span> <span class="token operator">not</span> s<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>isalnum<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-                j <span class="token operator">-=</span> <span class="token number">1</span>
-            <span class="token keyword">if</span> i <span class="token operator">></span> j<span class="token punctuation">:</span>
-                <span class="token keyword">return</span> <span class="token boolean">True</span>           
-            <span class="token keyword">if</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> s<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-                i <span class="token operator">+=</span> <span class="token number">1</span>
-                j <span class="token operator">-=</span> <span class="token number">1</span>
-            <span class="token keyword">else</span><span class="token punctuation">:</span>
-                <span class="token keyword">return</span> <span class="token boolean">False</span>       
-        <span class="token keyword">return</span> <span class="token boolean">True</span></code></pre>
-
+<p>Java 与 Java EE 的关系</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://imgchr.com/i/KRtz28" alt="Java 与 Java EE 的关系"></p>
+</font>
             </div>
             <hr/>
 
@@ -662,7 +587,7 @@ from functools import lru_cache
                     </span>
                     <a href="https://fujie.fun" class="b-link-green">我的博客</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/10/25/yi-xie-ti-mu/" class="b-link-green">一些题目</a>
+                    <a href="/2019/10/29/java/" class="b-link-green">java</a>
                 </p>
             </div>
 
@@ -684,9 +609,10 @@ from functools import lru_cache
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2019/10/29/java/">
                     <div class="card-image">
@@ -713,9 +639,9 @@ Java 与 Java EE 的关系
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-29
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-29
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -728,6 +654,7 @@ Java 与 Java EE 的关系
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -746,31 +673,30 @@ Java 与 Java EE 的关系
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/09/26/keras/">
+                <a href="/2019/10/25/yi-xie-ti-mu/">
                     <div class="card-image">
                         
+                        <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="一些题目">
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="keras">
-                        
-                        <span class="card-title">keras</span>
+                        <span class="card-title">一些题目</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            深度学习
+                            一些面试题
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-26
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-25
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/keras/" class="post-category" target="_blank">
-                                    keras
+                            <a href="/categories/面试题/" class="post-category" target="_blank">
+                                    面试题
                                 </a>
                             
                             
@@ -780,8 +706,8 @@ Java 与 Java EE 的关系
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/keras/" target="_blank">
-                        <span class="chip bg-color">keras</span>
+                    <a href="/tags/面试题/" target="_blank">
+                        <span class="chip bg-color">面试题</span>
                     </a>
                     
                 </div>
