@@ -404,14 +404,14 @@ continue 与 break
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        529
+                        813
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        2 分
+                        3 分
                     </div>
                     
                 
@@ -460,7 +460,8 @@ continue 与 break
 </ul>
 <hr>
 <h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><ul>
-<li>对象<ul>
+<li><p>对象</p>
+<ul>
 <li>对象的特征分为<font color="red">静态特征</font>和<font color="red">动态特征</font><ul>
 <li><font color="red">静态特征</font>抽象为<font color="red">属性</font>， 用数据来描述，在java中称为<font color="red">变量</font></li>
 <li><font color="red">动态特征</font>抽象为<font color="red">行为</font>， 用代码来表示，在java中称为<font color="red">方法</font></li>
@@ -474,7 +475,8 @@ continue 与 break
 </li>
 </ul>
 </li>
-<li>类<ul>
+<li><p>类</p>
+<ul>
 <li>用类的方式解决问题，必须用类创建一个<font color="red">实例化的类对象</font>，然后通过<font color="red">类对象</font>去访问类的成员变量，去调用类的成员方法来实现程序的功能</li>
 <li><pre class=" language-java"><code class="language-java"> <span class="token comment" spellcheck="true">//类的定义使用</span>
  <span class="token keyword">class</span> <span class="token class-name">colordefine</span><span class="token punctuation">{</span>
@@ -488,6 +490,67 @@ continue 与 break
        b<span class="token punctuation">.</span><span class="token function">getMes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
  <span class="token punctuation">}</span></code></pre>
+</li>
+<li>java类属性和对象属性的初始化顺序如下<ul>
+<li>类属性（静态变量）定义时初始化</li>
+<li>static 块中的初始化代码</li>
+<li>对象属性（非静态变量）定义时的初始化</li>
+<li>构造方法（函数）中初始化代码</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>类方法</p>
+<ul>
+<li><p>类方法也称<font color="red">静态方法</font></p>
+</li>
+<li><p><font color="red">构造方法</font>所完成的主要工作是帮助新创建的对象赋初值</p>
+<ul>
+<li><font color="green">构造方法没有返回值</font></li>
+<li><font color="green">与类名称相同</font></li>
+<li>构造方法无需在程序中直接使用，而是在对象产生时自动执行</li>
+</ul>
+</li>
+<li><p>构造方法和普通方法都可以<font color="red">重载</font></p>
+</li>
+<li><p>只要明确的声明了构造方法，那么默认的构造方法就不会自动生成</p>
+<ul>
+<li><pre class=" language-java"><code class="language-java"> <span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">{</span>
+    <span class="token keyword">private</span> String name<span class="token punctuation">;</span>
+    Private <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token function">Person</span><span class="token punctuation">(</span>String n<span class="token punctuation">,</span><span class="token keyword">int</span> a<span class="token punctuation">)</span><span class="token punctuation">{</span>
+       name <span class="token operator">=</span> n<span class="token punctuation">;</span>
+       age <span class="token operator">=</span> a<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span>
+ <span class="token comment" spellcheck="true">//------------------</span>
+ <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
+       Person p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">"张三"</span><span class="token punctuation">,</span><span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">// 正确</span>
+       Person p1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">// 报错 没有默认的构造方法</span>
+    <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span>
+ <span class="token comment" spellcheck="true">// ---------------------</span>
+ <span class="token comment" spellcheck="true">//       修改后</span>
+ <span class="token comment" spellcheck="true">//----------------------</span>
+ <span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">{</span>
+    <span class="token keyword">private</span> String name<span class="token punctuation">;</span>
+    Private <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+    puclic <span class="token function">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token function">Person</span><span class="token punctuation">(</span>String n<span class="token punctuation">,</span><span class="token keyword">int</span> a<span class="token punctuation">)</span><span class="token punctuation">{</span>
+       name <span class="token operator">=</span> n<span class="token punctuation">;</span>
+       age <span class="token operator">=</span> a<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span>
+ <span class="token comment" spellcheck="true">//-----------</span>
+ <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
+       Person p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">"张三"</span><span class="token punctuation">,</span><span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">// 正确</span>
+       Person p1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">// 正确</span>
+    <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span></code></pre>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -967,7 +1030,7 @@ a2 <span class="token operator">=</span> <span class="token punctuation">{</span
 					    
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">7.4k</span>
+                <span class="white-color">7.7k</span>
 
             
             <br>
