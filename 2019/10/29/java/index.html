@@ -404,14 +404,14 @@ continue 与 break
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        305
+                        529
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        2 分
                     </div>
                     
                 
@@ -459,6 +459,42 @@ continue 与 break
 </li>
 </ul>
 <hr>
+<h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><ul>
+<li>对象<ul>
+<li>对象的特征分为<font color="red">静态特征</font>和<font color="red">动态特征</font><ul>
+<li><font color="red">静态特征</font>抽象为<font color="red">属性</font>， 用数据来描述，在java中称为<font color="red">变量</font></li>
+<li><font color="red">动态特征</font>抽象为<font color="red">行为</font>， 用代码来表示，在java中称为<font color="red">方法</font></li>
+</ul>
+</li>
+<li>一个对象由一组属性和一组对属性进行操作的方法构成</li>
+<li>对象的比较<ul>
+<li><strong>==</strong> 用于比较两个对象的内存地址值是否相等</li>
+<li><strong>equals()</strong> 用于比较两个对象的内容是否一致</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>类<ul>
+<li>用类的方式解决问题，必须用类创建一个<font color="red">实例化的类对象</font>，然后通过<font color="red">类对象</font>去访问类的成员变量，去调用类的成员方法来实现程序的功能</li>
+<li><pre class=" language-java"><code class="language-java"> <span class="token comment" spellcheck="true">//类的定义使用</span>
+ <span class="token keyword">class</span> <span class="token class-name">colordefine</span><span class="token punctuation">{</span>
+    String color <span class="token operator">=</span> <span class="token string">"黑色"</span><span class="token punctuation">;</span>
+    <span class="token keyword">void</span> <span class="token function">getMes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+       System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"定义类"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+       colordefine b <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">colordefine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>b<span class="token punctuation">.</span>color<span class="token punctuation">)</span><span class="token punctuation">;</span>
+       b<span class="token punctuation">.</span><span class="token function">getMes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span>
+
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code> ```</code></pre><hr>
 <center><table><tr><td bgcolor="00FF7F"><hr></td></tr></table>
 
 <p><font color="red" size="6">以下为一些方法</font></p>
@@ -504,11 +540,11 @@ a2 <span class="token operator">=</span> <span class="token punctuation">{</span
 </li>
 <li><p>数组的排序 <font color="red">Arrays.sort()</font></p>
 <ul>
-<li><pre class=" language-java"><code class="language-java">   <span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>*
+<li><pre class=" language-java"><code class="language-java">   <span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
    <span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">32</span><span class="token punctuation">,</span><span class="token number">45</span><span class="token punctuation">,</span><span class="token number">32</span><span class="token punctuation">,</span><span class="token number">65</span><span class="token punctuation">,</span><span class="token number">32</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
    Arrays<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
    <span class="token comment" spellcheck="true">//--------------------------</span>
-   a <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token punctuation">,</span><span class="token number">32</span><span class="token punctuation">,</span><span class="token number">32</span><span class="token punctuation">,</span><span class="token number">32</span><span class="token punctuation">,</span><span class="token number">45</span><span class="token punctuation">,</span><span class="token number">65</span><span class="token punctuation">}</span></code></pre>
+   a <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">32</span><span class="token punctuation">,</span><span class="token number">32</span><span class="token punctuation">,</span><span class="token number">32</span><span class="token punctuation">,</span><span class="token number">45</span><span class="token punctuation">,</span><span class="token number">65</span><span class="token punctuation">}</span></code></pre>
 </li>
 </ul>
 </li>
@@ -933,7 +969,7 @@ a2 <span class="token operator">=</span> <span class="token punctuation">{</span
 					    
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">7.2k</span>
+                <span class="white-color">7.4k</span>
 
             
             <br>
