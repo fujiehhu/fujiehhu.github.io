@@ -13,13 +13,14 @@
 一些常用函数
 面向对象
 类的封装、继承与多态
+抽象类与接口
 
  Java特性：
 简单 安全 可移植 面向对象 健壮 多线程 体系结构中立 解释执行 高性能 分布式 动态
 
 面向对象的三个原则：封装 继承 多态
 
-Java 与 Java EE 的关系">
+Java 与 Java">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -405,14 +406,14 @@ Java 与 Java EE 的关系">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        945
+                        1.2k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        3 分
+                        4 分
                     </div>
                     
                 
@@ -433,6 +434,7 @@ Java 与 Java EE 的关系">
 <li><a href="#以下为一些方法">一些常用函数</a></li>
 <li><a href="##面向对象">面向对象</a></li>
 <li><a href="##类的封装、继承与多态">类的封装、继承与多态</a></li>
+<li><a href="##抽象类与接口">抽象类与接口</a></li>
 </ul>
 <p><font size="4"> </font><br>Java特性：</p>
 <p>简单 安全 可移植 面向对象 健壮 多线程 体系结构中立 解释执行 高性能 分布式 动态</p>
@@ -586,10 +588,62 @@ Java 与 Java EE 的关系">
 <li>java中支持类的<font color="red">单继承</font>和<font color="red">多层</font>继承，但是不支持多继承</li>
 <li><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://s2.ax1x.com/2019/10/31/KoyNyF.png" alt="多重继承"></li>
 <li><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://s2.ax1x.com/2019/10/31/Koyfwd.png" alt="多层继承"></li>
+<li><font color="red">子类对象在实例化时会默认<font color="green">先去调用父类中</font>的无参构造方法，之后<font color="green">再调用本类中</font>的相应构造方法</font></li>
+<li><font color="green">super</font>关键字完成子类调用父类中的属性和方法，只能放在程序第一行<ul>
+<li><pre class=" language-java"><code class="language-java"> <span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">{</span>
+    String name<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//父类构造方法</span>
+    <span class="token keyword">public</span> <span class="token function">Persong</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">talk</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+       <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span>
+ <span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token keyword">extends</span> <span class="token class-name">Person</span><span class="token punctuation">{</span>
+    String school<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//子类的构造方法</span>
+    <span class="token keyword">public</span> <span class="token function">Student</span><span class="token punctuation">(</span>String name<span class="token punctuation">,</span><span class="token keyword">int</span> age<span class="token punctuation">,</span>String school<span class="token punctuation">)</span><span class="token punctuation">{</span>
+       <span class="token comment" spellcheck="true">//这里用super调用父类中的方法</span>
+       <span class="token keyword">super</span><span class="token punctuation">.</span>name<span class="token operator">=</span>name<span class="token punctuation">;</span>
+       <span class="token keyword">super</span><span class="token punctuation">.</span>age<span class="token operator">=</span>age<span class="token punctuation">;</span>
+       <span class="token comment" spellcheck="true">//调用父类中的方法</span>
+       <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">talk</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+       <span class="token comment" spellcheck="true">//调用本类中shool属性</span>
+       <span class="token keyword">this</span><span class="token punctuation">.</span>school <span class="token operator">=</span> school<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span></code></pre>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li><p>类的多态</p>
+<ul>
+<li>子类实例化对象可以转换为父类实例化对象  <font color="#8470FF">向上转型（自动完成）</font><ul>
+<li><pre class=" language-java"><code class="language-java"> <span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">{</span>
+ <span class="token punctuation">}</span>
+ <span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token keyword">extends</span> <span class="token class-name">Person</span><span class="token punctuation">{</span>
+ <span class="token punctuation">}</span>
+ <span class="token keyword">class</span> <span class="token class-name">Test</span><span class="token punctuation">{</span>
+    puvlic <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+       <span class="token comment" spellcheck="true">//错误</span>
+       Person p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//报错</span>
+       Student s <span class="token operator">=</span> <span class="token punctuation">(</span>Student<span class="token punctuation">)</span>p<span class="token punctuation">;</span><span class="token comment" spellcheck="true">// 向下转型</span>
+       <span class="token comment" spellcheck="true">//正确</span>
+       Person p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//正确</span>
+       Student s <span class="token operator">=</span> <span class="token punctuation">(</span>Student<span class="token punctuation">)</span>p<span class="token punctuation">;</span><span class="token comment" spellcheck="true">// 向下转型</span>
+    <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span></code></pre>
 </li>
+</ul>
+</li>
+<li><font color="#8470FF">向下转型必须进行强制类型转换</font></li>
+</ul>
+</li>
+</ul>
+<h2 id="抽象类与接口"><a href="#抽象类与接口" class="headerlink" title="抽象类与接口"></a>抽象类与接口</h2><ul>
+<li></li>
 </ul>
 <hr>
 <h1 id="以下为一些方法"><a href="#以下为一些方法" class="headerlink" title="以下为一些方法"></a>以下为一些方法</h1><blockquote>
@@ -1060,7 +1114,7 @@ a2 <span class="token operator">=</span> <span class="token punctuation">{</span
 					    
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">8.1k</span>
+                <span class="white-color">8.3k</span>
 
             
             <br>
