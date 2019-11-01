@@ -406,14 +406,14 @@ Java 与 Java">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.2k
+                        1.5k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        4 分
+                        6 分
                     </div>
                     
                 
@@ -525,7 +525,7 @@ Java 与 Java">
 <ul>
 <li><pre class=" language-java"><code class="language-java"> <span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">{</span>
     <span class="token keyword">private</span> String name<span class="token punctuation">;</span>
-    Private <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span>
     <span class="token keyword">public</span> <span class="token function">Person</span><span class="token punctuation">(</span>String n<span class="token punctuation">,</span><span class="token keyword">int</span> a<span class="token punctuation">)</span><span class="token punctuation">{</span>
        name <span class="token operator">=</span> n<span class="token punctuation">;</span>
        age <span class="token operator">=</span> a<span class="token punctuation">;</span>
@@ -643,7 +643,32 @@ Java 与 Java">
 </li>
 </ul>
 <h2 id="抽象类与接口"><a href="#抽象类与接口" class="headerlink" title="抽象类与接口"></a>抽象类与接口</h2><ul>
-<li></li>
+<li>抽象类<ul>
+<li>抽象类、抽象方法用<font color="green">abstract</font>来修饰</li>
+<li>抽象类不能直接被实例化(不能直接用new关键字去产生对象)</li>
+<li>抽象方法只需声明，而不需实现</li>
+<li>含有抽象方法的类必须声明为抽象类，抽象类的子类<font color="red">必须覆写所有抽象方法</font>后才能被实例化，否则这个子类还是抽象类</li>
+<li>抽象类也可以有构造方法，但是这些构造方法<font color="red">必须在子类中被调用</font></li>
+<li><font color="#8470FF">抽象类中方法有一般方法和抽象方法</font></li>
+</ul>
+</li>
+<li>接口<ul>
+<li>接口里的数据成员必须被初始化，且数据成员均为常量</li>
+<li>接口里的方法必须<font color="red">全部声明为abstract（抽象方法）</font></li>
+</ul>
+</li>
+</ul>
+<h2 id="关于类的专题"><a href="#关于类的专题" class="headerlink" title="关于类的专题"></a>关于类的专题</h2><ul>
+<li>内部类<ul>
+<li>外部类声明的属性可以被内部类所访问</li>
+<li>内部类声明的属性外部类无法访问</li>
+<li>用static声明的内部类则变成外部类，<font color="red">用static声明的内部类不能访问非static的外部类属性</font></li>
+<li>内部类不仅可以在类中定义，也可以在方法中定义<ul>
+<li>在方法中定义的内部类<font color="red">只能访问方法中的<font color="green">final</font>类型的局部变量</font>（final定义的局部变量相当于一个常量，它的声明周期超出方法运行的声明周期）</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <hr>
 <h1 id="以下为一些方法"><a href="#以下为一些方法" class="headerlink" title="以下为一些方法"></a>以下为一些方法</h1><blockquote>
@@ -1114,7 +1139,7 @@ a2 <span class="token operator">=</span> <span class="token punctuation">{</span
 					    
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">8.3k</span>
+                <span class="white-color">8.7k</span>
 
             
             <br>
