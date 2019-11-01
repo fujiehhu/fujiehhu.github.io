@@ -406,7 +406,7 @@ Java 与 Java">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.5k
+                        1.7k
                     </div>
                     
 
@@ -655,20 +655,42 @@ Java 与 Java">
 <li>接口<ul>
 <li>接口里的数据成员必须被初始化，且数据成员均为常量</li>
 <li>接口里的方法必须<font color="red">全部声明为abstract（抽象方法）</font></li>
+<li><font color="#8470FF">接口是可以被实例化的，但是不能被直接实例化，只能通过其子类进行实例化</font></li>
 </ul>
 </li>
 </ul>
 <h2 id="关于类的专题"><a href="#关于类的专题" class="headerlink" title="关于类的专题"></a>关于类的专题</h2><ul>
-<li>内部类<ul>
+<li><p>内部类</p>
+<ul>
 <li>外部类声明的属性可以被内部类所访问</li>
 <li>内部类声明的属性外部类无法访问</li>
 <li>用static声明的内部类则变成外部类，<font color="red">用static声明的内部类不能访问非static的外部类属性</font></li>
 <li>内部类不仅可以在类中定义，也可以在方法中定义<ul>
-<li>在方法中定义的内部类<font color="red">只能访问方法中的<font color="green">final</font>类型的局部变量</font>（final定义的局部变量相当于一个常量，它的声明周期超出方法运行的声明周期）</li>
+<li>在方法中定义的内部类<font color="red">只能访问方法中的<font color="green">final</font>类型的局部变量</font>（final定义的局部变量相当于一个常量，它的生命周期超出方法运行的生命周期）</li>
 </ul>
 </li>
 </ul>
 </li>
+<li><p>将数组传递到方法里</p>
+<ul>
+<li><pre class=" language-java"><code class="language-java"> <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">add10</span><span class="token punctuation">(</span><span class="token keyword">int</span> arr<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span></code></pre>
+</li>
+</ul>
+</li>
+<li><p>Static 关键字</p>
+<ul>
+<li>静态变量： 类变量  <ul>
+<li>static声明的属性是<font color="red">所有对象共享的</font>，用static声明的属性也可以用类名直接访问  </li>
+</ul>
+</li>
+<li>静态方法： 类方法 <ul>
+<li>在使用static类型声明的方法时， 如果在类中声明了一个static类型的属性，则此属性既可以在非static类型的方法中使用，也可以在static类型的方法中使用。</li>
+<li>如果要用static类型的方法调用非static类型的属性，就会出错</li>
+</ul>
+</li>
+</ul>
+</li>
+<li></li>
 </ul>
 <hr>
 <h1 id="以下为一些方法"><a href="#以下为一些方法" class="headerlink" title="以下为一些方法"></a>以下为一些方法</h1><blockquote>
@@ -1139,7 +1161,7 @@ a2 <span class="token operator">=</span> <span class="token punctuation">{</span
 					    
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">8.7k</span>
+                <span class="white-color">8.8k</span>
 
             
             <br>
