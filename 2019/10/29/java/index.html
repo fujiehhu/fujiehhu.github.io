@@ -14,13 +14,14 @@
 面向对象
 类的封装、继承与多态
 抽象类与接口
+Java常用类库
 
  Java特性：
 简单 安全 可移植 面向对象 健壮 多线程 体系结构中立 解释执行 高性能 分布式 动态
 
 面向对象的三个原则：封装 继承 多态
 
-Java 与 Java">
+Ja">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -406,14 +407,14 @@ Java 与 Java">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.7k
+                        2k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        6 分
+                        7 分
                     </div>
                     
                 
@@ -435,6 +436,7 @@ Java 与 Java">
 <li><a href="##面向对象">面向对象</a></li>
 <li><a href="##类的封装、继承与多态">类的封装、继承与多态</a></li>
 <li><a href="##抽象类与接口">抽象类与接口</a></li>
+<li><a href="##Java常用类库">Java常用类库</a></li>
 </ul>
 <p><font size="4"> </font><br>Java特性：</p>
 <p>简单 安全 可移植 面向对象 健壮 多线程 体系结构中立 解释执行 高性能 分布式 动态</p>
@@ -684,10 +686,68 @@ Java 与 Java">
 </ul>
 </li>
 <li>静态方法： 类方法 <ul>
-<li>在使用static类型声明的方法时， 如果在类中声明了一个static类型的属性，则此属性既可以在非static类型的方法中使用，也可以在static类型的方法中使用。</li>
-<li>如果要用static类型的方法调用非static类型的属性，就会出错</li>
+<li>在使用static类型声明的方法时， 如果在类中声明了一个<font color="green">static类型的属性</font>，则此属性既可以<font color="green">在非static类型的方法</font>中使用，也可以<font color="green">在static类型的方法</font>中使用。</li>
+<li>如果要用static类型的方法调用非static类型的属性，就会<font color="red">出错</font></li>
 </ul>
 </li>
+</ul>
+</li>
+<li><p>静态代码块</p>
+<ul>
+<li>当类被载入时，静态代码块被执行，且<font color="red">只执行一次</font></li>
+<li>静态代码块优于静态方法，静态代码块可以对静态属性初始化</li>
+<li><pre class=" language-java"><code class="language-java"> <span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+       System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">//此段代码块会首先被执行</span>
+    <span class="token keyword">static</span><span class="token punctuation">{</span>
+       System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span>
+ <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span><span class="token punctuation">{</span>
+    <span class="token keyword">static</span><span class="token punctuation">{</span>
+       System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"3"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+       System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"4"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span>
+ <span class="token comment" spellcheck="true">// 输出</span>
+ <span class="token number">3</span>
+ <span class="token number">4</span>
+ <span class="token number">2</span>
+ <span class="token number">1</span>
+ <span class="token number">1</span></code></pre>
+</li>
+</ul>
+</li>
+<li><p>final 关键字</p>
+<ul>
+<li>final 标记的类不能被继承</li>
+<li>final 标记的方法不能被子类覆写</li>
+<li>final 标记的变量（成员变量和局部变量）即为常量，只能赋值一次</li>
+</ul>
+</li>
+<li><p>instanceof 关键字</p>
+<ul>
+<li>判断一个类是否实现了某个接口</li>
+<li>判断一个实例对象是否属于一个类</li>
+</ul>
+</li>
+</ul>
+<h2 id="Java常用类库"><a href="#Java常用类库" class="headerlink" title="Java常用类库"></a>Java常用类库</h2><ul>
+<li><p>String类和StringBuffer类</p>
+<ul>
+<li>String类对象的内容一旦被初始化就不能再改变</li>
+<li>StringBuffer类用于内容可以改变的字符串。一旦通过StringBuffer生成了最终想要的字符串，就应该使用StringBuffer.toString()方法将其转换成String类。</li>
+</ul>
+</li>
+<li><p>类成员的访问控制权限</p>
+<ul>
+<li><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://s2.ax1x.com/2019/11/04/KxEwFg.png" alt="访问控制符的权限"></li>
 </ul>
 </li>
 <li></li>
@@ -737,6 +797,16 @@ a2 <span class="token operator">=</span> <span class="token punctuation">{</span
    Arrays<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
    <span class="token comment" spellcheck="true">//--------------------------</span>
    a <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">32</span><span class="token punctuation">,</span><span class="token number">32</span><span class="token punctuation">,</span><span class="token number">32</span><span class="token punctuation">,</span><span class="token number">45</span><span class="token punctuation">,</span><span class="token number">65</span><span class="token punctuation">}</span></code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><font color="#0099ff">parseInt()</font>方法，将一个字符串转换成基本数据类型<ul>
+<li><pre class=" language-java"><code class="language-java"> String a <span class="token operator">=</span> <span class="token string">"123"</span><span class="token punctuation">;</span>
+ <span class="token keyword">int</span> i <span class="token operator">=</span> Integer<span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+ i<span class="token operator">++</span><span class="token punctuation">;</span></code></pre>
 </li>
 </ul>
 </li>
@@ -1161,7 +1231,7 @@ a2 <span class="token operator">=</span> <span class="token punctuation">{</span
 					    
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">8.8k</span>
+                <span class="white-color">9.1k</span>
 
             
             <br>
