@@ -11,17 +11,19 @@
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
     <meta name="description" content="目录
 一些常用函数
+Java中的length与length()
+与数组操作有关的API方法
+int与String 的相互转换
+
+
 面向对象
 类的封装、继承与多态
 抽象类与接口
 Java常用类库
+枚举
 
  Java特性：
-简单 安全 可移植 面向对象 健壮 多线程 体系结构中立 解释执行 高性能 分布式 动态
-
-面向对象的三个原则：封装 继承 多态
-
-Ja">
+简单 安全 可移植 ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -407,14 +409,14 @@ Ja">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        2k
+                        2.7k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        7 分
+                        10 分
                     </div>
                     
                 
@@ -432,11 +434,17 @@ Ja">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ul>
-<li><a href="#以下为一些方法">一些常用函数</a></li>
+<li><a href="#以下为一些方法">一些常用函数</a><ul>
+<li><a href="##Java中的length与length()">Java中的length与length()</a></li>
+<li><a href="##与数组操作有关的API方法">与数组操作有关的API方法</a></li>
+<li><a href="##int与String的相互转换">int与String 的相互转换</a></li>
+</ul>
+</li>
 <li><a href="##面向对象">面向对象</a></li>
 <li><a href="##类的封装、继承与多态">类的封装、继承与多态</a></li>
 <li><a href="##抽象类与接口">抽象类与接口</a></li>
 <li><a href="##Java常用类库">Java常用类库</a></li>
+<li><a href="##枚举">枚举</a></li>
 </ul>
 <p><font size="4"> </font><br>Java特性：</p>
 <p>简单 安全 可移植 面向对象 健壮 多线程 体系结构中立 解释执行 高性能 分布式 动态</p>
@@ -750,13 +758,32 @@ Ja">
 <li><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://s2.ax1x.com/2019/11/04/KxEwFg.png" alt="访问控制符的权限"></li>
 </ul>
 </li>
-<li></li>
 </ul>
+<h2 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h2><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">enum</span> Color<span class="token punctuation">{</span>
+   RED<span class="token punctuation">,</span>GREEN<span class="token punctuation">,</span>BLUE<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span><span class="token punctuation">{</span>
+   <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      Color c <span class="token operator">=</span> Color<span class="token punctuation">.</span>RED<span class="token punctuation">;</span>
+      System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">// RED</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test1</span><span class="token punctuation">{</span>
+   <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">switch</span><span class="token punctuation">(</span>Color<span class="token punctuation">.</span>RED<span class="token punctuation">)</span><span class="token punctuation">{</span>
+         <span class="token keyword">case</span> RED<span class="token operator">:</span><span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"红色"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">break</span><span class="token punctuation">;</span>
+         <span class="token punctuation">}</span>
+         <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+      <span class="token punctuation">}</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <hr>
-<h1 id="以下为一些方法"><a href="#以下为一些方法" class="headerlink" title="以下为一些方法"></a>以下为一些方法</h1><blockquote>
-<p>Java 中的<strong>length</strong> <strong>length()</strong></p>
-</blockquote>
-<ul>
+<h1 id="以下为一些方法"><a href="#以下为一些方法" class="headerlink" title="以下为一些方法"></a>以下为一些方法</h1><h2 id="Java中的length与length"><a href="#Java中的length与length" class="headerlink" title="Java中的length与length()"></a>Java中的length与length()</h2><ul>
 <li><p>length 是【属性】</p>
 <ul>
 <li>求数组的长度</li>
@@ -775,10 +802,7 @@ Ja">
 </li>
 </ul>
 <hr>
-<blockquote>
-<p>与数组操作有关的API方法</p>
-</blockquote>
-<ul>
+<h2 id="与数组操作有关的API方法"><a href="#与数组操作有关的API方法" class="headerlink" title="与数组操作有关的API方法"></a>与数组操作有关的API方法</h2><ul>
 <li><p>数组的拷贝 <font color="red">System.arraycopy(source,0,dest,0,x)</font></p>
 <ul>
 <li>复制源数组从下标0开始的x个元素到目标数组，从目标数组的下标0所对应的位置开始存取</li>
@@ -802,16 +826,122 @@ a2 <span class="token operator">=</span> <span class="token punctuation">{</span
 </li>
 </ul>
 <hr>
+<h2 id="int与String的相互转换"><a href="#int与String的相互转换" class="headerlink" title="int与String的相互转换"></a>int与String的相互转换</h2><blockquote>
+<p><font color="#0099ff">int</font> 转 <font color="#0099ff">String</font></p>
 <ul>
-<li><font color="#0099ff">parseInt()</font>方法，将一个字符串转换成基本数据类型<ul>
-<li><pre class=" language-java"><code class="language-java"> String a <span class="token operator">=</span> <span class="token string">"123"</span><span class="token punctuation">;</span>
- <span class="token keyword">int</span> i <span class="token operator">=</span> Integer<span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
- i<span class="token operator">++</span><span class="token punctuation">;</span></code></pre>
+<li>num + “”</li>
+<li>String.valueOf(num)</li>
+<li>Integer.toString(num)</li>
+<li><pre class=" language-java"><code class="language-java"> <span class="token keyword">int</span> num <span class="token operator">=</span> <span class="token number">123</span><span class="token punctuation">;</span>
+ String str <span class="token operator">=</span> num <span class="token operator">+</span> <span class="token string">""</span><span class="token punctuation">;</span>
+ String str <span class="token operator">=</span> String<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+ String str <span class="token operator">=</span> Integer<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span></code></pre>
+<font color="#0099ff">String</font> 转 <font color="#0099ff">int</font></li>
+<li>Integer.parseInt(str)</li>
+<li>Integer.valueOf(str).intValue()</li>
+<li><pre class=" language-java"><code class="language-java">    String str <span class="token operator">=</span> <span class="token string">"123"</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> i <span class="token operator">=</span> Integer<span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> n <span class="token operator">=</span> Integer<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">intValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 </li>
+</ul>
+</blockquote>
+<pre><code> ```</code></pre><hr>
+<h2 id="ArrayList和LinkedList"><a href="#ArrayList和LinkedList" class="headerlink" title="ArrayList和LinkedList"></a>ArrayList和LinkedList</h2><ul>
+<li>大致区别<ul>
+<li>ArrayList是实现了基于动态数组的数据结构，LinkedList是基于链表结构。</li>
+<li>对于随机访问的get和set方法，ArrayList要优于LinkedList，因为LinkedList要移动指针。</li>
+<li>对于新增和删除操作add和remove，LinkedList比较占优势，因为ArrayList要移动数据</li>
+</ul>
+</li>
+<li>应用场景<ul>
+<li>ArrayList使用在查询比较多，但是插入和删除比较少的情况，而LinkedList用在查询比较少而插入删除比较多的情况</li>
 </ul>
 </li>
 </ul>
+<table><thead>
+<tr> <th>操作</th> <th>Array</th> <th>ArrayList</th> </tr> </thead>
+<tbody>
+<tr>
+<td>创建 array/ArrayList</td>
+<td>String[] a = new String[10]</td>
+<td>ArrayList<> list = new ArrayList&lt;&gt;();</td>
+</tr>
+<tr>
+<td>访问一个元素</td>
+<td>a[index]</td>
+<td>list.get(index);</td>
+</tr>
+<tr>
+<td>更新一个元素</td>
+<td>a[index] = “London”;</td>
+<td>list.set(index, “London”);</td>
+</tr>
+<tr>
+<td>返回大小</td>
+<td>a.length</td>
+<td>list.size();</td>
+</tr>
+<tr>
+<td>排序</td>
+<td>java.util.Arrays.sort(array)</td>
+<td>java.util.Collections.sort(arraylist)</td>
+</tr>
+<tr>
+<td>添加一个新元素</td>
+<td>相当复杂</td>
+<td>list.add(“London”);</td>
+</tr>
+<tr>
+<td>插入一个新元素</td>
+<td>相当复杂</td>
+<td>list.add(index, “London”);</td>
+</tr>
+<tr>
+<td>删除一个元素</td>
+<td>相当复杂</td>
+<td>list.remove(index);</td>
+</tr>
+<tr>
+<td>删除一个元素</td>
+<td>相当复杂</td>
+<td>list.remove(Object);</td>
+</tr>
+<tr>
+<td>删除所有元素</td>
+<td>？</td>
+<td>list.clear();</td>
+</tr>
+</tbody>
+</table>   
 
+
+<table><thead>
+<tr><th>LinkedList</th> <th>添加元素</th><th>删除元素</th> <th>查看元素</th> </tr></thead>
+<tbody>
+<tr><td>作为链表</td> <td>add()</td><td>remove()</td><td>get()</td> </tr>
+<tr><td>作为队列</td> <td>offer()</td><td>poll()</td><td>peek()</td> </tr>
+<tr><td>作为栈</td> <td>push()</td><td>pop()</td><td>无</td> </tr>
+</tbody></table>
+
+
+<table><thead>
+<tr><th colspan="2">常用方法</th> </tr></thead>
+<tbody>
+<tr><td>add()</td> <td>将指定的元素追加到此列表的末尾</td> </tr>
+<tr><td>add(index, element)</td> <td>在此列表中的指定位置插入指定的元素</td> </tr>
+<tr><td>addFirst()</td> <td>在该列表开头插入指定的元素</td> </tr>
+<tr><td>addLast()</td> <td>将指定的元素追加到此列表的末尾</td> </tr>
+<tr><td>clear()</td> <td>从列表中删除所有元素</td> </tr>
+<tr><td>contains()</td> <td>如果此列表包含指定的元素，则返回 true </td> </tr>
+<tr><td>get()</td> <td>返回此列表中指定位置的元素</td> </tr>
+<tr><td>getFirst()</td> <td>返回此列表中的第一个元素</td> </tr>
+<tr><td>getLast()</td> <td>返回此列表中的最后一个元素</td> </tr>
+<tr><td>indexOf()</td> <td>返回此列表中指定元素的第一次出现的索引，如果此列表不包含元素，则返回-1</td> </tr>
+<tr><td>lastIndexOf()</td> <td>返回此列表中指定元素的最后一次出现的索引，如果此列表不包含元素，则返回-1</td> </tr>
+<tr><td>set(int index, E element)</td> <td>用指定的元素替换此列表中指定位置的元素</td> </tr>
+<tr><td>remove(int index)</td> <td>删除指定位置的节点</td> </tr>
+<tr><td>size()</td><td>返回此列表中的元素数</td> </tr>
+</tbody></table>
             </div>
             <hr/>
 
@@ -1231,7 +1361,7 @@ a2 <span class="token operator">=</span> <span class="token punctuation">{</span
 					    
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">9.1k</span>
+                <span class="white-color">9.8k</span>
 
             
             <br>
