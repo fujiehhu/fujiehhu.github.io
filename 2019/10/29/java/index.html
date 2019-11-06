@@ -828,24 +828,32 @@ a2 <span class="token operator">=</span> <span class="token punctuation">{</span
 <hr>
 <h2 id="int与String的相互转换"><a href="#int与String的相互转换" class="headerlink" title="int与String的相互转换"></a>int与String的相互转换</h2><blockquote>
 <p><font color="#0099ff">int</font> 转 <font color="#0099ff">String</font></p>
+</blockquote>
 <ul>
-<li>num + “”</li>
-<li>String.valueOf(num)</li>
-<li>Integer.toString(num)</li>
+<li><p>num + “”</p>
+</li>
+<li><p>String.valueOf(num)</p>
+</li>
+<li><p>Integer.toString(num)</p>
+</li>
 <li><pre class=" language-java"><code class="language-java"> <span class="token keyword">int</span> num <span class="token operator">=</span> <span class="token number">123</span><span class="token punctuation">;</span>
  String str <span class="token operator">=</span> num <span class="token operator">+</span> <span class="token string">""</span><span class="token punctuation">;</span>
  String str <span class="token operator">=</span> String<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
  String str <span class="token operator">=</span> Integer<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span></code></pre>
-<font color="#0099ff">String</font> 转 <font color="#0099ff">int</font></li>
-<li>Integer.parseInt(str)</li>
-<li>Integer.valueOf(str).intValue()</li>
+<blockquote>
+<p><font color="#0099ff">String</font> 转 <font color="#0099ff">int</font></p>
+</blockquote>
+</li>
+<li><p>Integer.parseInt(str)</p>
+</li>
+<li><p>Integer.valueOf(str).intValue()</p>
+</li>
 <li><pre class=" language-java"><code class="language-java">    String str <span class="token operator">=</span> <span class="token string">"123"</span><span class="token punctuation">;</span>
     <span class="token keyword">int</span> i <span class="token operator">=</span> Integer<span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">int</span> n <span class="token operator">=</span> Integer<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">intValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 </li>
 </ul>
-</blockquote>
-<pre><code> ```</code></pre><hr>
+<hr>
 <h2 id="ArrayList和LinkedList"><a href="#ArrayList和LinkedList" class="headerlink" title="ArrayList和LinkedList"></a>ArrayList和LinkedList</h2><ul>
 <li>大致区别<ul>
 <li>ArrayList是实现了基于动态数组的数据结构，LinkedList是基于链表结构。</li>
@@ -913,8 +921,7 @@ a2 <span class="token operator">=</span> <span class="token punctuation">{</span
 </tr>
 </tbody>
 </table>   
-
-
+&ensp;
 <table><thead>
 <tr><th>LinkedList</th> <th>添加元素</th><th>删除元素</th> <th>查看元素</th> </tr></thead>
 <tbody>
@@ -922,8 +929,7 @@ a2 <span class="token operator">=</span> <span class="token punctuation">{</span
 <tr><td>作为队列</td> <td>offer()</td><td>poll()</td><td>peek()</td> </tr>
 <tr><td>作为栈</td> <td>push()</td><td>pop()</td><td>无</td> </tr>
 </tbody></table>
-
-
+&ensp;
 <table><thead>
 <tr><th colspan="2">常用方法</th> </tr></thead>
 <tbody>
