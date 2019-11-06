@@ -14,16 +14,13 @@
 Java中的length与length()
 与数组操作有关的API方法
 int与String 的相互转换
+Vector、ArrayList和LinkedList
 
 
 面向对象
 类的封装、继承与多态
 抽象类与接口
-Java常用类库
-枚举
-
- Java特性：
-简单 安全 可移植 ">
+Java">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -409,14 +406,14 @@ Java常用类库
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        2.7k
+                        2.8k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        10 分
+                        11 分
                     </div>
                     
                 
@@ -438,6 +435,7 @@ Java常用类库
 <li><a href="##Java中的length与length()">Java中的length与length()</a></li>
 <li><a href="##与数组操作有关的API方法">与数组操作有关的API方法</a></li>
 <li><a href="##int与String的相互转换">int与String 的相互转换</a></li>
+<li><a href="##Vector、ArrayList和LinkedList">Vector、ArrayList和LinkedList</a></li>
 </ul>
 </li>
 <li><a href="##面向对象">面向对象</a></li>
@@ -818,7 +816,7 @@ a2 <span class="token operator">=</span> <span class="token punctuation">{</span
 <ul>
 <li><pre class=" language-java"><code class="language-java">   <span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
    <span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">32</span><span class="token punctuation">,</span><span class="token number">45</span><span class="token punctuation">,</span><span class="token number">32</span><span class="token punctuation">,</span><span class="token number">65</span><span class="token punctuation">,</span><span class="token number">32</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-   Arrays<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Arrays<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
    <span class="token comment" spellcheck="true">//--------------------------</span>
    a <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">32</span><span class="token punctuation">,</span><span class="token number">32</span><span class="token punctuation">,</span><span class="token number">32</span><span class="token punctuation">,</span><span class="token number">45</span><span class="token punctuation">,</span><span class="token number">65</span><span class="token punctuation">}</span></code></pre>
 </li>
@@ -854,7 +852,18 @@ a2 <span class="token operator">=</span> <span class="token punctuation">{</span
 </li>
 </ul>
 <hr>
-<h2 id="ArrayList和LinkedList"><a href="#ArrayList和LinkedList" class="headerlink" title="ArrayList和LinkedList"></a>ArrayList和LinkedList</h2><ul>
+<h2 id="Vector、ArrayList和LinkedList"><a href="#Vector、ArrayList和LinkedList" class="headerlink" title="Vector、ArrayList和LinkedList"></a>Vector、ArrayList和LinkedList</h2><p><a href="https://www.cnblogs.com/zengjiao/p/6244019.html" target="_blank" rel="noopener">List集合及子类</a></p>
+<ul>
+<li>List子类特点<ul>
+<li>ArrayList： 底层结构是数组，查询快，增删慢，线程不安全，效率高</li>
+<li>Vector：    底层结构是数组，查询快，增删慢，线程安全，  效率底</li>
+<li>LinkedList：底层结构是链表，查询慢，增删快，线程不安全，效率高</li>
+</ul>
+</li>
+<li>Vector 与 ArrayList唯一的区别<ul>
+<li>Vector是线程安全的，即它的大部分方法都包含有关键字synchronized，因此，若对于单一线程的应用来说，最好使用ArrayList代替Vector，因为这样效率会快很多；为了保证数据的同步和一致性，可以使用Vector代替ArrayList实现同样的功能。</li>
+</ul>
+</li>
 <li>大致区别<ul>
 <li>ArrayList是实现了基于动态数组的数据结构，LinkedList是基于链表结构。</li>
 <li>对于随机访问的get和set方法，ArrayList要优于LinkedList，因为LinkedList要移动指针。</li>
@@ -1367,7 +1376,7 @@ a2 <span class="token operator">=</span> <span class="token punctuation">{</span
 					    
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">9.8k</span>
+                <span class="white-color">9.9k</span>
 
             
             <br>
