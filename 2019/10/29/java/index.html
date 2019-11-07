@@ -15,9 +15,12 @@
 Java中的length与length()
 与数组操作有关的API方法
 int与String 的相互转换
-Vector、ArrayList和LinkedList
 java字符串的子串的获取和删除
-java字符串的遍历和">
+java字符串的遍历和字符串数组的遍历
+判断字符串是否属于字母 
+
+
+面向对象">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -403,14 +406,14 @@ java字符串的遍历和">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        3.1k
+                        3.5k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        12 分
+                        13 分
                     </div>
                     
                 
@@ -433,7 +436,6 @@ java字符串的遍历和">
 <li><a href="##Java中的length与length()">Java中的length与length()</a></li>
 <li><a href="##与数组操作有关的API方法">与数组操作有关的API方法</a></li>
 <li><a href="##int与String的相互转换">int与String 的相互转换</a></li>
-<li><a href="##Vector、ArrayList和LinkedList">Vector、ArrayList和LinkedList</a></li>
 <li><a href="##java字符串的子串的获取和删除">java字符串的子串的获取和删除</a></li>
 <li><a href="##java-字符串的遍历和字符串数组的遍历">java字符串的遍历和字符串数组的遍历</a></li>
 <li><a href="##判断字符串是否属于字母">判断字符串是否属于字母 </a></li>
@@ -446,6 +448,8 @@ java字符串的遍历和">
 <li><p><a href="##抽象类与接口">抽象类与接口</a></p>
 </li>
 <li><p><a href="##Java常用类库">Java常用类库</a></p>
+</li>
+<li><p><a href="##Java类集框架">Java类集框架</a></p>
 </li>
 <li><p><a href="##枚举">枚举</a></p>
 </li>
@@ -763,6 +767,161 @@ java字符串的遍历和">
 </ul>
 </li>
 </ul>
+<hr>
+<h2 id="Java类集框架"><a href="#Java类集框架" class="headerlink" title="Java类集框架"></a>Java类集框架</h2><p>类集框架又叫做集合框架或<font color="#5CACEE">集合类</font>, 类集框架 本质 上是对基本的 数据 结构（线性表、树等）和算法（查找、排序等）的封装。</p>
+<p>由于基本数据类型不能保存一系列的数据，对其进行扩展便形成了数组；又由于数组长度不可更改，缺乏灵活性，对数组进一步扩展便形成了功能更强大的“类集框架”。数组和类集框架都是一种“容器”，不同的是：</p>
+<ul>
+<li><p>数组的长度时固定的，集合类的长度时可变的；</p>
+</li>
+<li><p>数组用来存放基本数据类型，集合类用来存储对象的引用，<font color="#5CACEE">不能存储基本数据类型</font>，存储的基本数据类型会进行自动类型转换。</p>
+</li>
+<li><p><font color="#00CD66" size="4">HashMap</font></p>
+</li>
+</ul>
+<ul>
+<li><p><font color="#00CD66" size="4">HashSet</font></p>
+<ul>
+<li>HashSet是Set接口的实现类，储存的是<font color="red">无序</font>、<font color="red">唯一的</font>对象。</li>
+<li><font color="#5CACEE">不能存储相同的数据，存储数据时是无序的，HashSet存储元素的顺序并不是按照存入时的顺序</font></li>
+<li><strong>主要方法</strong><ul>
+<li>add():只有set中尚未包含指定元素，则添加指定元素返回true，否则添加失败返回false。</li>
+<li>remove():如果指定元素存在于此 set 中，则将其移除。底层使用HashMap的remove方法删除指定的Entry。</li>
+<li>contains():判断某个元素是否存在于set中。</li>
+<li>clone():调用返回这个集合的浅表副本。</li>
+</ul>
+</li>
+<li>遍历的方法<ul>
+<li>for (String string: hashSet) System.out.print(string);</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><font color="#00CD66" size="4">LinkedHashSet</font></p>
+<ul>
+<li>HashSet下面有一个子类LinkedHashSet，它是链表和哈希表组合的一个数据存储结构。</li>
+<li><font color="#5CACEE">不能存储相同的数据，存储数据时是有序的，LinkedHashSet存储元素的顺序是按照存入时的顺序</font></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><font color="#00CD66" size="4">Vector、ArrayList和LinkedList</font></p>
+<p> <a href="https://www.cnblogs.com/zengjiao/p/6244019.html" target="_blank" rel="noopener">List集合及子类</a></p>
+<ul>
+<li><p>List子类特点</p>
+<ul>
+<li>ArrayList：&ensp; 底层结构是数组，查询快，增删慢，线程不安全，效率高</li>
+<li>Vector：&emsp;&ensp; 底层结构是数组，查询快，增删慢，线程安全，  效率底</li>
+<li>LinkedList：底层结构是链表，查询慢，增删快，线程不安全，效率高</li>
+</ul>
+</li>
+<li><p>Vector 与 ArrayList唯一的区别</p>
+<ul>
+<li>Vector是线程安全的，即它的大部分方法都包含有关键字synchronized，因此，若对于单一线程的应用来说，最好使用ArrayList代替Vector，因为这样效率会快很多；为了保证数据的同步和一致性，可以使用Vector代替ArrayList实现同样的功能。</li>
+</ul>
+</li>
+<li><p>大致区别</p>
+<ul>
+<li>ArrayList是实现了基于动态数组的数据结构，LinkedList是基于链表结构。</li>
+<li>对于随机访问的get和set方法，ArrayList要优于LinkedList，因为LinkedList要移动指针。</li>
+<li>对于新增和删除操作add和remove，LinkedList比较占优势，因为ArrayList要移动数据</li>
+</ul>
+</li>
+<li><p>应用场景</p>
+<ul>
+<li>ArrayList使用在查询比较多，但是插入和删除比较少的情况，而LinkedList用在查询比较少而插入删除比较多的情况</li>
+</ul>
+<table><thead>
+<tr> <th>操作</th> <th>Array</th> <th>ArrayList</th> </tr> </thead>
+<tbody>
+<tr>
+<td>创建 array/ArrayList</td>
+<td>String[] a = new String[10]</td>
+<td>ArrayList<> list = new ArrayList&lt;&gt;();</td>
+</tr>
+<tr>
+<td>访问一个元素</td>
+<td>a[index]</td>
+<td>list.get(index);</td>
+</tr>
+<tr>
+<td>更新一个元素</td>
+<td>a[index] = “London”;</td>
+<td>list.set(index, “London”);</td>
+</tr>
+<tr>
+<td>返回大小</td>
+<td>a.length</td>
+<td>list.size();</td>
+</tr>
+<tr>
+<td>排序</td>
+<td>java.util.Arrays.sort(array)</td>
+<td>java.util.Collections.sort(arraylist)</td>
+</tr>
+<tr>
+<td>添加一个新元素</td>
+<td>相当复杂</td>
+<td>list.add(“London”);</td>
+</tr>
+<tr>
+<td>插入一个新元素</td>
+<td>相当复杂</td>
+<td>list.add(index, “London”);</td>
+</tr>
+<tr>
+<td>删除一个元素</td>
+<td>相当复杂</td>
+<td>list.remove(index);</td>
+</tr>
+<tr>
+<td>删除一个元素</td>
+<td>相当复杂</td>
+<td>list.remove(Object);</td>
+</tr>
+<tr>
+<td>删除所有元素</td>
+<td>？</td>
+<td>list.clear();</td>
+</tr>
+</tbody>
+</table>   
+&ensp;
+<table><thead>
+<tr><th>LinkedList</th> <th>添加元素</th><th>删除元素</th> <th>查看元素</th> </tr></thead>
+<tbody>
+<tr><td>作为链表</td> <td>add()</td><td>remove()</td><td>get()</td> </tr>
+<tr><td>作为队列</td> <td>offer()</td><td>poll()</td><td>peek()</td> </tr>
+<tr><td>作为栈</td> <td>push()</td><td>pop()</td><td>无</td> </tr>
+</tbody></table>
+&ensp;
+<table><thead>
+<tr><th colspan="2">常用方法</th> </tr></thead>
+<tbody>
+<tr><td>add()</td> <td>将指定的元素追加到此列表的末尾</td> </tr>
+<tr><td>add(index, element)</td> <td>在此列表中的指定位置插入指定的元素</td> </tr>
+<tr><td>addFirst()</td> <td>在该列表开头插入指定的元素</td> </tr>
+<tr><td>addLast()</td> <td>将指定的元素追加到此列表的末尾</td> </tr>
+<tr><td>clear()</td> <td>从列表中删除所有元素</td> </tr>
+<tr><td>contains()</td> <td>如果此列表包含指定的元素，则返回 true </td> </tr>
+<tr><td>get()</td> <td>返回此列表中指定位置的元素</td> </tr>
+<tr><td>getFirst()</td> <td>返回此列表中的第一个元素</td> </tr>
+<tr><td>getLast()</td> <td>返回此列表中的最后一个元素</td> </tr>
+<tr><td>indexOf()</td> <td>返回此列表中指定元素的第一次出现的索引，如果此列表不包含元素，则返回-1</td> </tr>
+<tr><td>lastIndexOf()</td> <td>返回此列表中指定元素的最后一次出现的索引，如果此列表不包含元素，则返回-1</td> </tr>
+<tr><td>set(int index, E element)</td> <td>用指定的元素替换此列表中指定位置的元素</td> </tr>
+<tr><td>remove(int index)</td> <td>删除指定位置的节点</td> </tr>
+<tr><td>size()</td><td>返回此列表中的元素数</td> </tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+<li><p><font color="#00CD66" size="4">HashTree</font></p>
+<ul>
+<li></li>
+</ul>
+</li>
+</ul>
+<hr>
 <h2 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h2><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">enum</span> Color<span class="token punctuation">{</span>
    RED<span class="token punctuation">,</span>GREEN<span class="token punctuation">,</span>BLUE<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
@@ -874,118 +1033,12 @@ String<span class="token punctuation">[</span><span class="token punctuation">]<
 </li>
 </ul>
 <hr>
-<h2 id="Vector、ArrayList和LinkedList"><a href="#Vector、ArrayList和LinkedList" class="headerlink" title="Vector、ArrayList和LinkedList"></a>Vector、ArrayList和LinkedList</h2><p><a href="https://www.cnblogs.com/zengjiao/p/6244019.html" target="_blank" rel="noopener">List集合及子类</a></p>
-<ul>
-<li>List子类特点<ul>
-<li>ArrayList：&ensp; 底层结构是数组，查询快，增删慢，线程不安全，效率高</li>
-<li>Vector：&emsp;&ensp; 底层结构是数组，查询快，增删慢，线程安全，  效率底</li>
-<li>LinkedList：底层结构是链表，查询慢，增删快，线程不安全，效率高</li>
-</ul>
-</li>
-<li>Vector 与 ArrayList唯一的区别<ul>
-<li>Vector是线程安全的，即它的大部分方法都包含有关键字synchronized，因此，若对于单一线程的应用来说，最好使用ArrayList代替Vector，因为这样效率会快很多；为了保证数据的同步和一致性，可以使用Vector代替ArrayList实现同样的功能。</li>
-</ul>
-</li>
-<li>大致区别<ul>
-<li>ArrayList是实现了基于动态数组的数据结构，LinkedList是基于链表结构。</li>
-<li>对于随机访问的get和set方法，ArrayList要优于LinkedList，因为LinkedList要移动指针。</li>
-<li>对于新增和删除操作add和remove，LinkedList比较占优势，因为ArrayList要移动数据</li>
-</ul>
-</li>
-<li>应用场景<ul>
-<li>ArrayList使用在查询比较多，但是插入和删除比较少的情况，而LinkedList用在查询比较少而插入删除比较多的情况</li>
-</ul>
-</li>
-</ul>
-<table><thead>
-<tr> <th>操作</th> <th>Array</th> <th>ArrayList</th> </tr> </thead>
-<tbody>
-<tr>
-<td>创建 array/ArrayList</td>
-<td>String[] a = new String[10]</td>
-<td>ArrayList<> list = new ArrayList&lt;&gt;();</td>
-</tr>
-<tr>
-<td>访问一个元素</td>
-<td>a[index]</td>
-<td>list.get(index);</td>
-</tr>
-<tr>
-<td>更新一个元素</td>
-<td>a[index] = “London”;</td>
-<td>list.set(index, “London”);</td>
-</tr>
-<tr>
-<td>返回大小</td>
-<td>a.length</td>
-<td>list.size();</td>
-</tr>
-<tr>
-<td>排序</td>
-<td>java.util.Arrays.sort(array)</td>
-<td>java.util.Collections.sort(arraylist)</td>
-</tr>
-<tr>
-<td>添加一个新元素</td>
-<td>相当复杂</td>
-<td>list.add(“London”);</td>
-</tr>
-<tr>
-<td>插入一个新元素</td>
-<td>相当复杂</td>
-<td>list.add(index, “London”);</td>
-</tr>
-<tr>
-<td>删除一个元素</td>
-<td>相当复杂</td>
-<td>list.remove(index);</td>
-</tr>
-<tr>
-<td>删除一个元素</td>
-<td>相当复杂</td>
-<td>list.remove(Object);</td>
-</tr>
-<tr>
-<td>删除所有元素</td>
-<td>？</td>
-<td>list.clear();</td>
-</tr>
-</tbody>
-</table>   
-&ensp;
-<table><thead>
-<tr><th>LinkedList</th> <th>添加元素</th><th>删除元素</th> <th>查看元素</th> </tr></thead>
-<tbody>
-<tr><td>作为链表</td> <td>add()</td><td>remove()</td><td>get()</td> </tr>
-<tr><td>作为队列</td> <td>offer()</td><td>poll()</td><td>peek()</td> </tr>
-<tr><td>作为栈</td> <td>push()</td><td>pop()</td><td>无</td> </tr>
-</tbody></table>
-&ensp;
-<table><thead>
-<tr><th colspan="2">常用方法</th> </tr></thead>
-<tbody>
-<tr><td>add()</td> <td>将指定的元素追加到此列表的末尾</td> </tr>
-<tr><td>add(index, element)</td> <td>在此列表中的指定位置插入指定的元素</td> </tr>
-<tr><td>addFirst()</td> <td>在该列表开头插入指定的元素</td> </tr>
-<tr><td>addLast()</td> <td>将指定的元素追加到此列表的末尾</td> </tr>
-<tr><td>clear()</td> <td>从列表中删除所有元素</td> </tr>
-<tr><td>contains()</td> <td>如果此列表包含指定的元素，则返回 true </td> </tr>
-<tr><td>get()</td> <td>返回此列表中指定位置的元素</td> </tr>
-<tr><td>getFirst()</td> <td>返回此列表中的第一个元素</td> </tr>
-<tr><td>getLast()</td> <td>返回此列表中的最后一个元素</td> </tr>
-<tr><td>indexOf()</td> <td>返回此列表中指定元素的第一次出现的索引，如果此列表不包含元素，则返回-1</td> </tr>
-<tr><td>lastIndexOf()</td> <td>返回此列表中指定元素的最后一次出现的索引，如果此列表不包含元素，则返回-1</td> </tr>
-<tr><td>set(int index, E element)</td> <td>用指定的元素替换此列表中指定位置的元素</td> </tr>
-<tr><td>remove(int index)</td> <td>删除指定位置的节点</td> </tr>
-<tr><td>size()</td><td>返回此列表中的元素数</td> </tr>
-</tbody></table>
-
 <hr>
 <h2 id="java字符串的子串的获取和删除"><a href="#java字符串的子串的获取和删除" class="headerlink" title="java字符串的子串的获取和删除"></a>java字符串的子串的获取和删除</h2><ul>
 <li><p>获取字符串子串</p>
 <ul>
-<li>sb.substring(5);//返回从指定下标开始截取的子字符串</li>
-<li>sb.substring(2，4);//返回从指定下标开始截取的子字符串</li>
+<li>sb.substring(5); //返回从指定下标开始截取的子字符串</li>
+<li>sb.substring(2，4); //返回从指定下标开始截取的子字符串</li>
 </ul>
 </li>
 <li><p>删除字符或字符串</p>
@@ -1416,7 +1469,7 @@ String<span class="token punctuation">[</span><span class="token punctuation">]<
 					    
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">10.3k</span>
+                <span class="white-color">10.8k</span>
 
             
             <br>
