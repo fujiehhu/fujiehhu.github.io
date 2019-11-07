@@ -406,14 +406,14 @@ java字符串的遍历和字符串数组的遍历
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        3.5k
+                        4.1k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        13 分
+                        16 分
                     </div>
                     
                 
@@ -777,8 +777,69 @@ java字符串的遍历和字符串数组的遍历
 <p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://s2.ax1x.com/2019/11/07/Mkysuq.png" alt="集合框架体系图"></p>
 <p><a href="https://www.cnblogs.com/jing99/p/7057245.html" target="_blank" rel="noopener">java集合继承关系图</a></p>
 <ul>
-<li><font color="#00CD66" size="4">TreeMap</font><br> * </li>
-<li><font color="#00CD66" size="4">HashMap</font></li>
+<li><p><font color="#00CD66" size="4">TreeMap</font></p>
+<ul>
+<li><font color="#5CACEE">底层是二叉树数据结构。线程不同步。可以用于给map集合中的键进行排序。</font></li>
+<li>TreeMap 是由红黑树实现的有序的 key-value 集合</li>
+</ul>
+</li>
+<li><p><font color="#00CD66" size="4">HashMap</font></p>
+<ul>
+<li><a href="https://www.cnblogs.com/ysocean/p/8711071.html#_label2" target="_blank" rel="noopener">JDK1.8源码(七)——java.util.HashMap 类</a></li>
+<li><font color="#5CACEE">底层是哈希表数据结构，允许使用 null 值和 null 键，该集合是不同步的。</font></li>
+<li>定义：HashMap 是一个散列表，它存储的内容是键值对(key-value)映射，而且 key 和 value 都可以为 null</li>
+<li>HashMap 是由数组+链表+红黑树组成（jdk1.8）</li>
+<li><strong>主要方法</strong><ul>
+<li><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://s2.ax1x.com/2019/11/07/MAymo8.png" alt></li>
+<li>遍历元素<ul>
+<li><pre class=" language-java"><code class="language-java"> <span class="token comment" spellcheck="true">//1、分别获取key和value的集合</span>
+ <span class="token keyword">for</span><span class="token punctuation">(</span>String key <span class="token operator">:</span> map<span class="token punctuation">.</span><span class="token function">keySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+ <span class="token keyword">for</span><span class="token punctuation">(</span>Object value <span class="token operator">:</span> map<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+  <span class="token comment" spellcheck="true">//2、获取key集合，然后遍历key，根据key得到 value</span>
+ Set<span class="token operator">&lt;</span>String<span class="token operator">></span> keySet <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">keySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token keyword">for</span><span class="token punctuation">(</span>String str <span class="token operator">:</span> keySet<span class="token punctuation">)</span><span class="token punctuation">{</span>
+     System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>str<span class="token operator">+</span><span class="token string">"-"</span><span class="token operator">+</span>map<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+ <span class="token comment" spellcheck="true">//3、得到 Entry 集合，然后遍历 Entry</span>
+ Set<span class="token operator">&lt;</span>Map<span class="token punctuation">.</span>Entry<span class="token operator">&lt;</span>String<span class="token punctuation">,</span>Object<span class="token operator">>></span> entrySet <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">entrySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token keyword">for</span><span class="token punctuation">(</span>Map<span class="token punctuation">.</span>Entry<span class="token operator">&lt;</span>String<span class="token punctuation">,</span>Object<span class="token operator">></span> entry <span class="token operator">:</span> entrySet<span class="token punctuation">)</span><span class="token punctuation">{</span>
+     System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>entry<span class="token punctuation">.</span><span class="token function">getKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"-"</span><span class="token operator">+</span>entry<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+ <span class="token comment" spellcheck="true">//4、迭代</span>
+ Iterator<span class="token operator">&lt;</span>Map<span class="token punctuation">.</span>Entry<span class="token operator">&lt;</span>String<span class="token punctuation">,</span>Object<span class="token operator">>></span> iterator <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">entrySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">iterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token keyword">while</span><span class="token punctuation">(</span>iterator<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    Map<span class="token punctuation">.</span>Entry<span class="token operator">&lt;</span>String<span class="token punctuation">,</span>Object<span class="token operator">></span> mapEntry <span class="token operator">=</span> iterator<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>mapEntry<span class="token punctuation">.</span><span class="token function">getKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"-"</span><span class="token operator">+</span>mapEntry<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span></code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>put 方法的三种情况<ul>
+<li><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://s2.ax1x.com/2019/11/07/MAcfsA.png" alt="put方法的三种情况"></li>
+</ul>
+</li>
+<li>总结<ul>
+<li>基于JDK1.8的HashMap是由数组+链表+红黑树组成，当链表长度超过 8 时会自动转换成红黑树，当红黑树节点个数小于 6 时，又会转化成链表。相对于早期版本的 JDK HashMap 实现，新增了红黑树作为底层数据结构，在数据量较大且哈希碰撞较多时，能够极大的增加检索的效率。</li>
+<li>允许 key 和 value 都为 null。key 重复会被覆盖，value 允许重复。</li>
+<li>非线程安全</li>
+<li>无序（遍历HashMap得到元素的顺序不是按照插入的顺序）</li>
+</ul>
+</li>
+<li><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://s2.ax1x.com/2019/11/07/MAf44x.png" alt></li>
+</ul>
+</li>
+<li><p><font color="#00CD66" size="4">LinkedHashMap</font></p>
+<ul>
+<li>LinkedHashMap 是有序的，因为 LinkedHashMap 在 HashMap 的基础上单独维护了一个具有所有数据的双向链表，该链表保证了元素迭代的顺序</li>
+<li>LinkedHashMap = HashMap + LinkedList</li>
+</ul>
+</li>
 </ul>
 <ul>
 <li><p><font color="#00CD66" size="4">HashSet</font></p>
@@ -805,9 +866,10 @@ java字符串的遍历和字符串数组的遍历
 </ul>
 </li>
 <li><p><font color="#00CD66" size="4">TreeSet</font></p>
-</li>
-</ul>
 <ul>
+<li>TreeSet是用来排序的, 可以指定一个顺序, 对象存入之后会按照指定的顺序排列</li>
+</ul>
+</li>
 <li><p><font color="#00CD66" size="4">Vector、ArrayList和LinkedList</font></p>
 <p> <a href="https://www.cnblogs.com/zengjiao/p/6244019.html" target="_blank" rel="noopener">List集合及子类</a></p>
 <ul>
@@ -919,11 +981,14 @@ java字符串的遍历和字符串数组的遍历
 
 
 
-
 </li>
 </ul>
 </li>
 </ul>
+<ul>
+<li><font color="#00CD66" size="4">比较</font></li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://s2.ax1x.com/2019/11/07/MAgkQJ.png" alt="比较"></p>
 <hr>
 <h2 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h2><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">enum</span> Color<span class="token punctuation">{</span>
    RED<span class="token punctuation">,</span>GREEN<span class="token punctuation">,</span>BLUE<span class="token punctuation">;</span>
@@ -1472,7 +1537,7 @@ String<span class="token punctuation">[</span><span class="token punctuation">]<
 					    
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">10.8k</span>
+                <span class="white-color">11.3k</span>
 
             
             <br>
