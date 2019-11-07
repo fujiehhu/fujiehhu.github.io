@@ -770,13 +770,15 @@ java字符串的遍历和字符串数组的遍历
 <hr>
 <h2 id="Java类集框架"><a href="#Java类集框架" class="headerlink" title="Java类集框架"></a>Java类集框架</h2><p>类集框架又叫做集合框架或<font color="#5CACEE">集合类</font>, 类集框架 本质 上是对基本的 数据 结构（线性表、树等）和算法（查找、排序等）的封装。</p>
 <p>由于基本数据类型不能保存一系列的数据，对其进行扩展便形成了数组；又由于数组长度不可更改，缺乏灵活性，对数组进一步扩展便形成了功能更强大的“类集框架”。数组和类集框架都是一种“容器”，不同的是：</p>
+<ol>
+<li>数组的长度时固定的，集合类的长度时可变的；</li>
+<li>数组用来存放基本数据类型，集合类用来存储对象的引用，<font color="#5CACEE">不能存储基本数据类型</font>，存储的基本数据类型会进行自动类型转换。</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://s2.ax1x.com/2019/11/07/Mkysuq.png" alt="集合框架体系图"></p>
+<p><a href="https://www.cnblogs.com/jing99/p/7057245.html" target="_blank" rel="noopener">java集合继承关系图</a></p>
 <ul>
-<li><p>数组的长度时固定的，集合类的长度时可变的；</p>
-</li>
-<li><p>数组用来存放基本数据类型，集合类用来存储对象的引用，<font color="#5CACEE">不能存储基本数据类型</font>，存储的基本数据类型会进行自动类型转换。</p>
-</li>
-<li><p><font color="#00CD66" size="4">HashMap</font></p>
-</li>
+<li><font color="#00CD66" size="4">TreeMap</font><br> * </li>
+<li><font color="#00CD66" size="4">HashMap</font></li>
 </ul>
 <ul>
 <li><p><font color="#00CD66" size="4">HashSet</font></p>
@@ -801,6 +803,8 @@ java字符串的遍历和字符串数组的遍历
 <li>HashSet下面有一个子类LinkedHashSet，它是链表和哈希表组合的一个数据存储结构。</li>
 <li><font color="#5CACEE">不能存储相同的数据，存储数据时是有序的，LinkedHashSet存储元素的顺序是按照存入时的顺序</font></li>
 </ul>
+</li>
+<li><p><font color="#00CD66" size="4">TreeSet</font></p>
 </li>
 </ul>
 <ul>
@@ -912,12 +916,11 @@ java字符串的遍历和字符串数组的遍历
 <tr><td>remove(int index)</td> <td>删除指定位置的节点</td> </tr>
 <tr><td>size()</td><td>返回此列表中的元素数</td> </tr>
 </tbody></table>
+
+
+
+
 </li>
-</ul>
-</li>
-<li><p><font color="#00CD66" size="4">HashTree</font></p>
-<ul>
-<li></li>
 </ul>
 </li>
 </ul>
