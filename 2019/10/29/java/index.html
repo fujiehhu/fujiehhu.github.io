@@ -10,17 +10,24 @@
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
     <meta name="description" content="目录
+面向对象
+
+类的封装、继承与多态
+
+抽象类与接口
+
+Java常用类库
+
+Java类集框架
+
+枚举
+
 一些常用函数
 
 Java中的length与length()
 与数组操作有关的API方法
 int与String 的相互转换
-java字符串的子串的获取和删除
-java字符串的遍历和字符串数组的遍历
-判断字符串是否属于字母 
-
-
-面向对象">
+java字符">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -431,16 +438,6 @@ java字符串的遍历和字符串数组的遍历
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ul>
-<li><p><a href="#以下为一些方法">一些常用函数</a></p>
-<ul>
-<li><a href="##Java中的length与length()">Java中的length与length()</a></li>
-<li><a href="##与数组操作有关的API方法">与数组操作有关的API方法</a></li>
-<li><a href="##int与String的相互转换">int与String 的相互转换</a></li>
-<li><a href="##java字符串的子串的获取和删除">java字符串的子串的获取和删除</a></li>
-<li><a href="##java-字符串的遍历和字符串数组的遍历">java字符串的遍历和字符串数组的遍历</a></li>
-<li><a href="##判断字符串是否属于字母">判断字符串是否属于字母 </a></li>
-</ul>
-</li>
 <li><p><a href="##面向对象">面向对象</a></p>
 </li>
 <li><p><a href="##类的封装、继承与多态">类的封装、继承与多态</a></p>
@@ -452,6 +449,16 @@ java字符串的遍历和字符串数组的遍历
 <li><p><a href="##Java类集框架">Java类集框架</a></p>
 </li>
 <li><p><a href="##枚举">枚举</a></p>
+</li>
+<li><p><a href="#以下为一些方法">一些常用函数</a></p>
+<ul>
+<li><a href="##Java中的length与length()">Java中的length与length()</a></li>
+<li><a href="##与数组操作有关的API方法">与数组操作有关的API方法</a></li>
+<li><a href="##int与String的相互转换">int与String 的相互转换</a></li>
+<li><a href="##java字符串的子串的获取和删除">java字符串的子串的获取和删除</a></li>
+<li><a href="##java-字符串的遍历和字符串数组的遍历">java字符串的遍历和字符串数组的遍历</a></li>
+<li><a href="##判断字符串是否属于字母">判断字符串是否属于字母 </a></li>
+</ul>
 </li>
 </ul>
 <p><font size="4"> </font><br>Java特性：</p>
@@ -1050,7 +1057,7 @@ String<span class="token punctuation">[</span><span class="token punctuation">]<
 <hr>
 <h2 id="判断字符串是否属于字母"><a href="#判断字符串是否属于字母" class="headerlink" title="判断字符串是否属于字母"></a>判断字符串是否属于字母</h2><pre class=" language-java"><code class="language-java">String s <span class="token operator">=</span> <span class="token string">"Hello, my name is John"</span><span class="token punctuation">;</span>
 <span class="token keyword">char</span> c <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">'a'</span><span class="token operator">&lt;</span> c <span class="token operator">&amp;&amp;</span> c <span class="token operator">&lt;</span> <span class="token string">'z'</span><span class="token operator">||</span> <span class="token string">'A'</span><span class="token operator">&lt;</span> c <span class="token operator">&amp;&amp;</span> c <span class="token operator">&lt;</span> <span class="token string">'Z'</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span></code></pre>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">'a'</span><span class="token operator">&lt;=</span> c <span class="token operator">&amp;&amp;</span> c <span class="token operator">&lt;=</span> <span class="token string">'z'</span><span class="token operator">||</span> <span class="token string">'A'</span><span class="token operator">&lt;=</span> c <span class="token operator">&amp;&amp;</span> c <span class="token operator">&lt;=</span>  <span class="token string">'Z'</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span></code></pre>
 <hr>
 <h2 id="与数组操作有关的API方法"><a href="#与数组操作有关的API方法" class="headerlink" title="与数组操作有关的API方法"></a>与数组操作有关的API方法</h2><ul>
 <li><p>数组的拷贝 <font color="red">System.arraycopy(source,0,dest,0,x)</font></p>
@@ -1537,7 +1544,7 @@ String<span class="token punctuation">[</span><span class="token punctuation">]<
 					    
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">11.3k</span>
+                <span class="white-color">12.5k</span>
 
             
             <br>

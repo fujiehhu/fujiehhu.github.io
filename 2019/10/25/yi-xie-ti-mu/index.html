@@ -10,14 +10,15 @@
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
     <meta name="description" content="目录
-面试题链接
+面试问答题链接
+错题
 
 假设你正在爬楼梯。需要 n 阶你才能到达楼顶。
 每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？
 注意：给定 n 是一个正整数。
 
 动态规划
-from functools import lru_ca">
+from functools import l">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -403,14 +404,14 @@ from functools import lru_ca">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        668
+                        1.8k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        2 分
+                        7 分
                     </div>
                     
                 
@@ -428,7 +429,8 @@ from functools import lru_ca">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ul>
-<li><a href="#面试题链接">面试题链接</a></li>
+<li><a href="#面试问答题链接">面试问答题链接</a></li>
+<li><a href="#小知识点与错题">错题</a></li>
 </ul>
 <table><tr><td bgcolor="00FF7F">假设你正在爬楼梯。需要 n 阶你才能到达楼顶。
 每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？
@@ -518,7 +520,6 @@ from functools import lru_ca">
                 <span class="token keyword">return</span> <span class="token boolean">False</span>       
         <span class="token keyword">return</span> <span class="token boolean">True</span></code></pre>
 <hr>
-<hr>
 <table><tr><td bgcolor="00FF7F">给定一个非空数组，返回此数组中第三大的数。如果不存在，则返回数组中最大的数。要求算法时间复杂度必须是O(n)。</td></tr></table>
 
 <p><strong><center><font size="4" color="red"> 借用TreeSet（红黑树） O(n)</font></center></strong></p>
@@ -536,10 +537,119 @@ from functools import lru_ca">
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
 <hr>
-<h1 id="面试题链接"><a href="#面试题链接" class="headerlink" title="面试题链接"></a>面试题链接</h1><ul>
+<hr>
+<table><tr><td bgcolor="00FF7F">学校在拍年度纪念照时，一般要求学生按照 非递减 的高度顺序排列。
+请你返回至少有多少个学生没有站在正确位置数量。该人数指的是：能让所有学生以 非递减 高度排列的必要移动人数。
+</td></tr></table>
+
+<p><strong><center><font size="4" color="red"> 排序，然后比较有多少个位置不同</font></center></strong></p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">heightChecker</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> heights<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> res<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span>heights<span class="token punctuation">.</span>length<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> count<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span><span class="token function">arraycopy</span><span class="token punctuation">(</span>heights<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> res<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> heights<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+        java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Arrays<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>heights<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>heights<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>heights<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">!=</span>res<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                count<span class="token operator">++</span><span class="token punctuation">;</span>    
+            <span class="token punctuation">}</span>   
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> count<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<hr>
+<h1 id="面试问答题链接"><a href="#面试问答题链接" class="headerlink" title="面试问答题链接"></a>面试问答题链接</h1><ul>
 <li><a href="https://blog.csdn.net/qq_30225725/article/details/88020157" target="_blank" rel="noopener">java中list，set，map集合的区别，及面试要点</a></li>
 <li></li>
 </ul>
+<hr>
+<h1 id="小知识点与错题"><a href="#小知识点与错题" class="headerlink" title="小知识点与错题"></a>小知识点与错题</h1><ul>
+<li><p>&lt;&lt; 表示左移位; &gt;&gt; 表示带符号右移位; &gt;&gt;&gt; 表示无符号右移; 没有&lt;&lt;&lt; 因为&lt;&lt;后右边总是补0</p>
+</li>
+<li><p>&amp;运算符：两个数都转为二进制，然后从两个数的最高位进行与运算，两个都为真（1），结果才为真（1），否则为假（0）。</p>
+<ul>
+<li>13：01101， 17：10001 结果：00001，既为1</li>
+</ul>
+</li>
+<li><p>并不是静态块最先初始化,而是静态域.(BM：啊!多么痛的领悟!) 而静态域中包含静态变量、静态块和静态方法,其中需要初始化的是静态变量和静态块.而他们两个的初始化顺序是靠他们俩的位置决定的。</p>
+<pre class=" language-java"><code class="language-java">  <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">B</span>
+  <span class="token punctuation">{</span>
+      <span class="token keyword">public</span> <span class="token keyword">static</span> B t1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">B</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">public</span> <span class="token keyword">static</span> B t2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">B</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">{</span>
+          System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"构造块"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">static</span>
+      <span class="token punctuation">{</span>
+          System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"静态块"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span>
+      <span class="token punctuation">{</span>
+          B t <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">B</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span></code></pre>
+<p>  初始化顺序是 t1 t2 静态块</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li>抽象类</li>
+</ul>
+<p>特点:<br>1.抽象类中可以构造方法</p>
+<p>2.抽象类中可以存在普通属性，方法，静态属性和方法。</p>
+<p>3.抽象类中可以存在抽象方法。</p>
+<p>4.如果一个类中有一个抽象方法，那么当前类一定是抽象类；抽象类中不一定有抽象方法。</p>
+<p>5.抽象类中的抽象方法，需要有子类实现，如果子类不实现，则子类也需要定义为抽象的。</p>
+<ul>
+<li>接口</li>
+</ul>
+<p>1.在接口中只有方法的声明，没有方法体。</p>
+<p>2.在接口中只有常量，因为定义的变量，在编译的时候都会默认加上<br>public static final </p>
+<p>3.在接口中的方法，永远都被public来修饰。</p>
+<p>4.接口中没有构造方法，也不能实例化接口的对象。</p>
+<p>5.接口可以实现多继承</p>
+<p>6.接口中定义的方法都需要有实现类来实现，如果实现类不能实现接口中的所有方法,则实现类定义为抽象类</p>
+<hr>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span><span class="token punctuation">{</span>
+<span class="token keyword">static</span><span class="token punctuation">{</span>
+   <span class="token keyword">int</span> x<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//局部变量</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">static</span> <span class="token keyword">int</span> x<span class="token punctuation">,</span>y<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//静态变量，int类型 默认初始值为0</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+   x<span class="token operator">--</span><span class="token punctuation">;</span>
+   <span class="token function">myMethod</span><span class="token punctuation">(</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+   System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>x<span class="token operator">+</span>y<span class="token operator">+</span> <span class="token operator">++</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">myMethod</span><span class="token punctuation">(</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
+  y<span class="token operator">=</span>x<span class="token operator">++</span> <span class="token operator">+</span> <span class="token operator">++</span>x<span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<hr>
+<ul>
+<li>aa =false</li>
+</ul>
+<hr>
+<ul>
+<li>1如果是本类使用，可以直接就用静态变量名。2如果是其他类使用，可以使用类名来调用，也可以创建一个实例对象来调用。3如果静态变量所在的类是静态类，那么不管在本类里或者在其他外部类，都可以直接使用静态变量名。</li>
+</ul>
+<hr>
+<ul>
+<li>try-catch-finally 规则( 异常处理语句的语法规则 ）<br>1)  必须在 try 之后添加 catch 或 finally 块。try 块后可同时接 catch 和 finally 块，但至少有一个块。</li>
+</ul>
+<p>2) 必须遵循块顺序：若代码同时使用 catch 和 finally 块，则必须将 catch 块放在 try 块之后。<br>3) catch 块与相应的异常类的类型相关。<br>4) 一个 try 块可能有多个 catch 块。若如此，则执行第一个匹配块。即Java虚拟机会把实际抛出的异常对象依次和各个catch代码块声明的异常类型匹配，如果异常对象为某个异常类型或 其子类的实例，就执行这个catch代码块，不会再执行其他的 catch代码块<br>5) 可嵌套 try-catch-finally 结构。<br>6) 在 try-catch-finally 结构中，可重新抛出异常。<br>7) 除了下列情况，总将执行 finally 做为结束： JVM 过早终止（调用 System.exit(int)）；在 finally 块中抛出一个未处理的异常；计算机断电、失火、或遭遇病毒攻击</p>
+<p>由此可以看出，catch只会匹配一个，因为只要匹配了一个，虚拟机就会使整个语句退出</p>
+<hr>
+<ul>
+<li><p>1、jps：查看本机java进程信息。</p>
+<p>2、jstack：打印线程的栈信息，制作线程dump文件。</p>
+<p>3、jmap：打印内存映射，制作堆dump文件</p>
+<p>4、jstat：性能监控工具</p>
+<p>5、jhat：内存分析工具</p>
+<p>6、jconsole：简易的可视化控制台</p>
+<p>7、jvisualvm：功能强大的控制台</p>
+</li>
+</ul>
+<hr>
 
             </div>
             <hr/>
@@ -959,7 +1069,7 @@ from functools import lru_ca">
 					    
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">11.3k</span>
+                <span class="white-color">12.5k</span>
 
             
             <br>
