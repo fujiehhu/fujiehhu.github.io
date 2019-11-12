@@ -404,7 +404,7 @@ from functools import l">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        2.3k
+                        2.5k
                     </div>
                     
 
@@ -695,7 +695,27 @@ from functools import l">
 </li>
 </ul>
 <hr>
+<ul>
+<li>return i++ 比较特殊，先是return i；然后i++。</li>
+<li>return i=i+ 1 则不同，它是先让i=i+1，再return。</li>
+</ul>
 <hr>
+<p>下列Java代码中的变量a、b、c分别在内存的____存储区存放。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">A</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> String a <span class="token operator">=</span> “aa”<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">methodB</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        String b <span class="token operator">=</span> “bb”<span class="token punctuation">;</span>
+        <span class="token keyword">final</span> String c <span class="token operator">=</span> “cc”<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">//a是类中的成员变量，存放在堆区</span>
+<span class="token comment" spellcheck="true">//b、c都是方法中的局部变量，存放在栈区</span></code></pre>
+<ul>
+<li><p>堆区：只存放类对象，线程共享；</p>
+<p>  方法区：又叫静态存储区，存放class文件和静态数据，线程共享;</p>
+<p>  栈区：存放方法局部变量，基本类型变量区、执行环境上下文、操作指令区，线程不共享;</p>
+</li>
+</ul>
 <hr>
 
             </div>
@@ -1116,7 +1136,7 @@ from functools import l">
 					    
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">13.3k</span>
+                <span class="white-color">15.8k</span>
 
             
             <br>

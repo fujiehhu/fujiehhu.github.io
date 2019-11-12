@@ -9,7 +9,8 @@
     <meta name="keywords" content="java, HHU">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="目录
+    <meta name="description" content="
+目录
 面向对象
 
 类的封装、继承与多态
@@ -24,12 +25,18 @@ Java类集框架
 
 枚举
 
+多线程
+
+补充
+
+JVM
+正则表达式
+
+
 一些常用函数
 
 Java中的length与length()
-与数组操作有关的API方法
-int与String 的相互转换
-">
+与数组操作有关的A">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -415,14 +422,14 @@ int与String 的相互转换
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        4.4k
+                        6.8k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        17 分
+                        26 分
                     </div>
                     
                 
@@ -439,7 +446,8 @@ int与String 的相互转换
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ul>
+                <hr>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ul>
 <li><p><a href="##面向对象">面向对象</a></p>
 </li>
 <li><p><a href="##类的封装、继承与多态">类的封装、继承与多态</a></p>
@@ -454,6 +462,14 @@ int与String 的相互转换
 </li>
 <li><p><a href="##枚举">枚举</a></p>
 </li>
+<li><p><a href="##多线程">多线程</a></p>
+</li>
+<li><p><a href="#补充">补充</a></p>
+<ul>
+<li><a href="##JVM">JVM</a></li>
+<li><a href="##正则表达式">正则表达式</a></li>
+</ul>
+</li>
 <li><p><a href="#以下为一些方法">一些常用函数</a></p>
 <ul>
 <li><a href="##Java中的length与length()">Java中的length与length()</a></li>
@@ -465,6 +481,7 @@ int与String 的相互转换
 </ul>
 </li>
 </ul>
+<hr>
 <p><font size="4"> </font><br>Java特性：</p>
 <p>简单 安全 可移植 面向对象 健壮 多线程 体系结构中立 解释执行 高性能 分布式 动态</p>
 <hr>
@@ -682,9 +699,12 @@ int与String 的相互转换
 </ul>
 </li>
 <li>接口<ul>
+<li>接口实现 implements ， 定义接口 interface</li>
 <li>接口里的数据成员必须被初始化，且数据成员均为常量</li>
-<li>接口里的方法必须<font color="red">全部声明为abstract（抽象方法）</font></li>
+<li>接口里的方法必须<font color="red">全部声明为abstract（抽象方法）</font>，不能像抽象类一样有一般的方法，必须全部是抽象方法</li>
 <li><font color="#8470FF">接口是可以被实例化的，但是不能被直接实例化，只能通过其子类进行实例化</font></li>
+<li>JDK8开始，接口中可以定义有方法体的方法，方法必须被default和static修饰。除此之外，其他方法都是抽象方法</li>
+<li></li>
 </ul>
 </li>
 </ul>
@@ -794,7 +814,7 @@ int与String 的相互转换
 <li>数组的长度时固定的，集合类的长度时可变的；</li>
 <li>数组用来存放基本数据类型，集合类用来存储对象的引用，<font color="#5CACEE">不能存储基本数据类型</font>，存储的基本数据类型会进行自动类型转换。</li>
 </ol>
-<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://s2.ax1x.com/2019/11/07/Mkysuq.png" alt="集合框架体系图"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://s2.ax1x.com/2019/11/07/Mkysuq.png" alt="集合框架体系图"><br><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://s2.ax1x.com/2019/11/12/M3vxaV.gif" alt="集合框架图"><br>* 上述类图中，实线边框的是实现类，比如ArrayList，LinkedList，HashMap等，虚线边框的是抽象类，比如AbstractCollection，AbstractList，AbstractMap等，而点线边框的是接口，比如Collection，Iterator，List等。</p>
 <p><a href="https://www.cnblogs.com/jing99/p/7057245.html" target="_blank" rel="noopener">java集合继承关系图</a></p>
 <ul>
 <li><p><font color="#00CD66" size="4">TreeMap</font></p>
@@ -1053,6 +1073,53 @@ int与String 的相互转换
    <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
 <hr>
+<h2 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h2><ul>
+<li>Java多线程实现方式主要有四种：继承Thread类、实现Runnable接口、实现Callable接口通过FutureTask包装器来创建Thread线程、使用ExecutorService、Callable、Future实现有返回结果的多线程。<br>其中前两种方式线程执行完后都没有返回值，后两种是带返回值的。</li>
+</ul>
+<hr>
+<h1 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h1><h2 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h2><p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://s2.ax1x.com/2019/11/12/M3qhMq.png" alt><br><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://s2.ax1x.com/2019/11/12/M3qTdU.png" alt="JVM 内存模型图"><br><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://s2.ax1x.com/2019/11/12/M3qLW9.png" alt></p>
+<ul>
+<li><p>大多数 JVM 将内存区域划分为<strong>Method Area（Non-Heap）（方法区）</strong> ,<strong>Heap（堆）</strong> , <strong>Program Counter Register（程序计数器）</strong> ,   <strong>VM Stack（虚拟机栈，也有翻译成JAVA 方法栈的）</strong>,<strong>Native Method Stack  （ 本地方法栈 ）</strong>，其中<strong>Method Area</strong> 和  <strong>Heap</strong> 是线程共享的  ，<strong>VM Stack</strong>，<strong>Native Method Stack</strong>  和<strong>Program Counter Register</strong>  是非线程共享的。为什么分为 线程共享和非线程共享的呢?请继续往下看。</p>
+<p> 首先我们熟悉一下一个一般性的 Java 程序的工作过程。一个 Java 源程序文件，会被编译为字节码文件（以 class 为扩展名），每个java程序都需要运行在自己的JVM上，然后告知 JVM 程序的运行入口，再被 JVM 通过字节码解释器加载运行。那么程序开始运行后，都是如何涉及到各内存区域的呢？</p>
+<p> 概括地说来，JVM初始运行的时候都会分配好 <strong>Method Area（方法区）</strong> 和<strong>Heap（堆）</strong> ，而JVM 每遇到一个线程，就为其分配一个<strong>Program Counter Register（程序计数器）</strong>,   <strong>VM Stack（虚拟机栈）</strong>和<strong>Native Method Stack  （本地方法栈）</strong>， 当线程终止时，三者（虚拟机栈，本地方法栈和程序计数器）所占用的内存空间也会被释放掉。这也是为什么我把内存区域分为线程共享和非线程共享的原因，非线程共享的那三个区域的生命周期与所属线程相同，而线程共享的区域与JAVA程序运行的生命周期相同，所以这也是系统垃圾回收的场所只发生在线程共享的区域（实际上对大部分虚拟机来说知发生在Heap上）的原因</p>
+</li>
+</ul>
+<hr>
+<h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><ul>
+<li>大写表示“非”，d表示digit数字。非数字就是\D, w表示word，非单词就是\W<table>  <tbody>   
+<tr>    <td> 元字符 </td>    <td> 描述 </td>  </tr>  
+<tr>    <td>    \   </td>    <td> 将下一个字符标记符、或一个向后引用、或一个八进制转义符。例如，“\\n”匹配\n。“\n”匹配换行符。序列“\\”匹配“\”而“\(”则匹配“(”。即相当于多种编程语言中都有的“转义字符”的概念。          </td>   </tr>   
+<tr>    <td>   ^  </td>    <td> 匹配输入字符串的开始位置。如果设置了RegExp对象的Multiline属性，^也匹配“\n”或“\r”之后的位置。          </td>   </tr>   <tr>    <td>   $  </td>    <td> 匹配输入字符串的结束位置。如果设置了RegExp对象的Multiline属性，$也匹配“\n”或“\r”之前的位置。          </td>   </tr>   <tr>    <td>   *  </td>    <td> 匹配前面的子表达式任意次。例如，zo*能匹配“z”，也能匹配“zo”以及“zoo”。*等价于o{0,}          </td>   </tr>   
+<tr>    <td>   +  </td>    <td> 匹配前面的子表达式一次或多次(大于等于1次）。例如，“zo+”能匹配“zo”以及“zoo”，但不能匹配“z”。+等价于{1,}。    </td></tr>  <tr>    <td>   ?  </td>    <td> 匹配前面的子表达式零次或一次。例如，“do(es)?”可以匹配“do”或“does”中的“do”。?等价于{0,1}。          </td>   </tr>   <tr>    <td>  {n} </td>    <td> n是一个非负整数。匹配确定的n次。例如，“o{2}”不能匹配“Bob”中的“o”，但是能匹配“food”中的两个o。          </td>   </tr>   <tr>    <td>  {n,}</td>    <td> n是一个非负整数。至少匹配n次。例如，“o{2,}”不能匹配“Bob”中的“o”，但能匹配“foooood”中的所有o。“o{1,}”等价于“o+”。“o{0,}”则等价于“o*”。          </td>   </tr>   
+<tr>    <td>  {n,m} </td>    <td>m和n均为非负整数，其中n&lt;=m。最少匹配n次且最多匹配m次。例如，“o{1,3}”将匹配“fooooood”中的前三个o为一组，后三个o为一组。“o{0,1}”等价于“o?”。请注意在逗号和两个数之间不能有空格。          </td>   </tr>   
+<tr>    <td>  ?   </td>    <td> 当该字符紧跟在任何一个其他限制符（*,+,?，{n}，{n,}，{n,m}）后面时，匹配模式是非贪婪的。非贪婪模式尽可能少的匹配所搜索的字符串，而默认的贪婪模式则尽可能多的匹配所搜索的字符串。例如，对于字符串“oooo”，“o+”将尽可能多的匹配“o”，得到结果[“oooo”]，而“o+?”将尽可能少的匹配“o”，得到结果 ['o', 'o', 'o', 'o']          </td>   </tr>   
+<tr>    <td>  .点  </td>    <td> 匹配除“\r\n”之外的任何单个字符。要匹配包括“\r\n”在内的任何字符，请使用像“[\s\S]”的模式。          </td>   </tr>   <tr>    <td>  (pattern)      </td>    <td>            匹配pattern并获取这一匹配。所获取的匹配可以从产生的Matches集合得到，在VBScript中使用SubMatches集合，在JScript中则使用$0…$9属性。要匹配圆括号字符，请使用“\(”或“\)”。          </td>   </tr>   
+<tr>    <td>  (?:pattern)      </td>    <td>  非获取匹配，匹配pattern但不获取匹配结果，不进行存储供以后使用。这在使用或字符“(|)”来组合一个模式的各个部分时很有用。例如“industr(?:y|ies)”就是一个比“industry|industries”更简略的表达式。          </td>   </tr>   
+<tr>    <td>  (?=pattern)       </td>    <td>   非获取匹配，正向肯定预查，在任何匹配pattern的字符串开始处匹配查找字符串，该匹配不需要获取供以后使用。例如，“Windows(?=95|98|NT|2000)”能匹配“Windows2000”中的“Windows”，但不能匹配“Windows3.1”中的“Windows”。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始。          </td>   </tr>   
+<tr>    <td>   (?!pattern)       </td>    <td>   非获取匹配，正向否定预查，在任何不匹配pattern的字符串开始处匹配查找字符串，该匹配不需要获取供以后使用。例如“Windows(?!95|98|NT|2000)”能匹配“Windows3.1”中的“Windows”，但不能匹配“Windows2000”中的“Windows”。          </td>   </tr>   <tr>    <td>            (?&lt;=pattern)       </td>    <td>            非获取匹配，反向肯定预查，与正向肯定预查类似，只是方向相反。例如，“(?&lt;=95|98|NT|2000)Windows”能匹配“2000Windows”中的“Windows”，但不能匹配“3.1Windows”中的“Windows”。          </td>   </tr>   
+<tr>    <td> (?&lt;!pattern)  </td>    <td>  非获取匹配，反向否定预查，与正向否定预查类似，只是方向相反。例如“(?&lt;!95|98|NT|2000)Windows”能匹配“3.1Windows”中的“Windows”，但不能匹配“2000Windows”中的“Windows”。这个地方不正确，有问题                  此处用或任意一项都不能超过2位，如“(?&lt;!95|98|NT|20)Windows正确，“(?&lt;!95|980|NT|20)Windows 报错，若是单独使用则无限制，如(?&lt;!2000)Windows 正确匹配          </td>   </tr> <tr>    <td>            x|y          </td>    <td>            匹配x或y。例如，“z|food”能匹配“z”或“food”(此处请谨慎)。“[zf]ood”则匹配“zood”或“food”。          </td>   </tr>   
+<tr>    <td>    [xyz]  </td>    <td>  字符集合。匹配所包含的任意一个字符。例如，“[abc]”可以匹配“plain”中的“a”。          </td>   </tr>   
+<tr>    <td>    [^xyz]    </td>    <td>    负值字符集合。匹配未包含的任意字符。例如，“[^abc]”可以匹配“plain”中的“plin”。          </td>   </tr> <tr>  <td>    [a-z]   </td>    <td>      字符范围。匹配指定范围内的任意字符。例如，“[a-z]”可以匹配“a”到“z”范围内的任意小写字母字符。  注意:只有连字符在字符组内部时,并且出现在两个字符之间时,才能表示字符的范围; 如果出字符组的开头,则只能表示连字符本身.          </td>   </tr>   
+<tr>    <td>   [^a-z] </td>    <td>    负值字符范围。匹配任何不在指定范围内的任意字符。例如，“[^a-z]”可以匹配任何不在“a”到“z”范围内的任意字符。          </td>   </tr>   
+<tr>    <td>     \b   </td>    <td>   匹配一个单词边界，也就是指单词和空格间的位置（即正则表达式的“匹配”有两种概念，一种是匹配字符，一种是匹配位置，这里的\b就是匹配位置的）。例如，“er\b”可以匹配“never”中的“er”，但不能匹配“verb”中的“er”。          </td>   </tr>   
+<tr>    <td>   \B    </td>    <td>   匹配非单词边界。“er\B”能匹配“verb”中的“er”，但不能匹配“never”中的“er”。          </td>   </tr>   
+<tr>    <td>   \cx   </td>    <td>  匹配由x指明的控制字符。例如，\cM匹配一个Control-M或回车符。x的值必须为A-Z或a-z之一。否则，将c视为一个原义的“c”字符。          </td>   </tr>   
+<tr>    <td>    \d </td>    <td>匹配一个数字字符。等价于[0-9]。grep 要加上-P，perl正则支持          </td>   </tr>   
+<tr>    <td>    \D </td>    <td>匹配一个非数字字符。等价于[^0-9]。grep要加上-P，perl正则支持          </td>   </tr>   
+<tr>    <td>    \f </td>    <td> 匹配一个换页符。等价于\x0c和\cL。          </td>   </tr>   
+<tr>    <td>    \n </td>    <td> 匹配一个换行符。等价于\x0a和\cJ。          </td>   </tr>   
+<tr>    <td>    \r </td>    <td> 匹配一个回车符。等价于\x0d和\cM。          </td>   </tr>   
+<tr>    <td>    \s </td>    <td> 匹配任何不可见字符，包括空格、制表符、换页符等等。等价于[ \f\n\r\t\v]。   </td>   </tr> 
+<tr>    <td>    \S </td>    <td> 匹配任何可见字符。等价于[^ \f\n\r\t\v]。          </td>   </tr>   
+<tr>    <td>    \t </td>    <td> 匹配一个制表符。等价于\x09和\cI。          </td>   </tr>   
+<tr>    <td>    \v </td>    <td> 匹配一个垂直制表符。等价于\x0b和\cK。          </td>   </tr>   
+<tr>    <td>    \w </td>    <td> 匹配包括下划线的任何单词字符。类似但不等价于“[A-Za-z0-9_]”，这里的&quot;单词&quot;字符使用Unicode字符集。</td> </tr>  
+<tr>    <td>    \W </td>    <td> 匹配任何非单词字符。等价于“[^A-Za-z0-9_]”。          </td>   </tr>  
+</tbody> </table>
+
+
+</li>
+</ul>
 <h1 id="以下为一些方法"><a href="#以下为一些方法" class="headerlink" title="以下为一些方法"></a>以下为一些方法</h1><h2 id="Java中的length与length"><a href="#Java中的length与length" class="headerlink" title="Java中的length与length()"></a>Java中的length与length()</h2><ul>
 <li><p>length 是【属性】</p>
 <ul>
@@ -1576,7 +1643,7 @@ String<span class="token punctuation">[</span><span class="token punctuation">]<
 					    
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">13.3k</span>
+                <span class="white-color">15.8k</span>
 
             
             <br>
