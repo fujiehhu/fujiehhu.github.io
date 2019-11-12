@@ -18,6 +18,8 @@
 
 Java常用类库
 
+异常处理
+
 Java类集框架
 
 枚举
@@ -27,7 +29,7 @@ Java类集框架
 Java中的length与length()
 与数组操作有关的API方法
 int与String 的相互转换
-java字符">
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -413,14 +415,14 @@ java字符">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        4.1k
+                        4.4k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        16 分
+                        17 分
                     </div>
                     
                 
@@ -445,6 +447,8 @@ java字符">
 <li><p><a href="##抽象类与接口">抽象类与接口</a></p>
 </li>
 <li><p><a href="##Java常用类库">Java常用类库</a></p>
+</li>
+<li><p><a href="##异常处理">异常处理</a></p>
 </li>
 <li><p><a href="##Java类集框架">Java类集框架</a></p>
 </li>
@@ -775,6 +779,15 @@ java字符">
 </li>
 </ul>
 <hr>
+<h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://s2.ax1x.com/2019/11/12/M1EFDe.png" alt><br></p>
+<ul>
+<li><p><font color="blue">运行时异常</font>:都是RuntimeException类及其子类异常，如NullPointerException(空指针异常)、IndexOutOfBoundsException(下标越界异常)等，<font color="red">这些异常是不检查异常</font>，程序中可以选择捕获处理，也可以不处理。这些异常一般是由程序逻辑错误引起的，程序应该从逻辑角度尽可能避免这类异常的发生。</p>
+<p> <strong>运行时异常的特点是Java编译器不会检查它，也就是说，当程序中可能出现这类异常，即使没有用try-catch语句捕获它，也没有用throws子句声明抛出它，也会编译通过。</strong></p>
+</li>
+<li><p><font color="blue">非运行时异常 （编译异常）</font>： 是RuntimeException以外的异常，类型上都属于Exception类及其子类。从程序语法角度讲是必须进行处理的异常，如果不处理，程序就不能编译通过。如IOException、SQLException等以及用户自定义的Exception异常，一般情况下不自定义<font color="red">检查异常</font>。</p>
+</li>
+</ul>
+<hr>
 <h2 id="Java类集框架"><a href="#Java类集框架" class="headerlink" title="Java类集框架"></a>Java类集框架</h2><p>类集框架又叫做集合框架或<font color="#5CACEE">集合类</font>, 类集框架 本质 上是对基本的 数据 结构（线性表、树等）和算法（查找、排序等）的封装。</p>
 <p>由于基本数据类型不能保存一系列的数据，对其进行扩展便形成了数组；又由于数组长度不可更改，缺乏灵活性，对数组进一步扩展便形成了功能更强大的“类集框架”。数组和类集框架都是一种“容器”，不同的是：</p>
 <ol>
@@ -997,63 +1010,99 @@ java字符">
 </ul>
 <p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://s2.ax1x.com/2019/11/07/MAgkQJ.png" alt="比较"></p>
 <hr>
-<h2 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h2><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">enum</span> Color<span class="token punctuation">{</span>
-   RED<span class="token punctuation">,</span>GREEN<span class="token punctuation">,</span>BLUE<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span><span class="token punctuation">{</span>
-   <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-      Color c <span class="token operator">=</span> Color<span class="token punctuation">.</span>RED<span class="token punctuation">;</span>
-      System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
-   <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span class="token comment" spellcheck="true">// RED</span>
-
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test1</span><span class="token punctuation">{</span>
-   <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-      <span class="token keyword">switch</span><span class="token punctuation">(</span>Color<span class="token punctuation">.</span>RED<span class="token punctuation">)</span><span class="token punctuation">{</span>
-         <span class="token keyword">case</span> RED<span class="token operator">:</span><span class="token punctuation">{</span>
-            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"红色"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token keyword">break</span><span class="token punctuation">;</span>
-         <span class="token punctuation">}</span>
-         <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-      <span class="token punctuation">}</span>
-   <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<hr>
-<h1 id="以下为一些方法"><a href="#以下为一些方法" class="headerlink" title="以下为一些方法"></a>以下为一些方法</h1><h2 id="Java中的length与length"><a href="#Java中的length与length" class="headerlink" title="Java中的length与length()"></a>Java中的length与length()</h2><ul>
-<li><p>length 是【属性】</p>
+<h2 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h2><ul>
+<li><p>public enum 名字{<br> 枚举量（常量，符合标识符书写）<font color="red">必须作为第一条语句</font></p>
+<p>}</p>
+</li>
+<li><p>枚举类型是<font color="red">类</font>,有构造方法（不能是第一条语句，只能是<font color="red">private</font>），方法，字段</p>
+</li>
+<li><p>获取枚举类型中的常量—枚举名.常量</p>
+</li>
+<li><p>枚举类型的每一个值都是一个对象</p>
+</li>
+<li><p>eg：</p>
 <ul>
-<li>求数组的长度</li>
-<li><pre class=" language-java"><code class="language-java"> String <span class="token punctuation">[</span><span class="token punctuation">]</span> myList<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">"str1"</span><span class="token punctuation">,</span><span class="token string">"str2"</span><span class="token punctuation">,</span><span class="token string">"str3"</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
- System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>myList<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-</li>
-</ul>
-</li>
-<li><p>length() 是【方法】</p>
-<ul>
-<li>求字符串的长度</li>
-<li><pre class=" language-java"><code class="language-java"> String <span class="token punctuation">[</span><span class="token punctuation">]</span> myString<span class="token operator">=</span><span class="token string">"stringtest"</span><span class="token punctuation">;</span>
- System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>myList<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<li><p>eunm Color{</p>
+<p> RED，BLUE，YELLOW；</p>
+<p> (等价于 public static final Color RED = new Color(); … )</p>
+<p> }</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">enum</span> Color<span class="token punctuation">{</span>
+RED<span class="token punctuation">,</span>GREEN<span class="token punctuation">,</span>BLUE<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
 </li>
 </ul>
 </li>
 </ul>
-<hr>
-<h2 id="java-字符串的遍历和字符串数组的遍历"><a href="#java-字符串的遍历和字符串数组的遍历" class="headerlink" title="java-字符串的遍历和字符串数组的遍历"></a>java-字符串的遍历和字符串数组的遍历</h2><pre class=" language-java"><code class="language-java">String s<span class="token operator">=</span><span class="token string">"abcde"</span><span class="token punctuation">;</span>
-<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>s<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
-　　<span class="token punctuation">{</span>
-　　　　<span class="token keyword">char</span> c<span class="token operator">=</span>s<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
-　　　　System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>c<span class="token operator">+</span><span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//输出a b c d e，获取字符串</span>
-　　<span class="token punctuation">}</span>
+<p>public class Test{<br>   public static void main(String args[]){<br>      Color c = Color.RED;<br>      System.out.print(c);<br>   }<br>}<br>// RED</p>
+<p>public class Test1{<br>   public static void main(String args[]){<br>      switch(Color.RED){<br>         case RED:{<br>            System.out.print(“红色”);<br>            break;<br>         }<br>         …<br>      }<br>   }<br>}</p>
+<pre><code>
+- 
 
 
-String<span class="token punctuation">[</span><span class="token punctuation">]</span> s1<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">"a"</span><span class="token punctuation">,</span><span class="token string">"b"</span><span class="token punctuation">,</span><span class="token string">"c"</span><span class="token punctuation">,</span><span class="token string">"d"</span><span class="token punctuation">,</span><span class="token string">"e"</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>s1<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
-　　<span class="token punctuation">{</span>
-　　　　System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>s1<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">+</span><span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//输出a b c d e，获取字符串数组</span>
-　　<span class="token punctuation">}</span></code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://s2.ax1x.com/2019/11/06/MiN0yQ.png" alt="字符串操作的各种方法"></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+# 以下为一些方法 
+
+## Java中的length与length()
+
+* length 是【属性】
+   - 求数组的长度
+   - ```java
+      String [] myList={&quot;str1&quot;,&quot;str2&quot;,&quot;str3&quot;};
+      System.out.println(myList.length);
+     ```
+
+* length() 是【方法】
+   - 求字符串的长度
+   - ```java
+      String [] myString=&quot;stringtest&quot;;
+      System.out.println(myList.length());
+     ```
+
+---
+## java-字符串的遍历和字符串数组的遍历
+```java
+String s=&quot;abcde&quot;;
+for(int i=0;i&lt;s.length();i++)
+　　{
+　　　　char c=s.charAt(i);
+　　　　System.out.print(c+&quot; &quot;);//输出a b c d e，获取字符串
+　　}
+
+
+String[] s1={&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;,&quot;e&quot;};
+for(int i=0;i&lt;s1.length;i++)
+　　{
+　　　　System.out.print(s1[i]+&quot; &quot;);//输出a b c d e，获取字符串数组
+　　}</code></pre><p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://s2.ax1x.com/2019/11/06/MiN0yQ.png" alt="字符串操作的各种方法"></p>
 <hr>
 <h2 id="判断字符串是否属于字母"><a href="#判断字符串是否属于字母" class="headerlink" title="判断字符串是否属于字母"></a>判断字符串是否属于字母</h2><pre class=" language-java"><code class="language-java">String s <span class="token operator">=</span> <span class="token string">"Hello, my name is John"</span><span class="token punctuation">;</span>
 <span class="token keyword">char</span> c <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1544,7 +1593,7 @@ String<span class="token punctuation">[</span><span class="token punctuation">]<
 					    
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">12.5k</span>
+                <span class="white-color">13.3k</span>
 
             
             <br>

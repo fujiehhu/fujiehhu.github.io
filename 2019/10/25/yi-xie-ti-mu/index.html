@@ -404,14 +404,14 @@ from functools import l">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.8k
+                        2.3k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        7 分
+                        9 分
                     </div>
                     
                 
@@ -634,10 +634,14 @@ from functools import l">
 </ul>
 <hr>
 <ul>
-<li>try-catch-finally 规则( 异常处理语句的语法规则 ）<br>1)  必须在 try 之后添加 catch 或 finally 块。try 块后可同时接 catch 和 finally 块，但至少有一个块。</li>
+<li><p>try-catch-finally 规则( 异常处理语句的语法规则 ）</p>
+<p>1)  必须在 try 之后添加 catch 或 finally 块。try 块后可同时接 catch 和 finally 块，但至少有一个块。</p>
+<p>2) 必须遵循块顺序：若代码同时使用 catch 和 finally 块，则必须将 catch 块放在 try 块之后。 </p>
+<p>3) catch 块与相应的异常类的类型相关。 </p>
+<p>  4) 一个 try 块可能有多个 catch 块。若如此，则执行第一个匹配块。即Java虚拟机会把实际抛出的异常对象依次和各个catch代码块声明的异常类型匹配，如果异常对象为某个异常类型或 其子类的实例，就执行这个catch代码块，不会再执行其他的 catch代码块<br>  5) 可嵌套 try-catch-finally 结构。<br>  6) 在 try-catch-finally 结构中，可重新抛出异常。<br>  7) 除了下列情况，总将执行 finally 做为结束： JVM 过早终止（调用 System.exit(int)）；在 finally 块中抛出一个未处理的异常；计算机断电、失火、或遭遇病毒攻击</p>
+<p>  由此可以看出，catch只会匹配一个，因为只要匹配了一个，虚拟机就会使整个语句退出</p>
+</li>
 </ul>
-<p>2) 必须遵循块顺序：若代码同时使用 catch 和 finally 块，则必须将 catch 块放在 try 块之后。<br>3) catch 块与相应的异常类的类型相关。<br>4) 一个 try 块可能有多个 catch 块。若如此，则执行第一个匹配块。即Java虚拟机会把实际抛出的异常对象依次和各个catch代码块声明的异常类型匹配，如果异常对象为某个异常类型或 其子类的实例，就执行这个catch代码块，不会再执行其他的 catch代码块<br>5) 可嵌套 try-catch-finally 结构。<br>6) 在 try-catch-finally 结构中，可重新抛出异常。<br>7) 除了下列情况，总将执行 finally 做为结束： JVM 过早终止（调用 System.exit(int)）；在 finally 块中抛出一个未处理的异常；计算机断电、失火、或遭遇病毒攻击</p>
-<p>由此可以看出，catch只会匹配一个，因为只要匹配了一个，虚拟机就会使整个语句退出</p>
 <hr>
 <ul>
 <li><p>1、jps：查看本机java进程信息。</p>
@@ -649,6 +653,49 @@ from functools import l">
 <p>7、jvisualvm：功能强大的控制台</p>
 </li>
 </ul>
+<hr>
+<ul>
+<li>java object默认的基本方法中没有copy()，含有如下方法：<br>getClass(), hashCode(), equals(), clone(), toString(), notify(), notifyAll(),  wait(), finalize()</li>
+</ul>
+<hr>
+<ul>
+<li><p>结果集(ResultSet)是数据中查询结果返回的一种对象，可以说结果集是一个存储查询结果的对象，但是结果集并不仅仅具有存储的功能，他同时还具有操纵数据的功能，可能完成对数据的更新等。 </p>
+<p>ResultSet跟普通的数组不同，索引从1开始而不是从0开始</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p>JDK提供的用于并发编程的同步器有哪些？</p>
+<p>  A，Java 并发库 的Semaphore 可以很轻松完成信号量控制，Semaphore可以控制某个资源可被同时访问的个数，通过 acquire() 获取一个许可，如果没有就等待，而 release() 释放一个许可。</p>
+<p>  B，CyclicBarrier 主要的方法就是一个：await()。await() 方法没被调用一次，计数便会减少1，并阻塞住当前线程。当计数减至0时，阻塞解除，所有在此 CyclicBarrier 上面阻塞的线程开始运行。</p>
+<p>  C，直译过来就是倒计数(CountDown)门闩(Latch)。倒计数不用说，门闩的意思顾名思义就是阻止前进。在这里就是指 CountDownLatch.await() 方法在倒计数为0之前会阻塞当前线程。</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li>ThreadLocalMap中使用开放地址法来处理散列冲突，而HashMap中使用的是分离链表法.</li>
+</ul>
+<hr>
+<ul>
+<li>java中的i++和++i在java语言层面上来看使用中间量机制，i=i++，i不变，i=++i相当于++i，而结合在一个语句里使用则会报错，因为++后应该跟<font color="red">变量</font></li>
+</ul>
+<hr>
+<ul>
+<li><p>throws 和 throw：</p>
+<p>  throws出现在方法头，表示可能会出现异常；</p>
+<p>  throw是在方法体，抛出了异常，执行throw则一定抛出了某种异常</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p>线程同步：喂，SHE<br>  喂（Vector）</p>
+<p>  S（Stack）</p>
+<p>  H（hashtable）</p>
+<p>  E（enumeration）</p>
+</li>
+</ul>
+<hr>
+<hr>
 <hr>
 
             </div>
@@ -1069,7 +1116,7 @@ from functools import l">
 					    
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">12.5k</span>
+                <span class="white-color">13.3k</span>
 
             
             <br>
