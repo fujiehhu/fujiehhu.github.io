@@ -18,6 +18,8 @@
 
 抽象类与接口
 
+关于类的专题
+
 Java常用类库
 
 异常处理
@@ -36,7 +38,7 @@ JVM
 
 一些常用函数
 
-Java中的length与lengt">
+Java中的leng">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -422,7 +424,7 @@ Java中的length与lengt">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        7k
+                        7.3k
                     </div>
                     
 
@@ -454,6 +456,8 @@ Java中的length与lengt">
 <li><p><a href="##类的封装、继承与多态">类的封装、继承与多态</a></p>
 </li>
 <li><p><a href="##抽象类与接口">抽象类与接口</a></p>
+</li>
+<li><p><a href="##关于类的专题">关于类的专题</a></p>
 </li>
 <li><p><a href="##Java常用类库">Java常用类库</a></p>
 </li>
@@ -733,6 +737,25 @@ Java中的length与lengt">
 </li>
 </ul>
 </li>
+<li><p>匿名内部类</p>
+<ul>
+<li>匿名内部类的创建格式为：<pre class=" language-java"><code class="language-java"> <span class="token keyword">new</span> 父类构造器（参数列表）<span class="token operator">|</span>实现接口（）<span class="token punctuation">{</span>
+          <span class="token comment" spellcheck="true">//匿名内部类的类体实现</span>
+                                   <span class="token punctuation">}</span></code></pre>
+</li>
+</ul>
+<ol>
+<li>使用匿名内部类时，我们必须是继承一个类或者实现一个接口，但是两者不可兼得，同时也只能继承一个类或者实现一个接口。</li>
+<li>匿名内部类中是不能定义构造函数的。</li>
+<li>匿名内部类中不能存在任何的静态成员变量和静态方法。</li>
+<li>匿名内部类为局部内部类，所以局部内部类的所有限制同样对匿名内部类生效。</li>
+<li>匿名内部类不能是抽象的，它必须要实现继承的类或者实现的接口的所有抽象方法。</li>
+<li>匿名类就是利用父类的构造函数和自身类体构造成一个类。</li>
+<li>匿名类可以继承父类的方法，也可以重写父类的方法。</li>
+</ol>
+</li>
+</ul>
+<ul>
 <li><p>将数组传递到方法里</p>
 <ul>
 <li><pre class=" language-java"><code class="language-java"> <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">add10</span><span class="token punctuation">(</span><span class="token keyword">int</span> arr<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span></code></pre>
@@ -742,7 +765,7 @@ Java中的length与lengt">
 <li><p>Static 关键字</p>
 <ul>
 <li>静态变量： 类变量  <ul>
-<li>static声明的属性是<font color="red">所有对象共享的</font>，用static声明的属性也可以用类名直接访问  </li>
+<li>static声明的属性是<font color="red">所 有对象共享的</font>，用static声明的属性也可以用类名直接访问  </li>
 </ul>
 </li>
 <li>静态方法： 类方法 <ul>
@@ -1655,7 +1678,7 @@ String<span class="token punctuation">[</span><span class="token punctuation">]<
 					    
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">16.3k</span>
+                <span class="white-color">16.5k</span>
 
             
             <br>
