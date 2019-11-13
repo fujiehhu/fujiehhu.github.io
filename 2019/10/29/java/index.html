@@ -9,9 +9,10 @@
     <meta name="keywords" content="java, HHU">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="
-目录
-面向对象
+    <meta name="description" content="目录
+常量与变量
+
+面向对象设计-类和对象
 
 类的封装、继承与多态
 
@@ -35,8 +36,7 @@ JVM
 
 一些常用函数
 
-Java中的length与length()
-与数组操作有关的A">
+Java中的length与lengt">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -422,14 +422,14 @@ Java中的length与length()
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        6.8k
+                        7k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        26 分
+                        27 分
                     </div>
                     
                 
@@ -446,9 +446,10 @@ Java中的length与length()
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <hr>
-<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ul>
-<li><p><a href="##面向对象">面向对象</a></p>
+                <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ul>
+<li><p><a href="##常量与变量">常量与变量</a></p>
+</li>
+<li><p><a href="##面向对象设计-类和对象">面向对象设计-类和对象</a></p>
 </li>
 <li><p><a href="##类的封装、继承与多态">类的封装、继承与多态</a></p>
 </li>
@@ -513,7 +514,17 @@ Java中的length与length()
 </li>
 </ul>
 <hr>
-<h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><ul>
+<h2 id="常量与变量"><a href="#常量与变量" class="headerlink" title="常量与变量"></a>常量与变量</h2><ul>
+<li>Java 标识符有如下命名规则： <ul>
+<li>由26个英文字母大小写，数字：0-9 符号：_ $ 组成</li>
+<li>标识符应以字母、_ 、$开头。</li>
+<li>标识符不能是关键字。</li>
+</ul>
+</li>
+<li>Java中严格区分大小写 </li>
+</ul>
+<hr>
+<h2 id="面向对象设计-类和对象"><a href="#面向对象设计-类和对象" class="headerlink" title="面向对象设计-类和对象"></a>面向对象设计-类和对象</h2><ul>
 <li><p>对象</p>
 <ul>
 <li>对象的特征分为<font color="red">静态特征</font>和<font color="red">动态特征</font><ul>
@@ -556,19 +567,25 @@ Java中的length与length()
 </li>
 <li><p>类方法</p>
 <ul>
-<li><p>类方法也称<font color="red">静态方法</font></p>
-</li>
-<li><p><font color="red">构造方法</font>所完成的主要工作是帮助新创建的对象赋初值</p>
-<ul>
+<li>类方法也称<font color="red">静态方法</font></li>
+<li><font color="red">构造方法</font>所完成的主要工作是帮助新创建的对象赋初值<ol>
 <li><font color="green">构造方法没有返回值</font></li>
 <li><font color="green">与类名称相同</font></li>
 <li>构造方法无需在程序中直接使用，而是在对象产生时自动执行</li>
+<li>构造方法可以被重载，一个构造方法可以通过this关键字调用另一个构造方法，this语句必须位于构造方法的第一行</li>
+<li>构造方法不能被static、final、synchronized、abstract、native修饰，但可以被public、private、protected修饰</li>
+<li>子类通过super关键字调用父类的一个构造方法</li>
+<li>当子类的某个构造方法没有通过super关键字调用父类的构造方法，通过这个构造方法创建子类对象时，会自动先调用父类的缺省构造方法</li>
+<li>构造方法不是类的成员方法</li>
+<li>构造方法不能被继承</li>
+</ol>
+</li>
 </ul>
 </li>
-<li><p>构造方法和普通方法都可以<font color="red">重载</font></p>
-</li>
-<li><p>只要明确的声明了构造方法，那么默认的构造方法就不会自动生成</p>
+</ul>
 <ul>
+<li>构造方法和普通方法都可以<font color="red">重载</font></li>
+<li>只要明确的声明了构造方法，那么默认的构造方法就不会自动生成<ul>
 <li><pre class=" language-java"><code class="language-java"> <span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">{</span>
     <span class="token keyword">private</span> String name<span class="token punctuation">;</span>
     <span class="token keyword">private</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span>
@@ -606,10 +623,8 @@ Java中的length与length()
 </li>
 </ul>
 </li>
-<li><p>单态模式</p>
-</li>
-<li><p>类中的属性或者方法被<strong>private</strong>修饰时，该类实例化的对象便不能调用</p>
-<ul>
+<li>单态模式</li>
+<li>类中的属性或者方法被<strong>private</strong>修饰时，该类实例化的对象便不能调用<ul>
 <li><pre class=" language-java"><code class="language-java"> <span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">{</span>
     <span class="token keyword">private</span> String name<span class="token punctuation">;</span>
  <span class="token punctuation">}</span>
@@ -620,8 +635,6 @@ Java中的length与length()
     <span class="token punctuation">}</span>
  <span class="token punctuation">}</span>
  <span class="token comment" spellcheck="true">// Error:(9, 27) java: name 在 Person 中是 private 访问控制</span></code></pre>
-</li>
-</ul>
 </li>
 </ul>
 </li>
@@ -1095,8 +1108,8 @@ Java中的length与length()
 <tr>    <td>  ?   </td>    <td> 当该字符紧跟在任何一个其他限制符（*,+,?，{n}，{n,}，{n,m}）后面时，匹配模式是非贪婪的。非贪婪模式尽可能少的匹配所搜索的字符串，而默认的贪婪模式则尽可能多的匹配所搜索的字符串。例如，对于字符串“oooo”，“o+”将尽可能多的匹配“o”，得到结果[“oooo”]，而“o+?”将尽可能少的匹配“o”，得到结果 ['o', 'o', 'o', 'o']          </td>   </tr>   
 <tr>    <td>  .点  </td>    <td> 匹配除“\r\n”之外的任何单个字符。要匹配包括“\r\n”在内的任何字符，请使用像“[\s\S]”的模式。          </td>   </tr>   <tr>    <td>  (pattern)      </td>    <td>            匹配pattern并获取这一匹配。所获取的匹配可以从产生的Matches集合得到，在VBScript中使用SubMatches集合，在JScript中则使用$0…$9属性。要匹配圆括号字符，请使用“\(”或“\)”。          </td>   </tr>   
 <tr>    <td>  (?:pattern)      </td>    <td>  非获取匹配，匹配pattern但不获取匹配结果，不进行存储供以后使用。这在使用或字符“(|)”来组合一个模式的各个部分时很有用。例如“industr(?:y|ies)”就是一个比“industry|industries”更简略的表达式。          </td>   </tr>   
-<tr>    <td>  (?=pattern)       </td>    <td>   非获取匹配，正向肯定预查，在任何匹配pattern的字符串开始处匹配查找字符串，该匹配不需要获取供以后使用。例如，“Windows(?=95|98|NT|2000)”能匹配“Windows2000”中的“Windows”，但不能匹配“Windows3.1”中的“Windows”。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始。          </td>   </tr>   
-<tr>    <td>   (?!pattern)       </td>    <td>   非获取匹配，正向否定预查，在任何不匹配pattern的字符串开始处匹配查找字符串，该匹配不需要获取供以后使用。例如“Windows(?!95|98|NT|2000)”能匹配“Windows3.1”中的“Windows”，但不能匹配“Windows2000”中的“Windows”。          </td>   </tr>   <tr>    <td>            (?&lt;=pattern)       </td>    <td>            非获取匹配，反向肯定预查，与正向肯定预查类似，只是方向相反。例如，“(?&lt;=95|98|NT|2000)Windows”能匹配“2000Windows”中的“Windows”，但不能匹配“3.1Windows”中的“Windows”。          </td>   </tr>   
+<tr>    <td>  (?=pattern)   </td>    <td>   非获取匹配，正向肯定预查，在任何匹配pattern的字符串开始处匹配查找字符串，该匹配不需要获取供以后使用。例如，“Windows(?=95|98|NT|2000)”能匹配“Windows2000”中的“Windows”，但不能匹配“Windows3.1”中的“Windows”。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始。          </td>   </tr>   
+<tr>    <td>  (?!pattern)    </td>    <td>   非获取匹配，正向否定预查，在任何不匹配pattern的字符串开始处匹配查找字符串，该匹配不需要获取供以后使用。例如“Windows(?!95|98|NT|2000)”能匹配“Windows3.1”中的“Windows”，但不能匹配“Windows2000”中的“Windows”。          </td>   </tr>   <tr>    <td>            (?&lt;=pattern)       </td>    <td>            非获取匹配，反向肯定预查，与正向肯定预查类似，只是方向相反。例如，“(?&lt;=95|98|NT|2000)Windows”能匹配“2000Windows”中的“Windows”，但不能匹配“3.1Windows”中的“Windows”。          </td>   </tr>   
 <tr>    <td> (?&lt;!pattern)  </td>    <td>  非获取匹配，反向否定预查，与正向否定预查类似，只是方向相反。例如“(?&lt;!95|98|NT|2000)Windows”能匹配“3.1Windows”中的“Windows”，但不能匹配“2000Windows”中的“Windows”。这个地方不正确，有问题                  此处用或任意一项都不能超过2位，如“(?&lt;!95|98|NT|20)Windows正确，“(?&lt;!95|980|NT|20)Windows 报错，若是单独使用则无限制，如(?&lt;!2000)Windows 正确匹配          </td>   </tr> <tr>    <td>            x|y          </td>    <td>            匹配x或y。例如，“z|food”能匹配“z”或“food”(此处请谨慎)。“[zf]ood”则匹配“zood”或“food”。          </td>   </tr>   
 <tr>    <td>    [xyz]  </td>    <td>  字符集合。匹配所包含的任意一个字符。例如，“[abc]”可以匹配“plain”中的“a”。          </td>   </tr>   
 <tr>    <td>    [^xyz]    </td>    <td>    负值字符集合。匹配未包含的任意字符。例如，“[^abc]”可以匹配“plain”中的“plin”。          </td>   </tr> <tr>  <td>    [a-z]   </td>    <td>      字符范围。匹配指定范围内的任意字符。例如，“[a-z]”可以匹配“a”到“z”范围内的任意小写字母字符。  注意:只有连字符在字符组内部时,并且出现在两个字符之间时,才能表示字符的范围; 如果出字符组的开头,则只能表示连字符本身.          </td>   </tr>   
@@ -1117,9 +1130,9 @@ Java中的length与length()
 <tr>    <td>    \W </td>    <td> 匹配任何非单词字符。等价于“[^A-Za-z0-9_]”。          </td>   </tr>  
 </tbody> </table>
 
-
 </li>
 </ul>
+<hr>
 <h1 id="以下为一些方法"><a href="#以下为一些方法" class="headerlink" title="以下为一些方法"></a>以下为一些方法</h1><h2 id="Java中的length与length"><a href="#Java中的length与length" class="headerlink" title="Java中的length与length()"></a>Java中的length与length()</h2><ul>
 <li><p>length 是【属性】</p>
 <ul>
@@ -1222,7 +1235,6 @@ String<span class="token punctuation">[</span><span class="token punctuation">]<
 </ul>
 </li>
 </ul>
-<hr>
 
             </div>
             <hr/>
@@ -1643,7 +1655,7 @@ String<span class="token punctuation">[</span><span class="token punctuation">]<
 					    
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">15.8k</span>
+                <span class="white-color">16.1k</span>
 
             
             <br>
