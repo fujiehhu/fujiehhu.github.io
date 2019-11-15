@@ -424,14 +424,14 @@ Java中的leng">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        7.3k
+                        8k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        27 分
+                        30 分
                     </div>
                     
                 
@@ -706,7 +706,8 @@ Java中的leng">
 </li>
 </ul>
 <h2 id="抽象类与接口"><a href="#抽象类与接口" class="headerlink" title="抽象类与接口"></a>抽象类与接口</h2><ul>
-<li>抽象类<ul>
+<li><p>抽象类</p>
+<ul>
 <li>抽象类、抽象方法用<font color="green">abstract</font>来修饰</li>
 <li>抽象类不能直接被实例化(不能直接用new关键字去产生对象)</li>
 <li>抽象方法只需声明，而不需实现</li>
@@ -715,14 +716,26 @@ Java中的leng">
 <li><font color="#8470FF">抽象类中方法有一般方法和抽象方法</font></li>
 </ul>
 </li>
-<li>接口<ul>
+<li><p>接口</p>
+<ul>
 <li>接口实现 implements ， 定义接口 interface</li>
-<li>接口里的数据成员必须被初始化，且数据成员均为常量</li>
+<li>接口里的数据成员必须被初始化，且数据成员均为<font color="red">常量</font></li>
 <li>接口里的方法必须<font color="red">全部声明为abstract（抽象方法）</font>，不能像抽象类一样有一般的方法，必须全部是抽象方法</li>
 <li><font color="#8470FF">接口是可以被实例化的，但是不能被直接实例化，只能通过其子类进行实例化</font></li>
 <li>JDK8开始，接口中可以定义有方法体的方法，方法必须被default和static修饰。除此之外，其他方法都是抽象方法</li>
-<li></li>
+<li>接口中可以不声明任何方法，和成员变量</li>
 </ul>
+</li>
+<li><p>两者的语法区别：</p>
+<ol>
+<li>抽象类可以有构造方法，接口中不能有构造方法。  </li>
+<li>抽象类中可以有普通成员变量，接口中没有普通成员变量  </li>
+<li>抽象类中可以包含非抽象的普通方法，接口中的所有方法必须都是抽象的，不能有非抽象的普通方法。  </li>
+<li>抽象类中的抽象方法的访问类型可以是public，protected和（默认类型,虽然<br>eclipse下不报错，但应该也不行），但接口中的抽象方法只能是public类型的，并且默认即为public abstract类型。  </li>
+<li>抽象类中可以包含静态方法，接口中不能包含静态方法  </li>
+<li>抽象类和接口中都可以包含静态成员变量，抽象类中的静态成员变量的访问类型可以任意，但接口中定义的变量只能是public static final类型，并且默认即为public static final类型。  </li>
+<li>一个类可以实现多个接口，但只能继承一个抽象类。  </li>
+</ol>
 </li>
 </ul>
 <h2 id="关于类的专题"><a href="#关于类的专题" class="headerlink" title="关于类的专题"></a>关于类的专题</h2><ul>
@@ -835,8 +848,16 @@ Java中的leng">
 </li>
 </ul>
 <hr>
-<h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://s2.ax1x.com/2019/11/12/M1EFDe.png" alt><br></p>
+<h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><ul>
+<li><p>finally中的代码是无论如何都会执行的。<br>另外再说下，如果抛出异常，并且在catch中有return语句，这个return语句会先执行，执行之后将结果保存在缓存中。再去查看是否有finally，如果有finally就先执行finally语句，之后再返回缓存中的return值。如果finally中也有return，那么finally中的return会覆盖掉之前缓存的return，即最终会返回finally中的值。</p>
+</li>
+<li><p>编译时异常必须显示处理，运行时异常交给虚拟机。</p>
 <ul>
+<li><p>运行时异常可以不处理。当出现这样的异常时，总是由虚拟机接管。比如我们从来没有人去处理过Null Pointer Exception异常，它就是运行时异常，并且这种异常还是最常见的异常之一。出现运行时异常后，系统会把异常一直往上层抛，一直遇到处理代码。如果没有处理块，到最上层，如果是多线程就由Thread.run()抛出，如果是单线程就被main()抛出。抛出之后，如果是线程，这个线程也就退出了。如果是主程序抛出的异常，整个程序也就退出了。运行时异常是Exception的子类，也有一般异常的特点，是可以被Catch块处理的。只不过往往不对它处理罢了。也就是说，如果不对运行时异常进行处理，那么出现运行时异常之后，要么是线程中止，要么是主程序终止。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://s2.ax1x.com/2019/11/12/M1EFDe.png" alt><br></p>
+</li>
+</ul>
+</li>
 <li><p><font color="blue">运行时异常</font>:都是RuntimeException类及其子类异常，如NullPointerException(空指针异常)、IndexOutOfBoundsException(下标越界异常)等，<font color="red">这些异常是不检查异常</font>，程序中可以选择捕获处理，也可以不处理。这些异常一般是由程序逻辑错误引起的，程序应该从逻辑角度尽可能避免这类异常的发生。</p>
 <p> <strong>运行时异常的特点是Java编译器不会检查它，也就是说，当程序中可能出现这类异常，即使没有用try-catch语句捕获它，也没有用throws子句声明抛出它，也会编译通过。</strong></p>
 </li>
@@ -1215,6 +1236,8 @@ String<span class="token punctuation">[</span><span class="token punctuation">]<
  a <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">32</span><span class="token punctuation">,</span><span class="token number">32</span><span class="token punctuation">,</span><span class="token number">32</span><span class="token punctuation">,</span><span class="token number">45</span><span class="token punctuation">,</span><span class="token number">65</span><span class="token punctuation">}</span></code></pre>
 </li>
 </ul>
+</li>
+<li><p>Arrays.equals(int [] a,int [] b)进行比较,查看Arrays的equals()方法的源码，就是对两个数组元素进行逐个比较</p>
 </li>
 </ul>
 <hr>
@@ -1678,7 +1701,7 @@ String<span class="token punctuation">[</span><span class="token punctuation">]<
 					    
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">16.5k</span>
+                <span class="white-color">17.5k</span>
 
             
             <br>

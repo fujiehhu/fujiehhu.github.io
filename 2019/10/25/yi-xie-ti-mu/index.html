@@ -404,14 +404,14 @@ from functools import l">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        2.7k
+                        2.9k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        10 分
+                        11 分
                     </div>
                     
                 
@@ -767,6 +767,27 @@ from functools import l">
 <li>java语言中的方法属于对象的成员,而不是类的成员。不过，其中静态方法属于类的成员.</li>
 </ul>
 <hr>
+<ul>
+<li><p>list是一个ArrayList的对象，哪个选项的代码填到//todo delete处，可以在Iterator遍历的过程中正确并安全的删除一个list中保存的对象？（）</p>
+<pre class=" language-java"><code class="language-java">Iterator it <span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">iterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> index <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span>it<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+ Object obj <span class="token operator">=</span> it<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">needDelete</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">//needDelete返回boolean，决定是否要删除</span>
+ <span class="token punctuation">{</span>
+     <span class="token comment" spellcheck="true">//todo delete</span>
+     it<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+ index <span class="token operator">++</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+</li>
+<li><p>如果在循环的过程中调用集合的remove()方法，就会导致循环出错，例如：</p>
+<p>  for(int i=0;i&lt; list.size();i++){</p>
+<pre><code>  list.remove(...);</code></pre><p>  }</p>
+<p>  循环过程中list.size()的大小变化了，就导致了错误。<br>  所以，如果你想在循环语句中删除集合中的某个元素，就要用迭代器iterator的remove()方法，因为它的remove()方法不仅会删除元素，还会维护一个标志，用来记录目前是不是可删除状态，例如，你不能连续两次调用它的remove()方法，调用之前至少有一次next()方法的调用。</p>
+</li>
+</ul>
 <hr>
 <hr>
 <hr>
@@ -1198,7 +1219,7 @@ from functools import l">
 					    
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">16.5k</span>
+                <span class="white-color">17.5k</span>
 
             
             <br>
