@@ -36,9 +36,11 @@ JVM
 正则表达式
 
 
+MVC设计模式
+
 一些常用函数
 
-Java中的leng">
+J">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -424,14 +426,14 @@ Java中的leng">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        8k
+                        8.2k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        30 分
+                        31 分
                     </div>
                     
                 
@@ -474,6 +476,8 @@ Java中的leng">
 <li><a href="##JVM">JVM</a></li>
 <li><a href="##正则表达式">正则表达式</a></li>
 </ul>
+</li>
+<li><p><a href="#MVC设计模式">MVC设计模式</a></p>
 </li>
 <li><p><a href="#以下为一些方法">一些常用函数</a></p>
 <ul>
@@ -1174,6 +1178,34 @@ Java中的leng">
 <tr>    <td>    \W </td>    <td> 匹配任何非单词字符。等价于“[^A-Za-z0-9_]”。          </td>   </tr>  
 </tbody> </table>
 
+
+
+</li>
+</ul>
+<hr>
+<h1 id="MVC设计模式"><a href="#MVC设计模式" class="headerlink" title="MVC设计模式"></a>MVC设计模式</h1><p>M 代表 模型（Model）</p>
+<p>V 代表 视图（View）</p>
+<p>C 代表 控制器（controller) </p>
+<p>模型是什么呢？ 模型就是数据，就是dao,bean</p>
+<p>视图是什么呢？ 就是网页, JSP，用来展示模型中的数据</p>
+<p>控制器是什么？ 控制器用来把不同的数据，显示在不同的视图上。 控制器的作用就是把不同的数据(Model)，显示在不同的视图(View)上。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://s2.ax1x.com/2019/12/19/QbZIBT.png" alt="QbZIBT.png"></p>
+<p>传统的servlet/jsp实现的MVC架构，其运行机制是：jsp页面（视图view）发送消息到servlet（控制器Controller），servlet获取请求数据，处理业务逻辑，分发转向</p>
+<ul>
+<li><p>struts2框架</p>
+<ul>
+<li><p>Struts2是一个基于MVC设计模式的Web应用框架，它本质上相当于一个servlet，在MVC设计模式中，Struts2作为控制器(Controller)来建立模型与视图的数据交互</p>
+</li>
+<li><p>Struts2框架的MVC分别对应： </p>
+<p> V：jsp+OGNL </p>
+<p> C：action类 </p>
+<p> M：javabean+ModelDriven</p>
+</li>
+<li><p>Struts2框架的控制器将“获取请求”和“分发转向”代码抽取出来写在配置文件里，这样一来，控制器（action类）就能专注于业务逻辑的处理了。</p>
+</li>
+<li><p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://s2.ax1x.com/2019/12/19/QqXOdx.png" alt="QqXOdx.png"></p>
+</li>
+</ul>
 </li>
 </ul>
 <hr>
@@ -1701,7 +1733,7 @@ String<span class="token punctuation">[</span><span class="token punctuation">]<
 					    
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">17.5k</span>
+                <span class="white-color">17.8k</span>
 
             
             <br>
